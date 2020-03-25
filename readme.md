@@ -2,7 +2,8 @@
  projek laravel internship
 
 ## Instruction
-- copy link yang sudah dibagikan ini
+- verifikasi permintaan colaborasi dari email kalian masing masing
+- 
 - change name file copy to .env
 
 ## Instruction
