@@ -22,5 +22,7 @@
     php artisan serve
 ```
 
-#note
-apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA
+# note
+Imporovisasilah template 
+Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA
+
