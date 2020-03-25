@@ -23,6 +23,6 @@
 ```
 
 # note
-Imporovisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah
+Imporovisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah https://laravel.com/docs/6.x/blade#introduction
 Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA
 
