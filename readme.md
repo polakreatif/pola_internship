@@ -4,9 +4,8 @@
 ## Instruction
 - verifikasi permintaan colaborasi dari email kalian masing masing
 - copy link https://github.com/polakreatif/pola_internship.git
-- lakukan clone projek git tersebut, bisa melalui aplikasi 
-
-## Instruction
+- lakukan clone projek git tersebut, bisa melalui aplikasi GUI github / lewat cmd
+- 
 - copy file .env.example in same folder
 - change name file copy to .env
 
