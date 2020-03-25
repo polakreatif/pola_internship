@@ -7,6 +7,7 @@
 - lakukan clone projek git tersebut, bisa melalui aplikasi GUI github / lewat cmd / sourcetree.
 - buatlah sebuah branch sendiri dengan ketentuan nama panggilan masing-masing.
 - lakukan checkout kemasing-masing branch yang sudah dibuat
+- melalui cmd jalan
 - copy file .env.example in same folder.
 - change name file copy to .env.
 
@@ -27,4 +28,4 @@ You can run server with artisan laravel
 ```
 
 #note
-apabila ada instruksi yang belum paha
+apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA
