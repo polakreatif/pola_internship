@@ -2,7 +2,7 @@
  projek laravel internship
 
 ## Instruction
-- masuk 
+- copy link yang sudah dibagikan ini
 - change name file copy to .env
 
 ## Instruction
