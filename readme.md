@@ -2,7 +2,7 @@
  projek laravel internship
 
 ## Instruction
-- copy file .env.example in same folder
+- masuk 
 - change name file copy to .env
 
 ## Instruction
