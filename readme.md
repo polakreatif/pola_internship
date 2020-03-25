@@ -6,6 +6,7 @@
 - copy link https://github.com/polakreatif/pola_internship.git
 - lakukan clone projek git tersebut, bisa melalui aplikasi GUI github / lewat cmd / sourcetree.
 - buatlah sebuah branch sendiri dengan ketentuan nama panggilan masing-masing.
+- lakukan checkout kemasing-masing branch yang sudah dibuat
 - copy file .env.example in same folder.
 - change name file copy to .env.
 
@@ -24,3 +25,6 @@ You can run server with artisan laravel
 ```sh
     php artisan serve
 ```
+
+#note
+apabila ada instruksi yang belum paha
