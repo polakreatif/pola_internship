@@ -23,5 +23,5 @@
 ```
 
 # note
-> 段落引用Improvisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah https://laravel.com/docs/6.x/blade#introduction.
-> 段落引用Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA.
+1. Improvisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah https://laravel.com/docs/6.x/blade#introduction.
+2. Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA.
