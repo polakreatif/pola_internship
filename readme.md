@@ -7,8 +7,8 @@
 - lakukan clone projek git dengan link tersebut, bisa melalui aplikasi GUI github / lewat cmd / sourcetree.
 - buatlah sebuah branch sendiri dengan ketentuan nama panggilan masing-masing.
 - lakukan checkout kemasing-masing branch yang sudah dibuat.
-- copy file .env.example in same folder.
-- change name file copy to .env.
+- di dalam projek yang sudah diclone copy lah file .env.example di folder yang sama.
+- gantilah nama file copy tersebut .env.
 - melalui cmd jalankan perintah berikut(posisi cmd harus dalam folder projek)
 ```sh
     composer update
