@@ -26,3 +26,4 @@
 Imporovisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah https://laravel.com/docs/6.x/blade#introduction
 Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA
 
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](http://creativecommons.org/publicdomain/zero/1.0)
