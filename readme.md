@@ -1,6 +1,11 @@
 # pola_internship
  projek laravel internship
 
+## Instruction
+
+- copy file .env.example in same folder
+- change name file copy to .env
+
 ## Installation
 
 after clone project Run the following to configur laravel
