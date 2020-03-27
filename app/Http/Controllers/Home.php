@@ -34,7 +34,7 @@ class Home extends Controller
         $titleAboutUs = "Siapa Kami ?";
 
         // Caraousel
-
+        
         return view('home', [
             "title" => $title, 
             "description" => $description,
@@ -45,7 +45,6 @@ class Home extends Controller
             "textDownload" => $textDownload,
             "mediaAboutUs" => $mediaAboutUs,
             "titleAboutUs" => $titleAboutUs,
-            "mediaCarousel" => $mediaCarousel,
         ]);
     }
 
