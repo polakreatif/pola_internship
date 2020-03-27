@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>andipputra photogaphy @yield('title')</title>
+  
+  @section('title')
+  <title>andipputra photogaphy</title>
+  @endsection
 
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,7 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav" style="font-family : sans-serif; font-weight:bolder">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="font-family : sans-serif; font-weight:bolder">
     <div class="container ">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +43,10 @@
             <a class="nav-link js-scroll-trigger" href="#service">Service</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portofolio">Portofolio</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#maps">Maps</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -147,7 +152,7 @@
   </section>
 
   <!-- Map -->
-  <section id="contact" class="map text-center">
+  <section id="maps" class="map text-center">
       <div class="container">
         <h2>Our Maps</h2>
         <br>
@@ -163,7 +168,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer text-center">
+  <footer class="footer text-center" id="contact">
     <div class="container">
       <br>
       <h2>You Can Contact Us On</h2>
