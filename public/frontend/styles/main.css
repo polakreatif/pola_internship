@@ -1,0 +1,255 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Assistant', sans-serif;
+  color: #212121;
+  font-weight: 300;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #707070;
+  font-weight: 300;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #CB5036;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #CB5036;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #CB5036 !important;
+}
+
+header .heading-primary {
+  color: #212121;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+header .heading-primary .heading-secondary {
+  color: #CB5036;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+header p strong {
+  font-weight: bold;
+}
+
+header a.color-secondary-paragraph {
+  color: #CB5036;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+header a.color-secondary-paragraph:hover {
+  color: #d26a54;
+}
+
+header a img {
+  max-height: 18px;
+}
+
+header .image-box img {
+  max-height: 400px;
+}
+
+main .heading-main {
+  color: #212121;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+main .heading-main-secondary {
+  color: #CB5036;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+main .design-header-aksesoris {
+  width: 382px;
+  height: 24px;
+  background-color: #ffc9be;
+  margin-top: -25px !important;
+}
+
+main .margin {
+  margin-top: 90px;
+}
+
+main img {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 95px;
+}
+
+main p {
+  font-size: 20px;
+}
+
+main p strong {
+  font-weight: 600;
+}
+
+main .section-partnerKami {
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+main .section-partnerKami .row [class*="col-"] {
+  max-height: 200px;
+}
+
+main .section-partnerKami img {
+  max-height: 200px;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu {
+  min-width: 300px;
+  min-height: 400px;
+  background-color: #000;
+  background-size: cover;
+  margin-top: 100px;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu .kotak-discount {
+  width: 50px;
+  height: 20px;
+  background-color: #CB3636;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu .kotak-discount .potongan-discount {
+  font-size: 14px;
+  color: #fff;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .text-sepatu .teks-nama-sepatu {
+  font-size: 24px;
+  margin-top: 14px !important;
+  margin-bottom: 5px !important;
+  font-weight: 400;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .text-sepatu .teks-kategori {
+  font-size: 20px;
+  color: #757575;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .text-sepatu .teks-harga-sepatu {
+  font-size: 20px;
+  color: #CB5036;
+  margin-bottom: 0px !important;
+  font-weight: 600;
+  padding-right: 5px;
+}
+
+main .section-produk-kami-konten .produk-button-lihat-lebih {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+main .section-produk-kami-konten .produk-button-lihat-lebih .btn-produk-lihat-lebih {
+  border: 2px solid #CB5036;
+  font-size: 22px;
+  padding: 16px 128px;
+  color: #CB5036;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+main .section-produk-kami-konten .produk-button-lihat-lebih .btn-produk-lihat-lebih:hover {
+  background-color: #CB5036;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+main .section-produk-terpopuler .produk-terpopuler {
+  margin-top: 40px;
+}
+
+main .section-produk-terpopuler .produk-terpopuler .btn-produk-terpopuler {
+  padding: 10px 40px;
+  background-color: #CB5036;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+main .section-produk-terpopuler .produk-terpopuler .btn-produk-terpopuler:hover {
+  background-color: #DE6850;
+}
+
+main .section-produk-terpopuler .carousel-item {
+  height: 600px !important;
+}
+
+main .section-produk-terpopuler .carousel-item img {
+  max-height: 100% !important;
+  background-size: cover;
+}
+
+main .section-produk-terpopuler .carousel-control-prev, main .section-produk-terpopuler .carousel-control-next {
+  background: #00000042;
+  top: 40% !important;
+  bottom: 40% !important;
+}
+
+main .section-produk-terpopuler .carousel-control-prev:hover, main .section-produk-terpopuler .carousel-control-next:hover {
+  background: #00000042;
+  opacity: 10.9;
+}
+
+main .section-produk-terpopuler .carousel-caption {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #c4c4c424;
+}
+
+main .section-produk-terpopuler .carousel-caption h5 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #4e4e4e;
+}
+
+.section-footer {
+  background-color: #CB5036;
+  margin-top: 120px;
+}
+
+.section-footer .heading-footer {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.section-footer li {
+  padding-top: 10px;
+}
+
+.section-footer a {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #ffffff;
+}
+/*# sourceMappingURL=main.css.map */
