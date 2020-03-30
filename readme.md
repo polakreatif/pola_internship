@@ -1,19 +1,21 @@
-# pola internship
- projek laravel internship
+## Laundry Jone. 
+Simple application of laundry services. 
+Made to fulfill the internship assignments at polakreatif.com (PT Aruziki Digital Indonesia).
+To multiply my portfolio too.
+Thank you for visiting. May be useful for you.
+
+## System Required
+1. Install Composer https://getcomposer.org/
 
 ## Instruction
-- verifikasi permintaan colaborasi dari email kalian masing masing.
-- copy link https://github.com/polakreatif/pola_internship.git
-- lakukan clone projek git dengan link tersebut, bisa melalui aplikasi GUI github / lewat cmd / sourcetree.
-- buatlah sebuah branch sendiri dengan ketentuan nama panggilan masing-masing.
-- lakukan checkout kemasing-masing branch yang sudah dibuat.
-- di dalam projek yang sudah diclone copy lah file .env.example di folder yang sama.
-- gantilah nama file copy tersebut ke nama .env
-- melalui cmd jalankan perintah berikut(posisi cmd harus dalam folder projek)
+1. Clone this project, through the Github / via cmd / sourcetree GUI application.
+2. In the cloned project, copy the .env.example file in the same folder.
+3. Change the name of the copy file to the name .env
+4. Via cmd run the following command (cmd position must be in the project folder)
 ```sh
     composer update
 ```
-- generate key aplikasi kalian masing-masing
+- generate each of your application keys
 ```sh
     php artisan key:generate
 ```
@@ -22,6 +24,5 @@
     php artisan serve
 ```
 
-# note
-1. Improvisasilah template yang kalian buat dengan **sistem templating blade** pada laravel agar lebih mudah https://laravel.com/docs/6.x/blade#introduction.
-2. Apabila ada instruksi yang belum paham atau gagal silakan bertanya digrub WA.
+## Dont forget to see me on alifata.com. See You.
+https://alifata.com
