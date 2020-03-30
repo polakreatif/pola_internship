@@ -5,8 +5,11 @@
 @endsection
 
 @section('jumbotron')
-    <h1 class="display-4">Selamat Datang</h1>
+<div class="container">
+    <h1 class="display-2">Selamat Datang</h1>
     <p class="lead">Ini merupakan website dari Andipputra Photography</p>
+    <hr class="my-4">
+</div>
 @endsection
 
 @section('about-text')
