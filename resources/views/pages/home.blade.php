@@ -101,8 +101,9 @@
             <div class="container">
                 <div class="section-produk-sepatu row justify-content-center">
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu1.jpg');">
-                        </div>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu1.jpg');"></div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Nike React Infinity Run Flyknight</h5>
                             <p class="teks-kategori">Sepatu Lari Laki</p>
@@ -110,11 +111,13 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu2.jpg');">
-                            <div class="kotak-discount text-center">
-                                <p class="potongan-discount">-20%</p>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu2.jpg');">
+                                <div class="kotak-discount text-center">
+                                    <p class="potongan-discount">-20%</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Nike Air VaporMax 360</h5>
                             <p class="teks-kategori">Sepatu Laki</p>
@@ -123,11 +126,13 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu3.jpg');">
-                            <div class="kotak-discount text-center">
-                                <p class="potongan-discount">-20%</p>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu3.jpg');">
+                                <div class="kotak-discount text-center">
+                                    <p class="potongan-discount">-20%</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Lebron 17</h5>
                             <p class="teks-kategori">Sepatu Basket</p>
@@ -136,8 +141,9 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu4.jpg');">
-                        </div>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu4.jpg');"></div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Kyrie AS EP</h5>
                             <p class="teks-kategori">Sepatu Basket</p>
@@ -145,11 +151,13 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu5.jpg');">
-                            <div class="kotak-discount text-center">
-                                <p class="potongan-discount">-40%</p>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu5.jpg');">
+                                <div class="kotak-discount text-center">
+                                    <p class="potongan-discount">-40%</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Nike SB Shane</h5>
                             <p class="teks-kategori">Sepatu Skate</p>
@@ -158,8 +166,9 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu6.jpg');">
-                        </div>
+                        <a href="#">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu6.jpg');"></div>
+                        </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">Nike Air Max 720 20</h5>
                             <p class="teks-kategori">Sepatu Basket</p>
