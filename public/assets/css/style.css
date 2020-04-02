@@ -156,6 +156,11 @@ button.bg-landing:focus {
 	padding: 50px 0px;
 }
 
+.foot-top-right ul a h1, .foot-top-right ul h5 {
+	text-decoration: none;
+	padding-bottom: 20px;
+}
+
 .foot-top-right ul li {
 	margin-bottom: 10px;
 }
@@ -199,6 +204,7 @@ button.bg-landing:focus {
 
 .foot-logo {
 	margin-bottom: 20px;
+	color: #7300ff;
 }
 
 .foot-logo img {
