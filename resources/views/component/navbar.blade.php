@@ -9,7 +9,6 @@
                     <i class="fas fa-list"></i>
                 </button>
             </div>
-            
         </div>
 
         <!-- Navbar -> min Medium Screen -->
@@ -22,26 +21,25 @@
                 </div>
                 <div class="col-md-9">
                     <div class="d-flex justify-content-end">
-                        <a href="#" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
+                        <a href="/" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
                             Tentang Kami
                         </a>
-                        <a href="#" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
+                        <a href="/blog" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
                             Blog
                         </a>
-                        <a href="#" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
+                        <a href="/" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
                             Franchise
                         </a>
-                        <a href="#" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
+                        <a href="/" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
                             Karir
                         </a>
-                        <a href="#" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
+                        <a href="/" class="mx-2 my-2" style="text-decoration: none; color: black; cursor: pointer;">
                             Kontak
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        
 
     </div>
 </nav>
@@ -51,19 +49,22 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <ul class="list-group text-center">
-                <a href="#" class="list-group-item list-group-item-action">
+                <a 
+                    href="/" 
+                    class="list-group-item list-group-item-action"
+                >
                     Tentang Kami
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="/blog" class="list-group-item list-group-item-action">
                     Blog
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="/" class="list-group-item list-group-item-action">
                     Franchise
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="/" class="list-group-item list-group-item-action">
                     Karir
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
+                <a href="/" class="list-group-item list-group-item-action">
                     Kontak Kami
                 </a>
                 <li class="list-group-item">

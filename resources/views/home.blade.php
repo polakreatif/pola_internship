@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
-@section('title')
-    {{ $title }}
-@endsection
-
-@section('meta-desc')
+@section('custom-head')
+    <title> {{ $title }} </title>
     <meta 
         name="description" 
         content="{{ $title }}. {{ $description }}"

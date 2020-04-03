@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'Home@index');
+Route::get('/blog', 'Blog@index');
+Route::get('/blog/{id}', 'Blog@show');
