@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/detail', 'DetailController@index');
+
+Route::get('/produkDetail/{id}','HomeController@edit');

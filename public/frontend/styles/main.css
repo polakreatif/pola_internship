@@ -232,6 +232,174 @@ main .section-produk-terpopuler .carousel-caption h5 {
   color: #4e4e4e;
 }
 
+main .section-produk-kami-header .section-title-detail h6 {
+  margin-bottom: 0px !important;
+  font-weight: 600;
+}
+
+main .section-produk-kami-header .navbar-light .navbar-nav .nav-dropdown {
+  padding: 8px;
+  display: block;
+  text-decoration: none;
+  color: #212121;
+}
+
+main .section-produk-kami-header .navbar-light .navbar-nav .nav-dropdown:hover {
+  color: #707070;
+}
+
+main .section-produk-kami-header .search-form {
+  border: 1px solid #BEBEBE;
+  max-height: 35px;
+  border-radius: 4px;
+  margin-right: inherit;
+  margin-top: auto;
+}
+
+main .section-produk-kami-header .search-form .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .section-produk-kami-header .search-form .input-group:focus {
+  outline: none !important;
+}
+
+main .section-produk-kami-header .search-form .input-group .input-style {
+  border: none;
+  max-height: 30px;
+  border-radius: 0px;
+  padding: 0px 0px 5px 14px;
+  margin-bottom: 7px;
+  border-bottom: 1px solid #BEBEBE;
+}
+
+main .section-produk-kami-header .search-form .input-group .input-style:focus {
+  outline: none !important;
+}
+
+main .section-produk-kami-header .search-form .input-group .btn {
+  padding-bottom: 6px;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu-detail {
+  min-width: 300px;
+  min-height: 400px;
+  background-color: #000;
+  background-size: cover;
+  margin-top: 40px;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu-detail .kotak-discount {
+  width: 50px;
+  height: 20px;
+  background-color: #CB3636;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .card-produk-sepatu-detail .kotak-discount .potongan-discount {
+  font-size: 14px;
+  color: #fff;
+}
+
+main .section-produk-kami-konten .section-produk-sepatu .link {
+  color: #212121;
+  text-decoration: none;
+}
+
+main .section-produk-sepatu-detail {
+  width: 100%;
+}
+
+main .section-produk-sepatu-detail .card-produk-sepatu {
+  min-width: 300px;
+  min-height: 625px;
+  background-color: #000;
+  background-size: cover;
+}
+
+main .section-produk-sepatu-detail .judul-produk {
+  font-weight: 600;
+}
+
+main .section-produk-sepatu-detail .kategori-sepatu {
+  color: #757575;
+  font-weight: 400;
+}
+
+main .section-produk-sepatu-detail .harga-sepatu-detail {
+  color: #CB5036;
+  font-weight: 600;
+}
+
+main .section-produk-sepatu-detail .konten-product {
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #232222;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 0px !important;
+}
+
+main .section-produk-sepatu-detail .pilihan-ukuran {
+  list-style: none;
+  padding-left: 0px;
+}
+
+main .section-produk-sepatu-detail .pilihan-ukuran li {
+  display: inline-block;
+}
+
+main .section-produk-sepatu-detail .pilihan-ukuran input {
+  opacity: 0;
+}
+
+main .section-produk-sepatu-detail .pilihan-ukuran label {
+  cursor: pointer;
+  padding: 5px 25px;
+  border: 1px solid #232222;
+  border-radius: 2px;
+}
+
+main .section-produk-sepatu-detail .pilihan-ukuran input:checked + label {
+  background: #232222;
+  color: #fff;
+  font-weight: 600;
+}
+
+main .section-produk-sepatu-detail .btn {
+  border-radius: 2px !important;
+}
+
+main .section-produk-sepatu-detail .btn.btn-tambah-keranjang {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #232222;
+}
+
+main .section-produk-sepatu-detail .btn.btn-tambah-keranjang:hover {
+  background-color: #323131;
+}
+
+main .section-produk-sepatu-detail .btn.btn-beli-produk {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #CB5036;
+}
+
+main .section-produk-sepatu-detail .btn.btn-beli-produk:hover {
+  background-color: #D25A41;
+}
+
 .section-footer {
   background-color: #CB5036;
   margin-top: 120px;

@@ -100,84 +100,21 @@
         <section class="section-produk-kami-konten" id="produkKonten">
             <div class="container">
                 <div class="section-produk-sepatu row justify-content-center">
+                    @foreach ($data as $datas)
                     <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu1.jpg');"></div>
+                        <a href="/produkDetail/{{$datas->id}}">
+                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/{{ $datas->gambar_produk}}');"></div>
                         </a>
                         <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Nike React Infinity Run Flyknight</h5>
-                            <p class="teks-kategori">Sepatu Lari Laki</p>
-                            <span class="teks-harga-sepatu">Rp 2,356,000,00</span>
+                            <h5 class="teks-nama-sepatu">{{ $datas->nama_produk }}</h5>
+                            <p class="teks-kategori">{{ $datas->kategori->nama}}</p>
+                            <span class="teks-harga-sepatu">@currency($datas->harga_produk)</span>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu2.jpg');">
-                                <div class="kotak-discount text-center">
-                                    <p class="potongan-discount">-20%</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Nike Air VaporMax 360</h5>
-                            <p class="teks-kategori">Sepatu Laki</p>
-                            <span class="teks-harga-sepatu"><del>Rp 3,156,000,00</del></span>
-                            <span class="teks-harga-sepatu">Rp 2,156,000,00</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu3.jpg');">
-                                <div class="kotak-discount text-center">
-                                    <p class="potongan-discount">-20%</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Lebron 17</h5>
-                            <p class="teks-kategori">Sepatu Basket</p>
-                            <span class="teks-harga-sepatu"><del>Rp 2,909,000,00</del></span>
-                            <span class="teks-harga-sepatu">Rp 2,156,000,00</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu4.jpg');"></div>
-                        </a>
-                        <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Kyrie AS EP</h5>
-                            <p class="teks-kategori">Sepatu Basket</p>
-                            <span class="teks-harga-sepatu">Rp 1,797,000,00</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu5.jpg');">
-                                <div class="kotak-discount text-center">
-                                    <p class="potongan-discount">-40%</p>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Nike SB Shane</h5>
-                            <p class="teks-kategori">Sepatu Skate</p>
-                            <span class="teks-harga-sepatu"><del>Rp 1,009,000,00</del></span>
-                            <span class="teks-harga-sepatu">Rp 560,000,00</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-4">
-                        <a href="#">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/sepatu6.jpg');"></div>
-                        </a>
-                        <div class="text-sepatu">
-                            <h5 class="teks-nama-sepatu">Nike Air Max 720 20</h5>
-                            <p class="teks-kategori">Sepatu Basket</p>
-                            <span class="teks-harga-sepatu">Rp 2,779,000,00</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="produk-button-lihat-lebih text-center">
-                    <a href="#" class="btn btn-produk-lihat-lebih">
+                    <a href="/detail" class="btn btn-produk-lihat-lebih">
                         Lihat Lebih
                     </a>
                 </div>

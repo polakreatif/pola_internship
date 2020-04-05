@@ -20,7 +20,7 @@
     <div class="container">
         <nav class="row navbar navbar-expand-lg navbar-light bg-white">
             <a href="#" class="navbar-brand">
-                <img src="frontend/images/logo.png" alt="THE FASHION logo">
+                <img src="../frontend/images/logo.png" alt="THE FASHION logo">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navb">
