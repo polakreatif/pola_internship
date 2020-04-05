@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', 'Home@index');
-Route::get('/blog', 'Blog@index');
-Route::get('/blog/{id}', 'Blog@show');
+Route::get('/blog/{id}', 'BlogController@show');
+Route::get('/blog', 'BlogController@index');
+Route::get('/', 'HomeController@index');
+

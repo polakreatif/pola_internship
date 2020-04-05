@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
 
-class Blog extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,8 +46,11 @@ class Blog extends Controller
      */
     public function show($id)
     {
+        $blog = Blog::findOrFail($id);
+
         return view('blog', [
-            'id' => $id
+            'id' => $id,
+            'blog' => $blog
         ]);
     }
 
