@@ -14,7 +14,15 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blogs');
+        $blogs = Blog::orderBy('created_at', 'desc')->get();
+
+        for ($i = 0; $i < count($blogs); $i++) { 
+            $category = $blogs[$i]->category;
+        }
+
+        return view('blogs.index', [
+            "blogs" => $blogs
+        ]);
     }
 
     /**
@@ -47,10 +55,11 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog = Blog::findOrFail($id);
+        $category = $blog->category;
 
-        return view('blog', [
+        return view('blogs.show', [
             'id' => $id,
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
