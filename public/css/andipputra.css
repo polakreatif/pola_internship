@@ -1,0 +1,87 @@
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 45px;
+  }
+
+.header{
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/header.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+footer.footer {
+    padding-top: 5rem;
+  }
+  
+  footer.footer .social-link {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    background-color: #343a40;
+    transition: background-color 0.15s ease-in-out;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  footer.footer .social-link:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+  }
+
+  @media (max-width:992px){
+    .map{
+        height:75%
+       }
+   }
+   .map iframe{
+       pointer-events:none
+   }
+   .scroll-to-top{
+       position:fixed;
+       right:15px;
+       bottom:15px;
+       display:none;
+       width:50px;
+       height:50px;
+       text-align:center;
+       color:#fff;
+       background:rgba(10, 10, 10, 0.5);
+       line-height:45px
+   }
+   .scroll-to-top:focus,
+   .scroll-to-top:hover{
+       color:#fff
+   }
+   .scroll-to-top:hover{
+       background:darkgrey;
+   }
+   .scroll-to-top i{
+       font-weight:800
+   }
