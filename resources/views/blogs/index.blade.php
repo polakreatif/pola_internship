@@ -9,21 +9,24 @@
 @endsection
 
 @section('content')
-    <div class="row justify-content-center">
+<div class="row justify-content-center">
         @foreach($blogs as $blog)
             <div class="col-md-3">
-                <div class="card shadow" style="cursor: default; border-radius: 25px">
+                <div class="card shadow mb-5" style="cursor: default; border-radius: 25px">
                     <div
                         class="card-img-top"
-                        style="background-image: url('https://picsum.photos/200/175'); background-color: #fff; background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 175px;"
+                        style="background-image: url('media/{{ $blog->mediaUrl }}'); background-color: #fff; background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 175px;"
                     ></div>
                     <div class="card-body">
                         <h5 class="card-title text-capitalize text-truncate">
-                            Kakkakakka akakka akakkakakak akakkakaka Long
+                            {{ $blog->title }}
                         </h5>
                         <p class="card-text">
-                            {{ substr($blog->description, 0, 21)}}...
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                            {{ substr($blog->description, 0, 85)}}...
+                            <br/>
+                            <i class="text-capitalize text-monospace font-italic" style="font-size: 12px"> 
+                                <mark>{{ $blog->category->name }}</mark>
+                            </i>
                             <br/>
                             <i class="text-monospace font-italic" style="font-size: 12px"> 
                                 {{ $blog->created_at }}

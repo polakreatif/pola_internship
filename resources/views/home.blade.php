@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('custom-head')
     <title> {{ $title }} </title>
@@ -61,7 +61,7 @@
                 <div class="carousel-inner">
                      @foreach ($mediaCarousel as $media)
                         @if($loop->first)
-                            <div class="carousel-item active">
+                            <div class="carousel-item active" >
                                 <img 
                                     src="{{ $media }}" 
                                     class="d-block w-100" 
@@ -94,10 +94,8 @@
     </div>
 @endsection
 
-@section('product')
+@section('products')
     <h2>Layanan Kami</h2>
-    <!-- Space between product -->
-    <br/>
     
     @foreach($products as $product)
         <br/>
@@ -106,7 +104,7 @@
         <div class="row justify-content-center">
             @foreach($product['data'] as $data)
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3" >
-                    <div class="card shadow">
+                    <div class="card shadow" style="border-radius: 15px">
                         <div class="card-body">
                             <h5 class="card-title">{{ $data['title'] }}</h5>
                                 <p>
@@ -119,4 +117,43 @@
             @endforeach
         </div>
     @endforeach
+@endsection
+
+@section('blogs')
+    <h2>Blog Terbaru</h2>
+
+    <!-- Space -->
+    <br/>
+    
+    <div class="row justify-content-center">
+        @foreach($blogs as $blog)
+            <div class="col-md-3">
+                <div class="card shadow mb-4" style="cursor: default; border-radius: 25px">
+                    <div
+                        class="card-img-top"
+                        style="background-image: url('media/{{ $blog->mediaUrl }}'); background-color: #fff; background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 175px;"
+                    ></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize text-truncate">
+                            {{ $blog->title }}
+                        </h5>
+                        <p class="card-text">
+                            {{ substr($blog->description, 0, 85)}}...
+                            <br/>
+                            <i class="text-capitalize text-monospace font-italic" style="font-size: 12px"> 
+                                <mark>{{ $blog->category->name }}</mark>
+                            </i>
+                            <br/>
+                            <i class="text-monospace font-italic" style="font-size: 12px"> 
+                                {{ $blog->created_at }}
+                            </i>
+                        </p>
+                        <a href="/blog/{{ $blog->id }}" class="btn btn-sm btn-outline-primary font-italic">
+                            selengkapnya
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection

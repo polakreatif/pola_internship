@@ -63,8 +63,13 @@
             <br/><br/><br/><br/>
 
             <!-- Product -->
-            @yield('product')
+            @yield('products')
 
+            <!-- Space between content -->
+            <br/><br/><br/><br/>
+            
+            <!-- Product -->
+            @yield('blogs')
         </div><!-- Close Container -->
 
         <!-- Space between content -->

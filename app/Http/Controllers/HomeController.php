@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -155,6 +156,14 @@ class HomeController extends Controller
             Dijamin jadi 3 hari (3 x 24 jam).
             Bersih, wangi, higienis, seperti baru.";
 
+
+        // Blogs
+        $blogs = Blog::orderBy('created_at', 'desc')->limit(4)->get();
+
+        for ($i=0; $i < count($blogs); $i++) { 
+            $category = $blogs[$i]->category;
+        }
+
         return view('home', [
             "title" => $title, 
             "description" => $description,
@@ -168,6 +177,7 @@ class HomeController extends Controller
             "mediaCarousel" => $mediaCarousel,
             "titleProduct" => $titleProduct,
             "products" => $products,
+            "blogs" => $blogs
         ]);
     }
 

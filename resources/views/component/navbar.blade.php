@@ -4,7 +4,7 @@
         <!-- Navbar -> max Medium Screen -->
         <div class="d-block d-md-none">
             <div class="d-flex justify-content-between py-3">
-                <a style="text-decoration: none; color: black; cursor: pointer; font-size: 23px;" href="#">Laundry Jone</a>
+                <a style="text-decoration: none; color: black; cursor: pointer; font-size: 23px;" href="/">Laundry Jone</a>
                 <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#staticBackdrop">
                     <i class="fas fa-list"></i>
                 </button>
@@ -16,7 +16,7 @@
             <div class="row justify-content-between py-3 ">
                 <div class="col-md-3">
                     <div class="d-flex">
-                        <a style="text-decoration: none; color: black; cursor: pointer; font-size: 23px;" href="#">Laundry Jone</a>
+                        <a style="text-decoration: none; color: black; cursor: pointer; font-size: 23px;" href="/">Laundry Jone</a>
                     </div>
                 </div>
                 <div class="col-md-9">
