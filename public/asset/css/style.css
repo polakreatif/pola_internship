@@ -1,15 +1,125 @@
-.bg-landing {
-  background-color: #7300ff !important;
+body {
+ 	user-select:none;
+ 	-moz-user-select:none;
+ 	-ms-user-select:none;
+ 	-khtml-user-select:none;
+	-webkit-user-select:none;
 }
 
-a.bg-landing:hover, a.bg-landing:focus,
-button.bg-landing:hover,
-button.bg-landing:focus {
-  background-color: #6e16d9 !important;
+header {
+	height: 90px;
+	background: #7300ff;
 }
 
-.header {
-	text-align: right;
+.inner-width {
+	max-width: 1200px;
+	padding: 0 10px;
+	margin: auto;
+}
+
+.logo {
+	float: left;
+	padding: 15px 0;
+}
+
+.logo-text {
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation-menu {
+	float: right;
+	display: flex;
+	align-items: center;
+	min-height: 90px;
+}
+
+.navigation-menu a {
+	margin-left: 10px;
+	color: #ddd;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 12px 20px;
+	border-radius: 4px;
+	transition: .3s linear;
+}
+
+.navigation-menu a:hover {
+	background: #fff;
+	color: #2f3640;
+	transform: scale(1.1);
+}
+
+.navigation-menu i {
+	margin-right: 8px;
+	font-size: 16px;
+}
+
+.home {
+	color: #fc6f03;
+}
+
+.product {
+	color: #0066ff;
+}
+
+.blog {
+	color: #03fc80;
+}
+
+.about {
+	color: #03cefc;
+}
+
+.menu-toggle-btn {
+	float: right;
+	height: 90px;
+	line-height: 90px !important;
+	color: #fff;
+	font-size: 26px;
+	display: none !important;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+	.menu-toggle-btn {
+		display: block !important;
+	}
+
+	.navigation-menu {
+		position: fixed;
+		width: 100%;
+		max-width: 400px;
+		background: #7300ff;
+		top: 90px;
+		right: 0;
+		display: none;
+		padding: 20px 40px;
+		box-sizing: border-box;
+	}
+
+	.navigation-menu::before {
+		content: "";
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #7300ff;
+		position: absolute;
+		top: -10px;
+		right: 10px;
+	}
+
+	.navigation-menu a {
+		display: block;
+		margin: 10px 0;
+	}
+
+	.navigation-menu.active {
+		display: block;
+	}
+}
+
+.blog-us .container h1{
+	padding-top: 30px;
 }
 
 .jumbotron {
@@ -25,9 +135,24 @@ button.bg-landing:focus {
 	padding-top: 65px;
 }
 
-.jumbotron img {
+.banner {
 	height: 550px;
 	width: 550px;
+}
+
+@media screen and (max-width: 700px) {
+	.jumbotron {
+		background: url('../img/background.jpg');
+		background-position: top left;
+		background-repeat: no-repeat;
+		background-size: 700px;
+		height: 100%;
+		color:#fff;
+	}
+
+	.banner {
+		display: none;
+	}
 }
 
 .box {
@@ -97,7 +222,6 @@ button.bg-landing:focus {
 .box-about {
 	box-shadow: 0 0 2px;
 	border-radius: 10px;
-}
 }
 
 #about-us {

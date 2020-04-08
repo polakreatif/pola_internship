@@ -13,7 +13,7 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('article', function (Blueprint $table) {
+        Schema::create('artikel', function (Blueprint $table) {
             $table->id('id_artikel');
             $table->string('judul');
             $table->longText('isi');

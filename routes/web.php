@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,16 @@
 */
 
 Route::get('/', function () {
-    return view('Landing.home');
+    return view('pages.home');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/blog', 'WelcomeController');
+
+Auth::routes();
+
+Route::get('/blogs', 'ViewController@show')->name('details');

@@ -1,4 +1,7 @@
 @extends('layouts.frontend.master')
+
+@include('layouts.frontend.navbar')
+
 @section('content')
 
     <section class="content">
@@ -12,7 +15,7 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
           </div>
           <div class="col-sm-6">  
-            <span><img src="assets/img/1585322535472.png" class="img-fluid" alt="Jumbotron Images"></span>
+            <span><img src="asset/img/1585322535472.png" class="banner img-fluid" alt="Jumbotron Images"></span>
           </div>
         </div>
       </div>
@@ -22,13 +25,13 @@
         <hr class="my-4" id="product">
           <h1>Produk Kami</h1>
           <p>Berikut adalah layanan kami sediakan untuk anda.</p>
-        <div class="row  text-center">
+        <div class="row text-center">
           <div class="row">
             <div class="col-sm-4">
               <div class="box">
                 <div class="card-body">
                   <a href="#" style="text-decoration:none">
-                    <img src="assets/img/1585323126329.png" class="card-img-top" alt="Website Development">
+                    <img src="asset/img/1585323126329.png" class="card-img-top" alt="Website Development">
                     <h5 class="card-title">Website Development.</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, pariatur.</p>
                   </a>
@@ -39,7 +42,7 @@
               <div class="box">
                 <div class="card-body text-center">
                   <a href="#" style="text-decoration:none">
-                    <img src="assets/img/1585323418010.png" class="card-img-top" alt="Desain UI/UX">
+                    <img src="asset/img/1585323418010.png" class="card-img-top" alt="Desain UI/UX">
                     <h5 class="card-title">Desain UI / UX</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, doloremque.</p>
                   </a>
@@ -50,7 +53,7 @@
               <div class="box">
                 <div class="card-body text-center">
                   <a href="#" style="text-decoration:none">
-                    <img src="assets/img/1585323920344.png" class="card-img-top" alt="3D Modelling">
+                    <img src="asset/img/1585323920344.png" class="card-img-top" alt="3D Modelling">
                     <h5 class="card-title">3D Modelling</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, unde.</p>
                   </a>
@@ -71,16 +74,16 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <a href="#"><img src="assets/img/website-development-banner_33099-1687.jpg" class="d-block img-fluid" alt="Website Development"></a>
+                <a href="#"><img src="asset/img/website-development-banner_33099-1687.jpg" class="d-block img-fluid" alt="Website Development"></a>
               </div>
               <div class="carousel-item">
-                <a href="#"><img src="assets/img/mobile-app-concept_52683-5158.jpg" class="d-block img-fluid" alt="Desain UI/UX"></a>
+                <a href="#"><img src="asset/img/mobile-app-concept_52683-5158.jpg" class="d-block img-fluid" alt="Desain UI/UX"></a>
               </div>
               <div class="carousel-item">
-                <a href="#"><img src="assets/img/3d-printing-flat-horizontal-banners-set_1284-7494.jpg" class="d-block img-fluid" alt="3D Modelling"></a>
+                <a href="#"><img src="asset/img/3d-printing-flat-horizontal-banners-set_1284-7494.jpg" class="d-block img-fluid" alt="3D Modelling"></a>
               </div>
               <div class="carousel-item">
-                <a href="#"><img src="assets/img/set-modern-abstract-web-buttons-with-ability-edit_110464-82.jpg" class="d-block img-fluid" alt="3D Modelling"></a>
+                <a href="#"><img src="asset/img/set-modern-abstract-web-buttons-with-ability-edit_110464-82.jpg" class="d-block img-fluid" alt="3D Modelling"></a>
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -102,7 +105,7 @@
             <div class="box-about mb-3" id="about-us">
               <div class="row no-gutters">
                 <div class="col-md-4">
-                  <img src="assets/img/1585313249662.png" class="card-img" alt="Responsive image">
+                  <img src="asset/img/1585313249662.png" class="card-img" alt="Responsive image">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -117,5 +120,7 @@
         </div>
       </div>
       <!-- About Us End -->
+
     </section>
-@stop
+
+@endsection
