@@ -237,7 +237,6 @@ header {
 }
 
 .blog-us-details h1 {
-	text-transform: capitalize;
 	padding-top: 20px;
 }
 
@@ -246,7 +245,6 @@ header {
 }
 
 .blog-us-details p {
-	text-transform: capitalize;
 	padding-top: 20px;
 	text-align: justify;
 }
