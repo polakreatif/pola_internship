@@ -22,8 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/blog', 'WelcomeController');
-
 Auth::routes();
 
-Route::get('/blogs', 'ViewController@show')->name('details');
+Route::resource('blog', 'ViewController');
+

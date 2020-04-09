@@ -236,6 +236,21 @@ header {
 	float: right;
 }
 
+.blog-us-details h1 {
+	text-transform: capitalize;
+	padding-top: 20px;
+}
+
+.blog-us-details img {
+	padding-bottom: 20px;
+}
+
+.blog-us-details p {
+	text-transform: capitalize;
+	padding-top: 20px;
+	text-align: justify;
+}
+
 .footer-main-container {
 	background: #f5f6f9;
 }

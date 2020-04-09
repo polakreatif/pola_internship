@@ -15,7 +15,7 @@
 				            <div class="col-sm-4 blog">
 				              	<div class="box">
 					                <div class="card-body">
-					                  <a href="/blogs/{{ $article->id_artikel }}" style="text-decoration:none">
+					                  <a href="/blog/{{ $article->id_artikel }}" style="text-decoration:none">
 					                    <img src="https://assets.zoom.us/images/en-us/desktop/generic/video-not-working.PNG" class="card-img-top" alt="Website Development">
 					                    <h5 class="card-title">{{ $article->judul }}</h5>
 					                    <p class="card-text">{{ \Illuminate\Support\Str::limit($article->isi, 150, $end='...') }}</p>
