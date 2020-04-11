@@ -1,0 +1,146 @@
+ShopTronik
+
+Schedule
+11/04/20 dah jadi tampilannya
+
+Authentication User
+Otorisasi User
+Manajemen User
+Manajemen Role
+Manajemen Brand
+Manajemen Product
+Manajemen Categories
+Manajemen Order
+
+Route :
+/ 
+/blog
+/blog/{slug}
+/p/{slug}
+/search?name={name}
+/login
+/register
+/reset_password
+
+Database :
+users
+    id
+    username
+    remember_token
+    email
+    password
+    name
+    roles
+    address
+    phone
+    avatar
+    created_at
+    updated_at
+roles
+    id
+    name
+    created_at
+    created_by
+    updated_at
+    updated_by
+    deleted_at
+    deleted_by
+brands
+    id
+    name
+    created_at
+    created_by
+    updated_at
+    updated_by
+    deleted_at
+    deleted_by
+products
+    id
+    name
+    slug
+    desciption
+    price
+    discount
+    views
+    stock
+    brand_id
+    created_at
+    updated_at
+    created_by
+    updated_by
+    deleted_by
+    deleted_at
+orders
+    id
+    user_id
+    total_price
+    invoice_number
+    status_id
+    created_at
+    updated_at
+status
+    id
+    name
+    created_at
+    created_by
+    updated_at
+    updated_by
+    deleted_at
+    deleted_by
+product_order
+    id
+    order_id
+    product_id
+    quantity
+    created_at
+    updated_at
+categories
+    id
+    name
+    media
+    slug
+    created_at
+    updated_at
+    created_by
+    updated_by
+    deleted_at
+    deleted_by
+product_category
+    id
+    book_id
+    category_id
+    created_at
+    updated_at
+
+navbar
+    brand, search, chart, user menu (edit data user, order, logout), login, register, 
+
+/ (home)
+    slider
+    category
+    produk diskon
+    terlaris
+    PC
+    Smartphone     
+    brands
+    lainnya
+    cara jual beli
+    ulasan pelanggan
+    
+/blog
+    (list card)
+    title, litte desc, category_blog, created_at, media, selengkapnya
+
+/blog/{slug}
+    title
+    media
+    categori_blog, created_at
+    description
+
+/p/{slug}
+    name
+    
+
+
+
+

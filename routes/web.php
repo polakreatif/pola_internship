@@ -11,7 +11,42 @@
 |
 */
 
-Route::get('/blog/{id}', 'BlogController@show');
-Route::get('/blog', 'BlogController@index');
-Route::get('/', 'HomeController@index');
+// resource =
+// Route::get("/categories", "CategoryController@index");
+// Route::get("/categories/create", "CategoryController@create");
+// Route::post("/categories", "CategoryController@store");
+// Route::get("/categories/{id}", "CategoryController@show");
+// Route::get("/categories/{id}/edit", "CategoryController@edit");
+// Route::put("/categories/{id}", "CategoryController@update");
+// Route::delete("/categories/{id}", "CategoryController@destroy");
+
+// Blogs 
+Route::resource('blog', 'BlogController');
+
+// Products
+Route::resource('p', 'ProductController');
+
+// Users
+Route::resource('users', 'UserController');
+
+// Categories
+Route::resource('categories', 'CategoryController');
+
+// Roles
+Route::resource('roles', 'RolesController');
+
+// Files
+Route::get('/files', function (){
+  return view('files');
+});
+
+// Dashboard
+Route::get('/dashboard', function (){
+  return view('dashboard');
+});
+
+// Home
+Route::get('/', function (){
+  return view('home');
+});
 
