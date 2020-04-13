@@ -1,3 +1,6 @@
+
+require('laravel-mix-purgecss');
+require('laravel-mix-tailwind');
 const mix = require('laravel-mix');
 
 /*
@@ -13,3 +16,5 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
+
+mix.tailwind('./tailwind.config.js');
