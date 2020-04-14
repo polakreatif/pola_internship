@@ -14,15 +14,23 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        // $blogs = Blog::orderBy('created_at', 'desc')->get();
 
-        for ($i = 0; $i < count($blogs); $i++) { 
-            $category = $blogs[$i]->category;
-        }
+        // for ($i = 0; $i < count($blogs); $i++) { 
+        //     $category = $blogs[$i]->category;
+        // }
 
-        return view('blogs.index', [
-            "blogs" => $blogs
-        ]);
+        return view('blogs.index');
+    }
+
+    /**
+     * Display a listing of the resource Admin Only.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index_admin()
+    {
+        return view('blogs.index_admin');
     }
 
     /**
@@ -32,7 +40,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -54,13 +62,10 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findOrFail($id);
-        $category = $blog->category;
+        // $blog = Blog::findOrFail($id);
+        // $category = $blog->category;
 
-        return view('blogs.show', [
-            'id' => $id,
-            'blog' => $blog,
-        ]);
+        return view('blogs.show');
     }
 
     /**
@@ -71,7 +76,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('blogs.edit');
     }
 
     /**

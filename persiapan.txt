@@ -1,7 +1,13 @@
 ShopTronik
-
 Schedule
 11/04/20 dah jadi tampilannya
+
+Font Awesome
+    quote left
+    quote right
+    question
+    dropdown
+    page up
 
 Authentication User
 Otorisasi User

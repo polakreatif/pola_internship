@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('categories.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -44,9 +44,13 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    // public function show(Category $category)
+    // {
+    //     return view('categories.show');
+    // }
+    public function show($id)
     {
-        //
+        return view('categories.show');
     }
 
     /**
@@ -55,9 +59,14 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+
+    // public function edit(Category $category)
+    // {
+    //     return view('categories.edit');
+    // }
+    public function edit($id)
     {
-        //
+        return view('categories.edit');
     }
 
     /**

@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('products.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -44,9 +44,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    // public function show(Product $product)
+    // {
+    //     //
+    // }
+    public function show($id)
     {
-        //
+        return view('products.show');
     }
 
     /**
@@ -55,9 +59,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    // public function edit(Product $product)
+    // {
+    //     //
+    // }
+    public function edit($id)
     {
-        //
+        return view('products.edit');
     }
 
     /**
