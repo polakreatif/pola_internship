@@ -52,6 +52,7 @@
       <!--Footer Section End-->
 
     <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       $(".menu-toggle-btn").click(function() {
         $(this).toggleClass("fa-times");

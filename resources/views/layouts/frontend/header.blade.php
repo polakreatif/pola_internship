@@ -15,3 +15,4 @@
     <title>Inspiring Media | Patner Penyedia Website dan Desain Kamu</title>
   </head>
   <body>
+    <div class="loading"></div>
