@@ -32,14 +32,31 @@
                     <li class="nav-item mx-md-2">
                         <a href="/" class="nav-link active">Beranda</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown position">
                         <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
                             Produk
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbardrop">
-                            <a href="#" class="dropdown-item">Laki-Laki</a>
-                            <a href="#" class="dropdown-item">Wanita</a>
-                            <a href="#" class="dropdown-item">Unisex</a>
+                        <div class="megamenu dropdown-menu" aria-labelledby="navbardrop">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="card-produk-jenis" style="background-image: url('frontend/images/sepatu1.jpg');"></div>
+                                        <h5 class="text-dropdown" >Sepatu Laki</h5>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="card-produk-jenis" style="background-image: url('frontend/images/sepatu2.jpg');"></div>
+                                        <h5 class="text-dropdown" >Sepatu Wanita</h5>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="#" class="dropdown-item">
+                                        <div class="card-produk-jenis" style="background-image: url('frontend/images/sepatu3.jpg');"></div>
+                                        <h5 class="text-dropdown" >Sepatu Anak - Anak</h5>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item mx-md-2">
@@ -52,6 +69,7 @@
             </div>
         </nav>
     </div>
+
 
     @yield('content')
 

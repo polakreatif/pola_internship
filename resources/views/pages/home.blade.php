@@ -18,7 +18,7 @@
                     jangan bingung karena TheFashion adalah pusat belanja sepatu
                     yang <strong>Murah</strong> dan <strong>Berkualitas Bagus</strong>.
                 </p>
-                <a href="#" class="d-flex align-items-center color-secondary-paragraph">
+                <a href="/detail" class="d-flex align-items-center color-secondary-paragraph">
                     <div>
                         Belanja Sekarang
                     </div>

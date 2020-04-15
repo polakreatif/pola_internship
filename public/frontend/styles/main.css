@@ -9,6 +9,38 @@ body {
   max-height: 40px;
 }
 
+.navbar-light .navbar-nav .position {
+  position: static !important;
+}
+
+.navbar-light .navbar-nav .position .megamenu {
+  width: 100%;
+  overflow: hidden;
+  padding: 15px !important;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.navbar-light .navbar-nav .position .megamenu .dropdown-item:hover {
+  background-color: transparent;
+}
+
+.navbar-light .navbar-nav .position .megamenu .card-produk-jenis {
+  max-width: 100%;
+  min-height: 300px;
+  background-color: #000;
+  background-size: cover;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.navbar-light .navbar-nav .position .megamenu .text-dropdown {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 15px;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #707070;
   font-weight: 300;
@@ -20,11 +52,11 @@ body {
 
 .navbar-light .navbar-nav .nav-link:focus {
   color: #CB5036;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-  font-weight: bold;
+  font-weight: 600;
   color: #CB5036 !important;
 }
 

@@ -24,7 +24,7 @@
                     <div class="row">
                         <ul class="pilihan-ukuran">
                             <li>
-                                <input type='radio' value='37' name='radio' id='ukuran_1'/>
+                                <input type='radio' value='37' name='radio' id='ukuran_1' checked/>
                                 <label for='ukuran_1'>37</label>
                             </li>
                             <li>
