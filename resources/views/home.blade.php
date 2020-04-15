@@ -34,52 +34,273 @@
   </section>
 @endsection
 
-@section('produk_diskon')
-    <div class="container">
-      <div class="card w-100 shadow" style="border-radius: 15px;">
-        <div class="card-body">
-          
-          <div data-aos="fade-up">
-            <span class="h4">Produk Diskon</span>
-          </div>
+@section('kategori_pilihan')
+<section class="section-bg">
+  <div class="container-fluid">
+    <div>
+        <div data-aos="fade-up">
+          <span class="h4">Kategori Pilihan</span>
+        </div>
 
-          <div  class="w-100 my-3">
-            <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-              @for($i = 0; $i < 10; $i++)
-                <div class="col-8 col-md-4 col-lg-3 mb-3" data-aos="fade-up">
+        <div  class="w-100 my-3">
+          <div id="scrollbar-2" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
+            @for($i = 0; $i < 5; $i++)
+              <div class="mb-5 mx-3" data-aos="fade-up">
+
+                  <div 
+                    id="kategori-detail" 
+                    class="card shadow" 
+                    style="
+                      border-radius: 15px;
+                      width: 150px; 
+                      height: 150px;
+                      margin-top: 15px;
+                      margin-left: 15px;
+                    "
+                  ></div>
+                  <div
+                    id="kategori-media" class="card shadow"
+                    style="
+                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                      background-color: #fff; background-position: center; 
+                      background-size: contain; background-repeat: no-repeat; 
+                      width: 150px; height: 150px;
+                      border-radius: 15px;
+                      margin-top: -165px; 
+                      "
+                  ></div>
                   
-                  <div class="card shadow" style="border-radius: 25px;">
-                    
-                    <div id="produk-media" class="position-relative" style="border-radius: 15px;">
-                      <div class="ribbon-wrapper ribbon-xl">
-                        <div class="ribbon bg-danger text-white text-lg">
-                          Sale of 30%
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                          background-color: #fff; background-position: center; 
-                          background-size: contain; background-repeat: no-repeat; 
-                          width: 100%; height: 150px;"
-                      ></div>
-                    </div>
 
-                    <div id="produk-detail" class="card-body">
-                      <h6>Name of product</h6>
-                      <mark>Rp. 19.000</mark>
-                    </div>
-
-                  </div>
-
-                </div>
-              @endfor  
-            </div>
+              </div>
+            @endfor  
           </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+@endsection
+
+@section('flash_sale')
+<section class="section-bg" >
+  <div  class="w-100 my-3 p-3" style="background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);">
+    <div class="d-flex text-white mb-3">
+      <h4 class="text-bold">Flash Sale</h4>
+      <div class="ml-3 px-3 bg-dark" style="border-radius: 15px;">
+        <h4 id="timer"></h4>
+      </div> 
+    </div>
+    <div id="scrollbar-3" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
+      @for($i = 0; $i < 5; $i++)
+        <div class="col-8 col-sm-4 col-md-3 col-lg-2 mb-3" data-aos="fade-up">
+          
+          <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
+            
+            <div id="produk-media" class="position-relative" style="border-radius: 15px;">
+              <div class="ribbon-wrapper ribbon-xl">
+                <div class="ribbon bg-danger text-white text-lg">
+                  Sale of 30%
+                </div>
+              </div>
+              <div
+                style="
+                  background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                  background-color: #fff; background-position: center; 
+                  background-size: contain; background-repeat: no-repeat; 
+                  width: 100%; height: 150px;"
+              ></div>
+            </div>
+
+            <div id="produk-detail" class="card-body">
+              <h6>Name of product</h6>
+              <mark>Rp. 19.000</mark>
+            </div>
+
+          </a>
 
         </div>
+      @endfor  
+    </div>
+  </div>
+</section>
+@endsection
+
+@section('produk_terlaris')
+<section class="section-bg">
+  <div class="container-fluid">
+    <div class="card w-100 shadow" style="border-radius: 15px;">
+      <div class="card-body">
+        
+        <div data-aos="fade-up">
+          <span class="h4">Produk Terlaris</span>
+        </div>
+
+        <div  class="w-100 my-3">
+          <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
+            @for($i = 0; $i < 5; $i++)
+              <div class="col-8 col-md-4 col-lg-3 mb-3" data-aos="fade-up">
+                
+                <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
+                  
+                  <div id="produk-media" style="border-radius: 15px;">
+                    <div
+                      style="
+                        background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                        background-color: #fff; background-position: center; 
+                        background-size: contain; background-repeat: no-repeat; 
+                        width: 100%; height: 150px;"
+                    ></div>
+                  </div>
+
+                  <div id="produk-detail" class="card-body">
+                    <h6>Name of product</h6>
+                    <mark>Rp. 19.000</mark>
+                  </div>
+
+                </a>
+
+              </div>
+            @endfor  
+          </div>
+        </div>
+
       </div>
     </div>
+  </div>
+</section>
+@endsection
+
+@section('produk_terbaru')
+<section class="section-bg">
+  <div class="container-fluid">
+    <div class="card w-100 shadow" style="border-radius: 15px;">
+      <div class="card-body">
+        
+        <div data-aos="fade-up">
+          <span class="h4">Produk Terbaru</span>
+        </div>
+
+        <div  class="w-100 my-3">
+          <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
+            @for($i = 0; $i < 5; $i++)
+              <div class="col-8 col-md-4 col-lg-3 mb-3" data-aos="fade-up">
+                
+                <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
+                  
+                  <div id="produk-media" style="border-radius: 15px;">
+                    <div
+                      style="
+                        background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                        background-color: #fff; background-position: center; 
+                        background-size: contain; background-repeat: no-repeat; 
+                        width: 100%; height: 150px;"
+                    ></div>
+                  </div>
+
+                  <div id="produk-detail" class="card-body">
+                    <h6>Name of product</h6>
+                    <mark>Rp. 19.000</mark>
+                  </div>
+
+                </a>
+
+              </div>
+            @endfor  
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+@endsection
+
+@section('pembelian')
+<section id="services" class="services section-bg">
+  <div class="container">
+
+    <div class="section-title" data-aos="zoom-in">
+      <h2>Pembelian</h2>
+      <p>Cukup empat langkah, dapatkan barang impianmu.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-dolly-flatbed fa-4x"></i></div>
+          <br/>
+          <h4 class="title"><a href="">Pesan</a></h4>
+          <p class="description">
+            Cari produk elektronik kebutuhanmu. Masukan keranjang dulu atau langsung pilih tombol beli.
+            Ikuti langkah-langkah nya sampai selesai.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-money-bill-wave fa-4x"></i></div>
+          <br/>
+          <h4 class="title"><a href="">Bayar</a></h4>
+          <p class="description">
+            Bayar pesanan kamu sesuai metode pembayaran yang kamu pilih.
+            Jangan lupa simpan/screenshot bukti pembayaran.
+            Lalu periksa status barang kamu di website.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-shipping-fast fa-4x"></i></div>
+          <br/>
+          <h4 class="title"><a href="">Pengiriman</a></h4>
+          <p class="description">
+            Barang kamu akan segera dikirim oleh pihak kami sesuai jadwal pengiriman.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+        <div class="icon-box">
+          <div class="icon"><i class="fas fa-check fa-4x"></i></div>
+          <br/>
+          <h4 class="title"><a href="">Selesai</a></h4>
+          <p class="description">
+            Pengirim akan menghubungi kamu jika telah sampai. Proses pembelian selesai.
+            Jangan lupa update status pembelian.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+@endsection
+
+@section('brands')
+<section id="clients" class="clients section-bg">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2></h2>
+      <p></p>
+    </div>
+
+    <div class="owl-carousel clients-carousel" data-aos="fade-up" data-aos-delay="100">
+      <img src="{{ asset('/media/client-1.png') }}" alt="">
+      <img src="{{ asset('/media/client-2.png') }}" alt="">
+      <img src="{{ asset('/media/client-3.png') }}" alt="">
+      <img src="{{ asset('/media/client-4.png') }}" alt="">
+      <img src="{{ asset('/media/client-5.png') }}" alt="">
+      <img src="{{ asset('/media/client-6.png') }}" alt="">
+      <img src="{{ asset('/media/client-7.png') }}" alt="">
+      <img src="{{ asset('/media/client-8.png') }}" alt="">
+    </div>
+
+  </div>
+</section>
 @endsection
 
 @section('testimonials')

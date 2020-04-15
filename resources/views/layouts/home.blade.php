@@ -41,6 +41,9 @@
   <!-- Template Appland Main CSS File -->
   <link href="{{ asset('/plugins/Appland/css/style.css') }}" rel="stylesheet">
 
+  <!-- Template Ninestars Main CSS File -->
+  <link href="{{ asset('/plugins/Ninestars/css/style.css') }}" rel="stylesheet">
+
   <!-- Styles -->
   <link href="{{ asset('/assets/css/scrollbar.css') }}" rel="stylesheet">
   <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
@@ -55,15 +58,20 @@
   @yield('jumbotron')
 
   <main id="main">
+    <!-- Brands -->
+    @yield('brands')
 
     <!-- Kategori Pilihan -->
     @yield('kategori_pilihan')
 
-    <!-- Kategori Pilihan -->
+    <!-- Flash Sale -->
     @yield('flash_sale')
 
-    <!-- Product Diskon -->
-    @yield('produk_diskon')
+    <!-- Produk Terlaris -->
+    @yield('produk_terlaris')
+
+    <!-- Produk Terbaru -->
+    @yield('produk_terbaru')
 
     <!-- Cara Pembelian -->
     @yield('pembelian')
@@ -88,12 +96,13 @@
 
   <!-- JQuery -->
   <script src="{{ asset('/plugins/Appland/vendor/jquery/jquery.min.js') }}"></script>
+  <!-- Bootstrap -->
+  <script src="{{ asset('/plugins/Bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- Jquey Easing -->
   <script src="{{ asset('/plugins/Appland/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
   
   <!-- Font Awesome -->
   <script src="{{ asset('/plugins/Fontawesome/js/all.min.js') }}"></script>
-  <!-- Bootstrap -->
-  <script src="{{ asset('/plugins/Bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Vendor Appland JS Files -->
   <script src="{{ asset('/plugins/Appland/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
@@ -102,6 +111,41 @@
 
   <!-- Template Appland Main JS File -->
   <script src="{{ asset('/plugins/Appland/js/main.js') }}"></script>
-  
+
+  <!-- Template Appland Main JS File -->
+  <script src="{{ asset('/plugins/Ninestars/js/main.js') }}"></script>
+
+  <!-- Timer -->
+  <script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("timer").innerHTML = days + ":" + hours + ":"
+    + minutes + ":" + seconds + "";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+  </script>
+
 </body>
 </html>

@@ -27,6 +27,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <!-- Fontawesome -->
+  <link href="{{ asset('/plugins/Fontawesome/css/all.min.css') }}" rel="stylesheet">
+
   <!-- Styles -->
   <link href="{{ asset('/assets/css/scrollbar.css') }}" rel="stylesheet">
 </head>
@@ -52,5 +55,10 @@
   
   <!-- Script -->
   @yield('script')  
+
+  <!-- Font Awesome -->
+  <script src="{{ asset('/plugins/Fontawesome/js/all.min.js') }}"></script>
+
+
 </body>
 </html>

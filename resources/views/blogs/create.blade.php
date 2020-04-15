@@ -150,5 +150,7 @@
 @endsection
 
 @section('script')
+
   @include('components.admin.script_form_advance')
+  
 @endsection
