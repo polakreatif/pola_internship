@@ -147,6 +147,13 @@
                         </div>
                     </div>
 
+                    <div class="flex-1 ">
+                        <div class="mb-6 px-10 mx-auto text-center">
+                            <h5 class="text-lg uppercase md:mb-6">Instagram Kami</h5>
+                            <iframe class="" width="100%" height="100%"frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.instagram.com/andipputraa/"></iframe>
+                        </div>
+                    </div>
+
                     
                 </div>
             </div>
