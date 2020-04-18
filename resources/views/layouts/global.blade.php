@@ -34,43 +34,24 @@
     <link href="{{ asset('vendor/venobox/venobox.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
   
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    
+  
 </head>
 <body>
-    <!-- Header -->
     @include('comp.header')
 
-    <!-- Hero -->
     @yield('hero')
 
     <main id="main">
-      @yield('brands')
-
-      @yield('kategori_pilihan')
-
-      @yield('produk_diskon')
-
-      @yield('produk_terlaris')
-
-      @yield('produk_terbaru')
-
-      @yield('pembelian')
-
-      @yield('testimonials')
-
-      @yield('faq')
-
-      @yield('customer_service')
+      @yield('content')
     </main>
 
     @include('comp.footer')
 
-    <!-- Back to Top -->
     <a href="#" class="text-center back-to-top">
       <i class="fas fa-angle-double-up fa-lg"></i>
     </a>
-
 
     <script src="{{ asset('vendor/fontawesome/js/all.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>

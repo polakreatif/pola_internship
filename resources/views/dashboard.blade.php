@@ -1,12 +1,4 @@
-@extends('layouts.admin')
-
-@section('head')
-  @include('components.admin.head_dashboard')
-@endsection
-
-@section('script')
-  @include('components.admin.script_dashboard')
-@endsection
+@extends('layouts.admin.dashboard')
 
 @section('content-header')
   <div class="container-fluid">

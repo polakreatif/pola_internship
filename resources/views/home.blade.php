@@ -1,20 +1,6 @@
 @extends('layouts.home')
 
-@section('head')
-  <title>
-    ShopTronik | Toko Elektornik Terlengkap Dijamin Ori
-  </title>
-  <meta 
-    content="ShopTronik | Toko Elektornik Terlengkap Dijamin Ori" 
-    name="descriptison"
-  >
-  <meta 
-    content="ShopTronik | Toko Elektornik Terlengkap Dijamin Ori" 
-    name="keywords"
-  >
-@endsection
-
-@section('jumbotron')
+@section('hero')
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <div class="row">
@@ -27,7 +13,7 @@
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
-          <img src="{{ asset('/media/hero-img.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('media/hero-img.png') }}" class="img-fluid" alt="">
         </div>
       </div>
     </div>
@@ -36,7 +22,7 @@
 
 @section('kategori_pilihan')
 <section class="section-bg">
-  <div class="container-fluid">
+  <div class="container">
     <div>
         <div data-aos="fade-up">
           <span class="h4">Kategori Pilihan</span>
@@ -81,44 +67,32 @@
 </section>
 @endsection
 
-@section('flash_sale')
+@section('produk_diskon')
 <section class="section-bg" >
   <div  class="w-100 my-3 p-3" style="background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);">
     <div class="d-flex text-white mb-3">
-      <h4 class="text-bold">Flash Sale</h4>
-      <div class="ml-3 px-3 bg-dark" style="border-radius: 15px;">
-        <h4 id="timer"></h4>
-      </div> 
+      <h4 class="text-bold">Diskon Spesial</h4>
     </div>
     <div id="scrollbar-3" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-      @for($i = 0; $i < 5; $i++)
-        <div class="col-8 col-sm-4 col-md-3 col-lg-2 mb-3" data-aos="fade-up">
-          
-          <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
-            
-            <div id="produk-media" class="position-relative" style="border-radius: 15px;">
-              <div class="ribbon-wrapper ribbon-xl">
-                <div class="ribbon bg-danger text-white text-lg">
-                  Sale of 30%
-                </div>
-              </div>
-              <div
-                style="
-                  background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                  background-color: #fff; background-position: center; 
-                  background-size: contain; background-repeat: no-repeat; 
-                  width: 100%; height: 150px;"
-              ></div>
-            </div>
+      @for($i = 0; $i < 10; $i++)
+        <a href="/p/slug" class="card mx-3 mb-3 shadow" style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up">
+                
+          <div id="produk-media">
+            <div
+              style="
+                background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                background-color: #fff; background-position: center; 
+                background-size: contain; background-repeat: no-repeat; 
+                width: 100%; height: 150px;"
+            ></div>
+          </div>
 
-            <div id="produk-detail" class="card-body">
-              <h6>Name of product</h6>
-              <mark>Rp. 19.000</mark>
-            </div>
+          <div id="produk-detail" class="card-body">
+            <h6>Name of product</h6>
+            <mark>Rp. 19.000</mark>
+          </div>
 
-          </a>
-
-        </div>
+        </a>
       @endfor  
     </div>
   </div>
@@ -135,31 +109,27 @@
           <span class="h4">Produk Terlaris</span>
         </div>
 
-        <div  class="w-100 my-3">
+        <div  class="w-100 mt-2">
           <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-            @for($i = 0; $i < 5; $i++)
-              <div class="col-8 col-md-4 col-lg-3 mb-3" data-aos="fade-up">
+            @for($i = 0; $i < 9; $i++) 
+              <a href="/p/slug" class="card mx-3 mb-3 shadow" style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up">
                 
-                <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
-                  
-                  <div id="produk-media" style="border-radius: 15px;">
-                    <div
-                      style="
-                        background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                        background-color: #fff; background-position: center; 
-                        background-size: contain; background-repeat: no-repeat; 
-                        width: 100%; height: 150px;"
-                    ></div>
-                  </div>
+                <div id="produk-media">
+                  <div
+                    style="
+                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                      background-color: #fff; background-position: center; 
+                      background-size: contain; background-repeat: no-repeat; 
+                      width: 100%; height: 150px;"
+                  ></div>
+                </div>
 
-                  <div id="produk-detail" class="card-body">
-                    <h6>Name of product</h6>
-                    <mark>Rp. 19.000</mark>
-                  </div>
+                <div id="produk-detail" class="card-body">
+                  <h6>Name of product</h6>
+                  <mark>Rp. 19.000</mark>
+                </div>
 
-                </a>
-
-              </div>
+              </a>
             @endfor  
           </div>
         </div>
@@ -180,31 +150,29 @@
           <span class="h4">Produk Terbaru</span>
         </div>
 
-        <div  class="w-100 my-3">
+        <div  class="w-100 mt-2">
           <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-            @for($i = 0; $i < 5; $i++)
-              <div class="col-8 col-md-4 col-lg-3 mb-3" data-aos="fade-up">
+            @for($i = 0; $i < 9; $i++) 
+              <a href="/p/slug" class="card mx-3 mb-3 shadow" 
+                style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up"
+              >
                 
-                <a href="/p/slug" class="card shadow" style="border-radius: 25px;">
-                  
-                  <div id="produk-media" style="border-radius: 15px;">
-                    <div
-                      style="
-                        background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                        background-color: #fff; background-position: center; 
-                        background-size: contain; background-repeat: no-repeat; 
-                        width: 100%; height: 150px;"
-                    ></div>
-                  </div>
+                <div id="produk-media">
+                  <div
+                    style="
+                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
+                      background-color: #fff; background-position: center; 
+                      background-size: contain; background-repeat: no-repeat; 
+                      width: 100%; height: 150px;"
+                  ></div>
+                </div>
 
-                  <div id="produk-detail" class="card-body">
-                    <h6>Name of product</h6>
-                    <mark>Rp. 19.000</mark>
-                  </div>
+                <div id="produk-detail" class="card-body">
+                  <h6>Name of product</h6>
+                  <mark>Rp. 19.000</mark>
+                </div>
 
-                </a>
-
-              </div>
+              </a>
             @endfor  
           </div>
         </div>
