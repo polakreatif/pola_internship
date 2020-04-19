@@ -23,22 +23,10 @@
         <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up">
           <h3>Kantor Pusat</h3>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            Kajen, Kab. Pekalongan, Jawa Tengah
+            <strong>Phone:</strong> 0858 7520 4463<br>
+            <strong>Email:</strong> cs@laundryjone.com<br>
           </p>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
-          <h4>Panduan Pengguna</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/cara-berbelanja') }}">Cara Berbelanja</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/diskon') }}">Diskon</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/voucher') }}">Voucher</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/berlangganan') }}">Berlangganan</a></li>
-          </ul>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
@@ -47,25 +35,6 @@
             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/garansi') }}">Garansi</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/panduan-keamanan') }}">Panduan Keamanan</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/support') }}">Halaman Bantuan</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-          <h4>Pengiriman</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/estimasi-pengiriman') }}">Estimasi Pengiriman</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/lupa-password') }}">Biaya Pengiriman</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/keterlambatan-pengiriman') }}">Keterlambatan Pengiriman</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-          <h4>Akun</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/pendaftaran-akun') }}">Pendaftaran</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/lupa-password') }}">Lupa password</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/term-of-service') }}">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('/blog/privacy-policy') }}">Privacy policy</a></li>
           </ul>
         </div>
 

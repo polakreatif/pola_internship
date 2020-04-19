@@ -38,6 +38,7 @@ Route::post("/blogs", "BlogController@store");
 Route::put("/blogs/{id}", "BlogController@update");
 Route::delete("/blogs/{id}", "BlogController@destroy");
 
+Auth::routes();
 
 // Dashboard
 Route::get('/dashboard', 'DashboardController@index');

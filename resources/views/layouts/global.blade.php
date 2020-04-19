@@ -12,14 +12,14 @@
 
     <!-- Default Title -->
     <title>
-      ShopTronik | Toko Elektornik Terlengkap Dijamin Ori
+      Laundry Jone | Profesional Laundry
     </title>
     <meta 
-      content="ShopTronik | Toko Elektornik Terlengkap Dijamin Ori" 
+      content="Laundry Jone | Profesional Laundry" 
       name="descriptison"
     >
     <meta 
-      content="ShopTronik | Toko Elektornik Terlengkap Dijamin Ori" 
+      content="Laundry Jone | Profesional Laundry" 
       name="keywords"
     >
 

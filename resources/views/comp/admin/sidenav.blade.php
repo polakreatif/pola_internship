@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
-    <span class="brand-text font-weight-light">ShopTronik</span>
+    <span class="brand-text font-weight-light">Laundry Jone</span>
   </a>
 
   <!-- Sidebar -->
@@ -32,6 +32,26 @@
           </a>
         </li>   
         
+        <li id="jumbotron" class="nav-item">
+          <a href="{{ url('/jumbotron') }}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Jumbotron
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+        </li>  
+
+        <li id="carousel" class="nav-item">
+          <a href="{{ url('/carousel') }}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Carousel
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+        </li> 
+
         <!-- Products -->
         <li id="products" class="nav-item has-treeview">
           <a href="#products" class="nav-link">
@@ -134,31 +154,6 @@
           </ul>
         </li>  
 
-        <!-- Roles -->
-        <li id="roles" class="nav-item has-treeview">
-          <a href="#roles" class="nav-link">
-            <i class="nav-icon fas fa-shield-alt"></i>
-            <p>
-              Role
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ url('/roles') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>All</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/roles/create') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create</p>
-              </a>
-            </li>
-          </ul>
-        </li> 
-
         <!-- Blogs -->
         <li id="blogs" class="nav-item has-treeview">
           <a href="#blogs" class="nav-link">
@@ -183,6 +178,7 @@
             </li>
           </ul>
         </li>   
+
         <!-- Setting -->
         <li id="setting" class="nav-item">
           <a href="{{ url('/setting') }}" class="nav-link">

@@ -6,10 +6,12 @@
       <div class="row">
         <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
           <div>
-            <h1>ShopTronik</h1>
+            <h1>Laundry Jone</h1>
             <h2>
-              Toko Elektronik terlengkap, terpercaya, dijamin ORI.
+              Jasa Laundry Profesional. 
             </h2>
+            
+            <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Pesan Jasa</a>
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
@@ -20,253 +22,167 @@
   </section>
 @endsection
 
-@section('kategori_pilihan')
+@section('about_us')
 <section class="section-bg">
+  <br/><br/>
   <div class="container">
-    <div>
-        <div data-aos="fade-up">
-          <span class="h4">Kategori Pilihan</span>
-        </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-lg-6 text-center" data-aos="fade-up">
+        <div
+            class="w-100 shadow"
+            style="
+              background-image: url('{{ asset('images/about_us.jpg') }}'); 
+              background-color: #fff; 
+              background-position: center; 
+              background-size: cover; 
+              background-repeat: no-repeat; 
+              height: 350px;
+              border-radius: 15px;
+            "
+        ></div>
+      </div>
+      <div class="col-sm-8 col-lg-6 text-center" data-aos="fade-up">
+        <br/><br/><br/>
+        <h2>Siapa Kami ?</h2>
+        <p>Kami adalah Laundry Jone</p>
+      </div>
+    </div>
+  </div>
+</section>
+@endsection
 
-        <div  class="w-100 my-3">
-          <div id="scrollbar-2" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-            @for($i = 0; $i < 5; $i++)
-              <div class="mb-5 mx-3" data-aos="fade-up">
-
-                  <div 
-                    id="kategori-detail" 
-                    class="card shadow" 
-                    style="
-                      border-radius: 15px;
-                      width: 150px; 
-                      height: 150px;
-                      margin-top: 15px;
-                      margin-left: 15px;
-                    "
-                  ></div>
-                  <div
-                    id="kategori-media" class="card shadow"
-                    style="
-                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                      background-color: #fff; background-position: center; 
-                      background-size: contain; background-repeat: no-repeat; 
-                      width: 150px; height: 150px;
-                      border-radius: 15px;
-                      margin-top: -165px; 
-                      "
-                  ></div>
-                  
-
+@section('carousel')
+<section class="section-bg">
+  <br/><br/>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12" data-aos="fade-up">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div
+                class="d-block w-100 shadow"
+                style="
+                  background-image: url('{{ asset('images/carousel-1.jpg') }}'); 
+                  background-color: #fff; 
+                  background-position: center; 
+                  background-size: cover; 
+                  background-repeat: no-repeat; 
+                  width: 1200px; 
+                  height: 500px;
+                  border-radius: 15px;
+                "
+              ></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
-            @endfor  
+            </div>
+            <div class="carousel-item">
+              <div
+                class="d-block w-100 shadow"
+                style="
+                  background-image: url('{{ asset('images/carousel-2.jpg') }}'); 
+                  background-color: #fff; 
+                  background-position: center; 
+                  background-size: cover; 
+                  background-repeat: no-repeat; 
+                  width: 1200px; 
+                  height: 500px;
+                  border-radius: 15px;
+                "
+              ></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="d-block w-100 shadow"
+                style="
+                  background-image: url('{{ asset('images/carousel-3.jpg') }}'); 
+                  background-color: #fff; 
+                  background-position: center; 
+                  background-size: cover; 
+                  background-repeat: no-repeat; 
+                  width: 1200px; 
+                  height: 500px;
+                  border-radius: 15px;
+                "
+              ></div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              </div>
+            </div>
           </div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-
+      </div>
     </div>
   </div>
 </section>
 @endsection
 
-@section('produk_diskon')
-<section class="section-bg" >
-  <div  class="w-100 my-3 p-3" style="background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);">
-    <div class="d-flex text-white mb-3">
-      <h4 class="text-bold">Diskon Spesial</h4>
-    </div>
-    <div id="scrollbar-3" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-      @for($i = 0; $i < 10; $i++)
-        <a href="/p/slug" class="card mx-3 mb-3 shadow" style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up">
-                
-          <div id="produk-media">
-            <div
-              style="
-                background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                background-color: #fff; background-position: center; 
-                background-size: contain; background-repeat: no-repeat; 
-                width: 100%; height: 150px;"
-            ></div>
-          </div>
-
-          <div id="produk-detail" class="card-body">
-            <h6>Name of product</h6>
-            <mark>Rp. 19.000</mark>
-          </div>
-
-        </a>
-      @endfor  
-    </div>
-  </div>
-</section>
-@endsection
-
-@section('produk_terlaris')
+@section('products')
 <section class="section-bg">
-  <div class="container-fluid">
-    <div class="card w-100 shadow" style="border-radius: 15px;">
-      <div class="card-body">
-        
-        <div data-aos="fade-up">
-          <span class="h4">Produk Terlaris</span>
-        </div>
-
-        <div  class="w-100 mt-2">
-          <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-            @for($i = 0; $i < 9; $i++) 
-              <a href="/p/slug" class="card mx-3 mb-3 shadow" style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up">
-                
-                <div id="produk-media">
-                  <div
-                    style="
-                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                      background-color: #fff; background-position: center; 
-                      background-size: contain; background-repeat: no-repeat; 
-                      width: 100%; height: 150px;"
-                  ></div>
+  <div class="container">
+    <br/><br/>
+    <h2 data-aos="fade-up"> Layanan Kami </h2>
+    <br/>
+    <div class="row justify-content-center">
+        @for($i = 0; $i < 6; $i++)
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-3" >
+                <div class="card shadow" style="border-radius: 15px" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                            <p>
+                                Deskripsi
+                            Cuma <del>Rp. 10000</del> <mark>Rp. 199000</mark>
+                            </p>
+                    </div>
                 </div>
-
-                <div id="produk-detail" class="card-body">
-                  <h6>Name of product</h6>
-                  <mark>Rp. 19.000</mark>
-                </div>
-
-              </a>
-            @endfor  
-          </div>
-        </div>
-
-      </div>
+            </div>
+        @endfor
     </div>
   </div>
 </section>
 @endsection
 
-@section('produk_terbaru')
+@section('blog')
 <section class="section-bg">
-  <div class="container-fluid">
-    <div class="card w-100 shadow" style="border-radius: 15px;">
-      <div class="card-body">
-        
-        <div data-aos="fade-up">
-          <span class="h4">Produk Terbaru</span>
-        </div>
-
-        <div  class="w-100 mt-2">
-          <div id="scrollbar-1" class="d-flex" style="overflow-x: auto; overflow-y: hidden;">
-            @for($i = 0; $i < 9; $i++) 
-              <a href="/p/slug" class="card mx-3 mb-3 shadow" 
-                style="min-width: 200px; min-height: 250px;border-radius: 15px;" data-aos="fade-up"
-              >
-                
-                <div id="produk-media">
-                  <div
-                    style="
-                      background-image: url('media/0{{ $i*1+1 }}.jpg'); 
-                      background-color: #fff; background-position: center; 
-                      background-size: contain; background-repeat: no-repeat; 
-                      width: 100%; height: 150px;"
-                  ></div>
-                </div>
-
-                <div id="produk-detail" class="card-body">
-                  <h6>Name of product</h6>
-                  <mark>Rp. 19.000</mark>
-                </div>
-
-              </a>
-            @endfor  
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-@endsection
-
-@section('pembelian')
-<section id="services" class="services section-bg">
   <div class="container">
-
-    <div class="section-title" data-aos="zoom-in">
-      <h2>Pembelian</h2>
-      <p>Cukup empat langkah, dapatkan barang impianmu.</p>
+    <br/><br/>
+    <h2 data-aos="fade-up"> Blog </h2>
+    <br/>
+    <div class="row justify-content-center">
+        @for($i = 0; $i < 6; $i++)
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-3" >
+                <div class="card shadow" style="border-radius: 15px" data-aos="fade-up">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                            <p>
+                                Deskripsi
+                            Cuma <del>Rp. 10000</del> <mark>Rp. 199000</mark>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        @endfor
     </div>
-
-    <div class="row">
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-        <div class="icon-box">
-          <div class="icon"><i class="fas fa-dolly-flatbed fa-4x"></i></div>
-          <br/>
-          <h4 class="title"><a href="">Pesan</a></h4>
-          <p class="description">
-            Cari produk elektronik kebutuhanmu. Masukan keranjang dulu atau langsung pilih tombol beli.
-            Ikuti langkah-langkah nya sampai selesai.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
-        <div class="icon-box">
-          <div class="icon"><i class="fas fa-money-bill-wave fa-4x"></i></div>
-          <br/>
-          <h4 class="title"><a href="">Bayar</a></h4>
-          <p class="description">
-            Bayar pesanan kamu sesuai metode pembayaran yang kamu pilih.
-            Jangan lupa simpan/screenshot bukti pembayaran.
-            Lalu periksa status barang kamu di website.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
-        <div class="icon-box">
-          <div class="icon"><i class="fas fa-shipping-fast fa-4x"></i></div>
-          <br/>
-          <h4 class="title"><a href="">Pengiriman</a></h4>
-          <p class="description">
-            Barang kamu akan segera dikirim oleh pihak kami sesuai jadwal pengiriman.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
-        <div class="icon-box">
-          <div class="icon"><i class="fas fa-check fa-4x"></i></div>
-          <br/>
-          <h4 class="title"><a href="">Selesai</a></h4>
-          <p class="description">
-            Pengirim akan menghubungi kamu jika telah sampai. Proses pembelian selesai.
-            Jangan lupa update status pembelian.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-@endsection
-
-@section('brands')
-<section id="clients" class="clients section-bg">
-  <div class="container">
-
-    <div class="section-title" data-aos="fade-up">
-      <h2></h2>
-      <p></p>
-    </div>
-
-    <div class="owl-carousel clients-carousel" data-aos="fade-up" data-aos-delay="100">
-      <img src="{{ asset('/media/client-1.png') }}" alt="">
-      <img src="{{ asset('/media/client-2.png') }}" alt="">
-      <img src="{{ asset('/media/client-3.png') }}" alt="">
-      <img src="{{ asset('/media/client-4.png') }}" alt="">
-      <img src="{{ asset('/media/client-5.png') }}" alt="">
-      <img src="{{ asset('/media/client-6.png') }}" alt="">
-      <img src="{{ asset('/media/client-7.png') }}" alt="">
-      <img src="{{ asset('/media/client-8.png') }}" alt="">
-    </div>
-
   </div>
 </section>
 @endsection
