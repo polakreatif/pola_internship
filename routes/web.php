@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -10,6 +11,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Jumbotron
+Route::get('/jumbotron', 'JumbotronController@index');
+Route::get('/jumbotron/edit', 'JumbotronController@edit');
+Route::put('/jumbotron/update', 'JumbotronController@update');
+
 // Products
 Route::get("/products/create", "ProductController@create");
 Route::get("/products/{id}/edit", "ProductController@edit");
@@ -27,16 +33,6 @@ Route::resource('order', 'BlogController');
 
 // Users
 Route::resource('users', 'UserController');
-
-// Blogs
-Route::get("/blogs/create", "BlogController@create");
-Route::get("/blogs/{id}/edit", "BlogController@edit");
-Route::get("/blogs", "BlogController@index_admin");
-Route::get("/blog", "BlogController@index");
-Route::get("/blog/{id}", "BlogController@show");
-Route::post("/blogs", "BlogController@store");
-Route::put("/blogs/{id}", "BlogController@update");
-Route::delete("/blogs/{id}", "BlogController@destroy");
 
 Auth::routes();
 

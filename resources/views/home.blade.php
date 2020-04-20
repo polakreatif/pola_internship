@@ -162,31 +162,6 @@
 </section>
 @endsection
 
-@section('blog')
-<section class="section-bg">
-  <div class="container">
-    <br/><br/>
-    <h2 data-aos="fade-up"> Blog </h2>
-    <br/>
-    <div class="row justify-content-center">
-        @for($i = 0; $i < 6; $i++)
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-3" >
-                <div class="card shadow" style="border-radius: 15px" data-aos="fade-up">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                            <p>
-                                Deskripsi
-                            Cuma <del>Rp. 10000</del> <mark>Rp. 199000</mark>
-                            </p>
-                    </div>
-                </div>
-            </div>
-        @endfor
-    </div>
-  </div>
-</section>
-@endsection
-
 @section('testimonials')
   <section id="testimonials" class="testimonials section-bg">
     <div class="container">

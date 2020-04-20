@@ -50,8 +50,6 @@
       @yield('carousel')
       
       @yield('products')
-      
-      @yield('blog')
 
       @yield('testimonials')
 

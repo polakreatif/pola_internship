@@ -12,7 +12,7 @@
         <img src="{{ asset('media/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="#" class="d-block">Super Admin</a>
       </div>
     </div>
 
@@ -40,7 +40,17 @@
               <span class="right badge badge-danger"></span>
             </p>
           </a>
-        </li>  
+        </li> 
+
+        <li id="jumbotron" class="nav-item">
+          <a href="{{ url('/about-us') }}" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              About Us
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+        </li> 
 
         <li id="carousel" class="nav-item">
           <a href="{{ url('/carousel') }}" class="nav-link">
@@ -213,13 +223,19 @@
         </li>  
         <!-- Logout -->
         <li id="logout" class="nav-item">
-          <a href="{{ url('/logout') }}" class="nav-link">
+          <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
             <i class="nav-icon fas fa-sign-out-alt"></i>
             <p>
               Logout
               <span class="right badge badge-danger"></span>
             </p>
           </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
         </li>   
       </ul>
     </nav>
