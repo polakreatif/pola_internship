@@ -7,7 +7,7 @@
     <div class="container">
         <div class="section-produk-sepatu-detail row justify-content-center">
             <div class="col-sm-12 col-md-8 col-lg-7">
-                <div class="card-produk-sepatu" style="background-image: url('../frontend/images/{{ $produk->gambar_produk }}');"></div>
+                <div class="card-produk-sepatu" style="background-image: url('{{ Storage::url($produk->gambar_produk) }}');"></div>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-5">
                 <h5 class="judul-produk">{{$produk->nama_produk}}</h5>

@@ -103,7 +103,7 @@
                     @foreach ($data as $datas)
                     <div class="col-sm-6 col-md-4 col-lg-4">
                         <a href="/produkDetail/{{$datas->id}}">
-                            <div class="card-produk-sepatu" style="background-image: url('frontend/images/{{ $datas->gambar_produk}}');"></div>
+                            <div class="card-produk-sepatu" style="background-image: url('{{ Storage::url($datas->gambar_produk) }}');"></div>
                         </a>
                         <div class="text-sepatu">
                             <h5 class="teks-nama-sepatu">{{ $datas->nama_produk }}</h5>

@@ -16,3 +16,15 @@ Route::get('/', 'HomeController@index');
 Route::get('/detail', 'DetailController@index');
 
 Route::get('/produkDetail/{id}','HomeController@edit');
+
+// Admin
+Route::prefix('admin')
+    ->namespace('admin')
+    ->group(function(){
+        Route::get('/','DashboardController@index')
+            ->name('dashboard');
+        
+        Route::resource('produk', 'ProdukDashboardController');
+        Route::resource('kategori', 'KategoriDashboardController');
+        Route::resource('pemesanan', 'PemesananDashboardController');
+    });

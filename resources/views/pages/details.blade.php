@@ -27,9 +27,9 @@
                                 Kategori Sepatu
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbardrop">
-                                <a href="#" class="dropdown-item">Sepatu Formal</a>
-                                <a href="#" class="dropdown-item">Sepatu Lari</a>
-                                <a href="#" class="dropdown-item">Sepatu Basket</a>
+                                @foreach ($kategoris as $kategori)
+                                    <a href="#" class="dropdown-item">{{ $kategori->nama }}</a>
+                                @endforeach
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -54,7 +54,7 @@
                     @foreach ($data as $datas)
                         <div class="col-sm-6 col-md-4 col-lg-4">
                             <a href="/produkDetail/{{ $datas->id }}" class="link">
-                                <div class="card-produk-sepatu-detail" style="background-image: url('frontend/images/{{ $datas->gambar_produk }}');"></div>
+                                <div class="card-produk-sepatu-detail" style="background-image: url('{{ Storage::url($datas->gambar_produk) }}');"></div>
                                 <div class="text-sepatu">
                                     <h5 class="teks-nama-sepatu">{{$datas->nama_produk}}</h5>
                                     <p class="teks-kategori">{{$datas->kategori->nama}}</p>
