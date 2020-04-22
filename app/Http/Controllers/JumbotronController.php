@@ -15,7 +15,7 @@ class JumbotronController extends Controller
      */
     public function index()
     {
-        $jumbotron = Jumbotron::find(1);
+        $jumbotron = Jumbotron::findOrFail(1);
 
         return view('jumbotron.index', [
             'jumbotron' => $jumbotron
@@ -30,7 +30,7 @@ class JumbotronController extends Controller
      */
     public function edit()
     {
-        $jumbotron = Jumbotron::find(1);
+        $jumbotron = Jumbotron::findOrFail(1);
 
         return view('jumbotron.edit', [
             'jumbotron' => $jumbotron
@@ -45,7 +45,13 @@ class JumbotronController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    {
+    {  
+        $validator = \Validator::make($request->all(), [
+            "title" => "required|max:199",
+            "caption" => "max:199",
+            "sumber_label" => "max:199"
+        ])->validate();
+
         $jumbotron = Jumbotron::find(1);
         $jumbotron->title = $request->input('title');
         $jumbotron->caption = $request->input('caption');
@@ -63,8 +69,7 @@ class JumbotronController extends Controller
 
         $jumbotron->save();
 
-        return redirect('/jumbotron/edit')->with('status', 'Jumbotron
-berhasil di perbarui');
+        return redirect('/jumbotron/edit')->with('status', 'Jumbotron berhasil di perbarui');
     }
 
 }

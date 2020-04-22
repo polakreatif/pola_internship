@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="/" class="brand-link">
+  <a href="{{ url('/') }}" class="brand-link">
     <span class="brand-text font-weight-light">Laundry Jone</span>
   </a>
 
@@ -46,7 +46,7 @@
           <a href="{{ url('/about-us') }}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              About Us
+              Tentang Kami
               <span class="right badge badge-danger"></span>
             </p>
           </a>
@@ -56,63 +56,21 @@
           <a href="{{ url('/carousel') }}" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Carousel
+              Carousel Promotion
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li> 
 
-        <!-- Products -->
-        <li id="products" class="nav-item has-treeview">
-          <a href="#products" class="nav-link">
+        <li id="carousel" class="nav-item">
+          <a href="{{ url('/products') }}" class="nav-link">
             <i class="nav-icon fas fa-box-open"></i>
             <p>
-              Product
-              <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right"></span>
+              Produk
+              <span class="right badge badge-danger"></span>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ url('/products') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>All</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/products/create') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- categories -->
-        <li id="categories" class="nav-item has-treeview">
-          <a href="#categories" class="nav-link">
-            <i class="nav-icon fas fa-th-large"></i>
-            <p>
-              Category
-              <i class="fas fa-angle-left right"></i>
-              <span class="badge badge-info right"></span>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ url('/categories') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>All</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/categories/create') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+        </li> 
 
         <!-- Orders -->
         <li id="orders" class="nav-item has-treeview">
@@ -163,31 +121,6 @@
             </li>
           </ul>
         </li>  
-
-        <!-- Blogs -->
-        <li id="blogs" class="nav-item has-treeview">
-          <a href="#blogs" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
-            <p>
-              Blog
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ url('/blogs') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>All</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/blogs/create') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create</p>
-              </a>
-            </li>
-          </ul>
-        </li>   
 
         <!-- Setting -->
         <li id="setting" class="nav-item">

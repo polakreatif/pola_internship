@@ -14,7 +14,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        $products = Product::all();
+
+        return view('products.index', [
+            "products" => $products
+        ]);
     }
 
     /**
@@ -35,7 +39,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = \Validator::make($request->all(), [
+            "name" => "required|max:199",
+            "price" => "required",
+            "type" => "required",
+            "description" => "required|max:245",
+            "image" => "required",
+            "sumber_label" => "max:199"
+        ])->validate();
+
+        $file = $request->file('image')->store('images', 'public');
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->type = $request->input('type');
+        $product->description = $request->input('description');
+        $product->sumber_link = $request->input('sumber_link');
+        $product->sumber_label = $request->input('sumber_label');    
+        $product->image = $file;
+       
+        $product->save();
+
+        return redirect('/products')->with('success', 'Produk berhasil di perbarui.');
     }
 
     /**
@@ -65,7 +90,11 @@ class ProductController extends Controller
     // }
     public function edit($id)
     {
-        return view('products.edit');
+        $product = Product::findOrFail($id);
+
+        return view('products.edit', [
+            "product" => $product
+        ]);
     }
 
     /**
@@ -75,9 +104,36 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = \Validator::make($request->all(), [
+            "name" => "required|max:199",
+            "price" => "required",
+            "type" => "required",
+            "description" => "required|max:245",
+            "sumber_label" => "max:199"
+        ])->validate();
+
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->price = $request->input('price');
+        $product->type = $request->input('type');
+        $product->description = $request->input('description');
+        $product->sumber_link = $request->input('sumber_link');
+        $product->sumber_label = $request->input('sumber_label');
+
+        if($request->hasFile('image')){
+            if($product->image && file_exists(storage_path('app/public/'. $product->image))){
+                \Storage::delete('public/'.$product->image);
+            }
+            
+            $file = $request->file('image')->store('images', 'public');
+            $product->image = $file;
+        }
+
+        $product->save();
+
+        return redirect('/products/'.$id.'/edit')->with('success', 'Produk berhasil di perbarui.');
     }
 
     /**
@@ -86,8 +142,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = product::findOrFail($id);
+            \Storage::delete('public/'.$product->image);
+
+        $product->delete();
+        
+        return redirect('/products')->with('status', 'Produk berhasil di hapus');
     }
 }

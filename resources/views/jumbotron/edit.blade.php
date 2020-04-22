@@ -1,5 +1,9 @@
 @extends('layouts.admin.dashboard')
 
+@section('head')
+	<title>Laundry Jone | Edit Jumbotron
+@endsection
+
 @section('content-header')
   <div class="container-fluid">
     <div class="row mb-2">
@@ -9,7 +13,7 @@
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Dasboard</a></li>
-          <li class="breadcrumb-item active">Jumbotron</li>
+          <li class="breadcrumb-item active"><a href="{{ url('/jumbotron') }}">Jumbotron</a></li>
         </ol>
       </div>
     </div>
@@ -19,6 +23,11 @@
 @section('content')
 	<div class="container">
 		<div class="card">
+			@if(count($errors) > 0)
+				<div class="alert alert-danger">
+					Terjadi kesalahan atau data yang dimasukan tidak sesuai. Coba lagi.
+				</div>
+			@endif
 			@if(session('status'))
 				<div class="alert alert-success">
 					{{session('status')}}
@@ -26,7 +35,7 @@
 			@endif 
 
 			<div class="card-body">
-				<form enctype="multipart/form-data" action="/jumbotron/update" method="POST">
+				<form enctype="multipart/form-data" action="{{ url('/jumbotron/update') }}" method="POST">
 				  @csrf
 
 				  <input
@@ -36,21 +45,20 @@
 
 				  <div class="form-group">
 				    <label for="title">Judul</label>
-				    <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelp" value="{{ $jumbotron->title }}">
+				    <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelp" value="{{ $jumbotron->title }}" placeholder="Laundry Jone...">
 				    <small id="titleHelp" class="form-text text-muted">Judul max 199 karakter.</small>
 				  </div>
 				  <div class="form-group">
 				    <label for="caption">Caption</label>
-				    <input type="text" name="caption" class="form-control" id="caption" value="{{ $jumbotron->caption }}">
+				    <input type="text" name="caption" class="form-control" id="caption" value="{{ $jumbotron->caption }}" placeholder="Caption...">
 				    <small id="captionHelp" class="form-text text-muted">Caption max 199 karakter.</small>
 				  </div>
-				  <br/>
 				  <hr/>
-				  <br/>
+				   <label>Gambar</label>
 
 				  <div style="max-width: 350px;">
 				  	<label>Gambar Sebelumnya</label>
-				  	<img src="{{ asset('storage/'. $jumbotron->image ) }}" class="img-fluid" alt="jumbotron-img"/>
+				  	<img src="{{ asset('storage/'. $jumbotron->image ) }}" class="img-fluid" alt="Gambar Jumbotron"/>
 				  </div>
 				  <br/>
 
@@ -60,15 +68,18 @@
 				    <small id="imageHelp" class="form-text text-muted">Pilih gambar.</small>
 				  </div>
 
+				  	<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="sumber_link">https://</span>
+					  </div>
+					  <input type="text" class="form-control"value="{{ $jumbotron->sumber_link }}" aria-label="user_link" aria-describedby="sumber_link" name="sumber_link" placeholder="domain.com">
+					  
+					</div>
+				 	<small id="sumberLinkHelp" class="form-text text-muted">Masukan sumber link  gambar, apabila ada.</small>
+				 	<br/>
 				  <div class="form-group">
-				    <label for="sumber_link">Sumber Link</label>
-				    <input type="text" class="form-control" name="sumber_link" id="sumber_link" value="{{ $jumbotron->sumber_link }}">
-				    <small id="sumberLinkHelp" class="form-text text-muted">Masukan sumber link  gambar, apabila ada.</small>
-				  </div>
-				  <div class="form-group">
-				    <label for="sumber_label">Sumber Label</label>
-				    <input type="text" class="form-control" name="sumber_label" id="sumber_label" value="{{ $jumbotron->sumber_label }}">
-				    <small id="sumberLabelHelp" class="form-text text-muted">Masukan sumber label gambar, apabila ada.</small>
+				    <input type="text" class="form-control" name="sumber_label" id="sumber_label" value="{{ $jumbotron->sumber_label }}" placeholder="Free Pic etc">
+				    <small id="sumberLabelHelp" class="form-text text-muted">Masukan sumber label gambar, apabila ada. Maksimal 199 karakter.</small>
 				  </div>
 				  <br/>
 
