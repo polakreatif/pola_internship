@@ -22,9 +22,8 @@ class AboutUsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing resource.
      *
-     * @param  \App\AboutUs  $aboutUs
      * @return \Illuminate\Http\Response
      */
     public function edit()
@@ -37,10 +36,8 @@ class AboutUsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AboutUs  $aboutUs
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)

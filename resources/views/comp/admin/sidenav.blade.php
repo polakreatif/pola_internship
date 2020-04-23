@@ -124,14 +124,42 @@
 
         <!-- Setting -->
         <li id="setting" class="nav-item">
-          <a href="{{ url('/setting') }}" class="nav-link">
+          <a href="{{ url('/others') }}" class="nav-link">
             <i class="nav-icon fas fa-cog"></i>
             <p>
-              Setting
+              Lainnya
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li>  
+
+        <!-- Setting -->
+        <li id="setting" class="nav-item">
+          <a href="{{ url('/setting') }}" class="nav-link">
+            <i class="nav-icon fas fa-cog"></i>
+            <p>
+              Pengaturan
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+        </li>  
+
+        <!-- Logout -->
+        <li id="logout" class="nav-item">
+          <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p>
+              Keluar
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+        </li>   
 
         <li class="nav-header"></li>
         <!-- Documentation App -->
@@ -139,7 +167,7 @@
           <a href="{{ url('/documentation') }}" class="nav-link">
             <i class="nav-icon fas fa-file-alt"></i>
             <p>
-              Documentation
+              Documentasi
               <span class="right badge badge-danger"></span>
             </p>
           </a>
@@ -149,27 +177,13 @@
           <a href="{{ url('/about-app') }}" class="nav-link">
             <i class="nav-icon fas fa-angle-double-right"></i>
             <p>
-              About App
+              Tentang Applikasi
               <span class="right badge badge-danger"></span>
             </p>
           </a>
         </li>  
-        <!-- Logout -->
-        <li id="logout" class="nav-item">
-          <a class="nav-link" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-            <i class="nav-icon fas fa-sign-out-alt"></i>
-            <p>
-              Logout
-              <span class="right badge badge-danger"></span>
-            </p>
-          </a>
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-          </form>
-        </li>   
+        
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -38,8 +38,18 @@ Route::post("/products", "ProductController@store");
 Route::put("/products/{id}", "ProductController@update");
 Route::delete("/products/{id}", "ProductController@destroy");
 
+// Others
+Route::get('/others', 'OtherController@index');
+Route::get('/others/edit', 'OtherController@edit');
+Route::put('/others/update', 'OtherController@update');
+
+// Setting
+Route::get('/setting', 'SettingController@index');
+Route::put('/setting/update', 'SettingController@update');
+
 // Orders
-Route::resource('order', 'BlogController');
+Route::get('/order', 'OrderController@index');
+Route::get('/order', 'OrderController@create');
 
 // Users
 Route::resource('users', 'UserController');

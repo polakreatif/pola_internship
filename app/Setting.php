@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jumbotron extends Model
+class Setting extends Model
 {
-	protected $table = 'jumbotron';
+    protected $table = 'setting';
 	protected $primaryKey = 'id';
 
     protected $fillable = [
     	'id',
-        'title', 'caption', 'image',
-        'sumber_link', 'sumber_label'
+    	
+        'app_name', 'app_slogan', 
+
     ];
 }

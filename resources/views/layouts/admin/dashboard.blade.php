@@ -6,22 +6,6 @@
   
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  
-  <!-- Custom Head -->
-  @yield('head')
-
-  <!-- Default Head -->
-  <title>
-    Laundry Jone | Dashboard
-  </title>
-  <meta 
-    content="Laundry Jone | Profesional Laundry" 
-    name="descriptison"
-  >
-  <meta 
-    content="Laundry Jone | Profesional Laundry" 
-    name="keywords"
-  >
 
   <!-- Favicons -->
   <link href="{{ asset('favicon.ico') }}" rel="icon">
@@ -40,6 +24,8 @@
 
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
 
+   <!-- Custom Head -->
+  @yield('head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">

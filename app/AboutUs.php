@@ -10,6 +10,7 @@ class AboutUs extends Model
 	protected $primaryKey = 'id';
 
     protected $fillable = [
+    	'id',
         'title', 'description', 'image',
         'sumber_link', 'sumber_label'
     ];

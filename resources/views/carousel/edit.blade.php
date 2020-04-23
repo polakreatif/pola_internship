@@ -1,7 +1,7 @@
 @extends('layouts.admin.dashboard')
 
 @section('head')
-	<title>Laundry Jone | Edit Carousel Promotion
+	<title>Laundry Jone | Edit Carousel Promotion</title>
 @endsection
 
 @section('content-header')

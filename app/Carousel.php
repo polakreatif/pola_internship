@@ -10,6 +10,7 @@ class Carousel extends Model
 	protected $primaryKey = 'id';
 
     protected $fillable = [
+    	'id',
         'title', 'caption', 'image',
         'sumber_link', 'sumber_label'
     ];

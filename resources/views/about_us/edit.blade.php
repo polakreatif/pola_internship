@@ -1,7 +1,7 @@
 @extends('layouts.admin.dashboard')
 
 @section('head')
-	<title>Laundry Jone | Edit Tentang Kami
+	<title>Laundry Jone | Edit Tentang Kami </title>
 @endsection
 
 @section('content-header')
