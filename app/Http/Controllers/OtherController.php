@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Other;
 use Illuminate\Http\Request;
 
 class OtherController extends Controller
@@ -14,10 +13,14 @@ class OtherController extends Controller
      */
     public function index()
     {
-        $other = Other::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('others.index', [
-            "other" => $other
+            "other" => $other,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -29,10 +32,14 @@ class OtherController extends Controller
      */
     public function edit()
     {
-        $other = Other::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('others.edit', [
-            "other" => $other
+            "other" => $other,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -90,7 +97,7 @@ class OtherController extends Controller
         ])->validate();
 
 
-        $other = Other::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $other->cs_title = $request->input('cs_title');
         $other->cs_caption = $request->input('cs_caption');
         $other->cs_address_title = $request->input('cs_address_title');

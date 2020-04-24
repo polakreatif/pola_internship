@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-  <title>Laundry Jone | Jumbotron</title>
+  <title>{{ $setting->app_name }} | Jumbotron </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')

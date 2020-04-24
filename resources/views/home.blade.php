@@ -1,165 +1,60 @@
 @extends('layouts.home')
 
+@section('head')
+  <title>{{ $setting->app_name }} | {{ $setting->app_slogan }}</title>
+@endsection
+
+@section('header')
+
+  @include('comps.header', ['setting' => $setting])
+
+@endsection
+
 @section('hero')
-  <section id="hero" class="d-flex align-items-center">
+  <div id="hero" class="d-flex align-items-center">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
           <div>
-            <h1>Laundry Jone</h1>
-            <h2>
-              Jasa Laundry Profesional. 
-            </h2>
-            
-            <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Pesan Jasa</a>
+            <h1>{{ $jumbotron->title }}</h1>
+              @if(strlen($jumbotron->caption) > 0)
+                <h2>
+                  {{ $jumbotron->caption }} 
+                </h2>
+              @endif
+              
+              <a href="#" class="btn btn-success px-5 py-1"><i class="bx bxl-play-store"></i> Pesan Jasa</a>
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
-          <img src="{{ asset('media/hero-img.png') }}" class="img-fluid" alt="">
+          <img src="{{ asset('storage/'. $jumbotron->image) }}" class="img-fluid" alt="">
+          @if(strlen($jumbotron->sumber_link) > 0)
+            <div class="d-flex justify-content-end">
+              <a href="https://{{ $jumbotron->sumber_link }}" target="_blank">{{ $jumbotron->sumber_label }}</a>
+            </div>
+          @endif
         </div>
       </div>
     </div>
-  </section>
+  </div>
 @endsection
 
 @section('about_us')
-<section class="section-bg">
-  <br/><br/>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-8 col-lg-6 text-center" data-aos="fade-up">
-        <div
-            class="w-100 shadow"
-            style="
-              background-image: url('{{ asset('images/about_us.jpg') }}'); 
-              background-color: #fff; 
-              background-position: center; 
-              background-size: cover; 
-              background-repeat: no-repeat; 
-              height: 350px;
-              border-radius: 15px;
-            "
-        ></div>
-      </div>
-      <div class="col-sm-8 col-lg-6 text-center" data-aos="fade-up">
-        <br/><br/><br/>
-        <h2>Siapa Kami ?</h2>
-        <p>Kami adalah Laundry Jone</p>
-      </div>
-    </div>
+    @includeIf('comps.about_us', ['about_us' => $about_us])
   </div>
-</section>
 @endsection
 
 @section('carousel')
-<section class="section-bg">
-  <br/><br/>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-12" data-aos="fade-up">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div
-                class="d-block w-100 shadow"
-                style="
-                  background-image: url('{{ asset('images/carousel-1.jpg') }}'); 
-                  background-color: #fff; 
-                  background-position: center; 
-                  background-size: cover; 
-                  background-repeat: no-repeat; 
-                  width: 1200px; 
-                  height: 500px;
-                  border-radius: 15px;
-                "
-              ></div>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div
-                class="d-block w-100 shadow"
-                style="
-                  background-image: url('{{ asset('images/carousel-2.jpg') }}'); 
-                  background-color: #fff; 
-                  background-position: center; 
-                  background-size: cover; 
-                  background-repeat: no-repeat; 
-                  width: 1200px; 
-                  height: 500px;
-                  border-radius: 15px;
-                "
-              ></div>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div
-                class="d-block w-100 shadow"
-                style="
-                  background-image: url('{{ asset('images/carousel-3.jpg') }}'); 
-                  background-color: #fff; 
-                  background-position: center; 
-                  background-size: cover; 
-                  background-repeat: no-repeat; 
-                  width: 1200px; 
-                  height: 500px;
-                  border-radius: 15px;
-                "
-              ></div>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
+    @includeIf('comps.carousel', ['all_carousel' => $all_carousel])
   </div>
-</section>
 @endsection
 
 @section('products')
-<section class="section-bg">
-  <div class="container">
-    <br/><br/>
-    <h2 data-aos="fade-up"> Layanan Kami </h2>
-    <br/>
-    <div class="row justify-content-center">
-        @for($i = 0; $i < 6; $i++)
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-3" >
-                <div class="card shadow" style="border-radius: 15px" data-aos="fade-up">
-                    <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                            <p>
-                                Deskripsi
-                            Cuma <del>Rp. 10000</del> <mark>Rp. 199000</mark>
-                            </p>
-                    </div>
-                </div>
-            </div>
-        @endfor
-    </div>
+  <div>
+    
   </div>
-</section>
 @endsection
 
 @section('testimonials')
@@ -313,70 +208,17 @@
 @endsection
 
 @section('customer_service')
-  <section id="contact" class="contact">
-    <div class="container">
+ <div class="container">
+    @includeIf('comps.customer_service', ['other' => $other ])
+ </div>
+@endsection
 
-      <div class="section-title">
-        <h2>Customer Service</h2>
-        <p></p>
-      </div>
+@section('footer')
+  <footer id="footer"> 
+    @includeIf('comps.buletin', ['other' => $other ])
 
-      <div class="row">
+    @includeIf('comps.footer', ['other' => $other ])
 
-        <div class="col-lg-6">
-          <div class="row">
-            <div class="col-lg-6 info" data-aos="fade-up">
-              <i class="bx bx-map"></i>
-              <h4>Address</h4>
-              <p>A108 Adam Street,<br>New York, NY 535022</p>
-            </div>
-            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-phone"></i>
-              <h4>Call Us</h4>
-              <p>+1 5589 55488 55<br>+1 5589 22548 64</p>
-            </div>
-            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-envelope"></i>
-              <h4>Email Us</h4>
-              <p>contact@example.com<br>info@example.com</p>
-            </div>
-            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-time-five"></i>
-              <h4>Working Hours</h4>
-              <p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
-            <div class="form-group">
-              <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <input placeholder="Your Email" type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Message" class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
-              <div class="validate"></div>
-            </div>
-            <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
+    @includeIf('comps.footer_copyright')
+  </footer>
 @endsection

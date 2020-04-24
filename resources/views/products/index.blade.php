@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-  <title>Laundry Jone | Produk</title>
+  <title>{{ $setting->app_name }} | Produk </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -27,13 +40,14 @@
 @section('content')
   <div class="container">
     <div class="card">
+      @if(session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+        <br/>
+      @endif 
+        
       <div class="card-body">
-        @if(session('success'))
-          <div class="alert alert-success">
-            {{session('success')}}
-          </div>
-          <br/>
-        @endif 
         
         <div class="table-responsive">
           <table class="table table-hover table-sm">

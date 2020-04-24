@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,10 +13,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = \App\Product::all();
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('products.index', [
-            "products" => $products
+            "products" => $products,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -28,7 +31,14 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $products = \App\Product::all();
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
+
+        return view('products.create', [
+            "setting" => $setting,
+            "user_admin" => $user_admin
+        ]);
     }
 
     /**
@@ -49,7 +59,7 @@ class ProductController extends Controller
         ])->validate();
 
         $file = $request->file('image')->store('images', 'public');
-        $product = new Product;
+        $product = new \App\Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
@@ -90,10 +100,14 @@ class ProductController extends Controller
     // }
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $product = \App\Product::findOrFail($id);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('products.edit', [
-            "product" => $product
+            "product" => $product,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -114,7 +128,7 @@ class ProductController extends Controller
             "sumber_label" => "max:199"
         ])->validate();
 
-        $product = Product::find($id);
+        $product = \App\Product::find($id);
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
@@ -144,11 +158,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = product::findOrFail($id);
+        $product = \App\Product::findOrFail($id);
             \Storage::delete('public/'.$product->image);
 
         $product->delete();
         
-        return redirect('/products')->with('status', 'Produk berhasil di hapus');
+        return redirect('/products')->with('success', 'Produk berhasil di hapus');
     }
 }

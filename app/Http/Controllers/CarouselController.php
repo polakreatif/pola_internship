@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Carousel;
 use Illuminate\Http\Request;
 
 class CarouselController extends Controller
@@ -14,10 +13,14 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        $all_carousel = Carousel::all();
+        $all_carousel = \App\Carousel::all();
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('carousel.index', [
-            "all_carousel" => $all_carousel
+            "all_carousel" => $all_carousel,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -28,7 +31,13 @@ class CarouselController extends Controller
      */
     public function create()
     {
-        return view('carousel.create');
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
+        
+        return view('carousel.create', [
+            "setting" => $setting,
+            "user_admin" => $user_admin
+        ]);
     }
 
     /**
@@ -48,7 +57,7 @@ class CarouselController extends Controller
 
         $file = $request->file('image')->store('images', 'public');
 
-        $new_carousel = new Carousel;
+        $new_carousel = new \App\Carousel;
         $new_carousel->title = $request->input('title');
         $new_carousel->caption = $request->input('caption');
         $new_carousel->sumber_link = $request->input('sumber_link');
@@ -56,7 +65,7 @@ class CarouselController extends Controller
         $new_carousel->image = $file;
         $new_carousel->save();
 
-        return redirect('/carousel')->with('status', 'Carousel Promosi berhasil di buat');
+        return redirect('/carousel')->with('success', 'Carousel Promosi berhasil di buat');
     }
 
     /**
@@ -67,10 +76,14 @@ class CarouselController extends Controller
      */
     public function edit($id)
     {
-        $carousel = Carousel::findOrFail($id);
+        $carousel = \App\Carousel::findOrFail($id);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('carousel.edit', [
-            "carousel" => $carousel
+            "carousel" => $carousel,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -89,7 +102,7 @@ class CarouselController extends Controller
             "sumber_label" => "max:199",
         ])->validate();
 
-        $carousel = Carousel::find($id);
+        $carousel = \App\Carousel::find($id);
         $carousel->title = $request->input('title');
         $carousel->caption = $request->input('caption');
         $carousel->sumber_link = $request->input('sumber_link');
@@ -106,7 +119,7 @@ class CarouselController extends Controller
 
         $carousel->save();
 
-        return redirect('/carousel/'.$id.'/edit')->with('status', 'Carousel Promosi berhasil di perbarui');
+        return redirect('/carousel/'.$id.'/edit')->with('success', 'Carousel Promosi berhasil di perbarui');
     }
 
     /**
@@ -117,11 +130,11 @@ class CarouselController extends Controller
      */
     public function destroy($id)
     {
-        $carousel = Carousel::findOrFail($id);
+        $carousel = \App\Carousel::findOrFail($id);
             \Storage::delete('public/'.$carousel->image);
 
         $carousel->delete();
         
-        return redirect('/carousel')->with('status', 'Carousel berhasil di hapus');
+        return redirect('/carousel')->with('success', 'Carousel berhasil di hapus');
     }
 }

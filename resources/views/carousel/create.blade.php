@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-	<title>Laundry Jone | Buat Carousel Promotion </title>
+  <title>{{ $setting->app_name }} | Buat Carousel </title>
+@endsection
+
+@section('nav')
+	@include('comps.admin.navbar')
+
+	@includeIf('comps.admin.sidebar', [
+		'setting' => $setting,
+		'user_admin' => $user_admin
+	])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -25,12 +38,12 @@
 		<div class="card">
 			@if(count($errors) > 0)
 				<div class="alert alert-danger">
-					Terjadi kesalahan atau data yang dimasukan tidak sesuai. Coba lagi.
+					Terjadi kesalahan ! atau data yang dimasukan tidak sesuai. Coba periksa kembali dan masukan data dengan benar.
 				</div>
 			@endif
-			@if(session('status'))
+			@if(session('success'))
 				<div class="alert alert-success">
-					{{session('status')}}
+					{{session('success')}}
 				</div>
 			@endif 
 
@@ -73,7 +86,7 @@
 				  </div>
 				  <br/>
 
-				  <button type="submit" class="btn btn-primary">Kirim</button>
+				  <button type="submit" class="btn btn-primary w-100" style="border-radius: 15px;">Kirim</button>
 				</form>
 			</div>
 		</div>

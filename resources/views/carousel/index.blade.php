@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-	<title>Laundry Jone | Carousel Promotion</title>
+  <title>{{ $setting->app_name }} | Carousel Promotion </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -27,59 +40,13 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        @if(session('status'))
+        @if(session('success'))
           <div class="alert alert-success">
-            {{session('status')}}
+            {{session('success')}}
           </div>
-          <br/>
         @endif 
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-8 col-md-6">
-            <div id="carousel-promotion" class="carousel slide carousel-fade" data-ride="carousel">
-              <ol class="carousel-indicators">
-                @foreach($all_carousel as $carousel)
-                  @if($loop->first)
-                    <li data-target="#carousel-promotion" data-slide-to="{{$loop->index}}" class="active"></li>
-                  @else
-                    <li data-target="#carousel-promotion" data-slide-to="{{$loop->index}}"></li>
-                  @endif
-                @endforeach
-              </ol>
-              <div class="carousel-inner">
-                @foreach($all_carousel as $carousel)
-                  @if($loop->first)
-                    <div class="carousel-item active" >
-                      <img src="{{ asset('storage/'.$carousel->image) }}" class="d-block w-100" alt="Carousel Promotion">
-                      <div class="carousel-caption d-none d-md-block" >
-                        <h5 >{{ $carousel->title }}</h5>
-                        <p >{{ $carousel->caption }}</p>
-                      </div>
-                      <a href="https:\\{{$carousel->sumber_link}}" target="_blank">{{ $carousel->sumber_label }}</a>
-                    </div>
-                  @else             
-                    <div class="carousel-item">
-                      <img src="{{ asset('storage/'.$carousel->image) }}" class="d-block w-100" alt="Carousel Promotion">
-                      <div class="carousel-caption d-none d-md-block" >
-                        <h5 >{{ $carousel->title }}</h5>
-                        <p >{{ $carousel->caption }}</p>
-                      </div>
-                      <a href="https:\\{{$carousel->sumber_link}}" target="_blank">{{ $carousel->sumber_label }}</a>
-                    </div>      
-                  @endif             
-                @endforeach
-              
-              </div>
-              <a class="carousel-control-prev" href="#carousel-promotion" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-promotion" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
+
+        @includeIf('comps.carousel', ['all_carousel' => $all_carousel])
         <hr/>
         <br/>
         <br/>

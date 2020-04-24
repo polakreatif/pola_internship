@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\AboutUs;
 use Illuminate\Http\Request;
 
 class AboutUsController extends Controller
@@ -14,10 +13,14 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $about_us = AboutUs::findOrFail(1);
+        $about_us = \App\AboutUs::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('about_us.index', [
-            "about_us" => $about_us
+            "about_us" => $about_us,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -28,10 +31,14 @@ class AboutUsController extends Controller
      */
     public function edit()
     {
-        $about_us = AboutUs::findOrFail(1);
+        $about_us = \App\AboutUs::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('about_us.edit', [
-            "about_us" => $about_us
+            "about_us" => $about_us,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -48,7 +55,7 @@ class AboutUsController extends Controller
             "sumber_label" => "max:199"
         ])->validate();
 
-        $about_us = AboutUs::find(1);
+        $about_us = \App\AboutUs::find(1);
         $about_us->title = $request->input('title');
         $about_us->description = $request->input('description');
         $about_us->sumber_link = $request->input('sumber_link');
@@ -65,6 +72,6 @@ class AboutUsController extends Controller
 
         $about_us->save();
 
-        return redirect('/about-us/edit')->with('status', 'Tentang Kami berhasil di perbarui.');
+        return redirect('/about-us/edit')->with('success', 'Tentang Kami berhasil di perbarui.');
     }
 }

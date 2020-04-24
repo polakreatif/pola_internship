@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-  <title>Laundry Jone | Pengaturan</title>
+  <title>{{ $setting->app_name }} | Pengaturan </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -23,18 +36,17 @@
 @section('content')
   <div class="container">
     <div class="card">
+      @if(count($errors) > 0)
+        <div class="alert alert-danger">
+          Terjadi kesalahan ! atau data yang dimasukan tidak sesuai. Coba periksa kembali dan masukan data dengan benar.
+        </div>
+      @endif
+      @if(session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+      @endif 
       <div class="card-body">
-        @if(count($errors) > 0)
-          <div class="alert alert-danger">
-            Terjadi kesalahan, atau data yang dimasukan tidak sesuai. Coba lagi.
-            {{ $errors->first('email') }}
-          </div>
-        @endif
-        @if(session('success'))
-          <div class="alert alert-success">
-            {{session('success')}}
-          </div>
-        @endif 
 
         <form enctype="multipart/form-data" action="{{ url('/setting/update') }}" method="POST">
           @csrf
@@ -56,7 +68,20 @@
             <small id="app_sloganHelp" class="form-text text-muted">Slogan Aplikasi max 199 karakter.</small>
           </div>
           <hr/>
-          <label>Akun</label>
+          <label>Akun</label><br/>
+          <label>Avatar</label>
+
+          <div style="max-width: 350px;">
+            <label>Avatar saat ini</label><br/>
+            <img src="{{ asset('storage/'. $user_admin->avatar ) }}" class="img-fluid" alt="Tentang Kami"/>
+          </div>
+          <br/>
+
+          <div class="form-group">
+            <label for="avatar"></label>
+            <input type="file" class="form-control" name="avatar" id="avatar">
+            <small id="avatarHelp" class="form-text text-muted">Pilih avatar.</small>
+          </div>
           <div class="form-group">
             <label for="name">Nama</label>
             <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="{{ $user_admin->name }}" placeholder="Super Admin...">
@@ -68,7 +93,8 @@
             <small id="emailHelp" class="form-text text-muted">Email Akun max 199 karakter.</small>
           </div>
           <a href="{{ url('/password/reset') }}">klik disini untuk mereset/mengganti password</a>
-          <br/><br/>
+          <br/><br/><br/>
+          
           <button class="btn btn-primary w-100" style="border-radius: 15px;"> Simpan Perubahan</button>
         </form>
 

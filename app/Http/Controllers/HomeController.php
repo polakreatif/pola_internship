@@ -14,72 +14,18 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('home');
-    }
+        $setting = \App\Setting::findOrFail(1);
+        $jumbotron = \App\Jumbotron::findOrFail(1);
+        $about_us = \App\AboutUs::findOrFail(1);
+        $all_carousel = \App\Carousel::all();
+        $other = \App\other::findOrFail(1);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('home', [
+            'setting' => $setting,
+            'jumbotron' => $jumbotron,
+            'about_us' => $about_us,
+            'all_carousel' => $all_carousel,
+            'other' => $other
+        ]);
     }
 }

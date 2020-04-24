@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Jumbotron;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class JumbotronController extends Controller
 {
@@ -15,10 +13,14 @@ class JumbotronController extends Controller
      */
     public function index()
     {
-        $jumbotron = Jumbotron::findOrFail(1);
+        $jumbotron = \App\Jumbotron::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('jumbotron.index', [
-            'jumbotron' => $jumbotron
+            'jumbotron' => $jumbotron,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -30,10 +32,14 @@ class JumbotronController extends Controller
      */
     public function edit()
     {
-        $jumbotron = Jumbotron::findOrFail(1);
+        $jumbotron = \App\Jumbotron::findOrFail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('jumbotron.edit', [
-            'jumbotron' => $jumbotron
+            'jumbotron' => $jumbotron,
+            "setting" => $setting,
+            "user_admin" => $user_admin
         ]);
     }
 
@@ -60,7 +66,7 @@ class JumbotronController extends Controller
 
         if($request->hasFile('image')){
             if($jumbotron->image && file_exists(storage_path('app/public/'. $jumbotron->image))){
-                Storage::delete('public/'.$jumbotron->image);
+                \Storage::delete('public/'.$jumbotron->image);
             }
             
             $file = $request->file('image')->store('images', 'public');
@@ -69,7 +75,7 @@ class JumbotronController extends Controller
 
         $jumbotron->save();
 
-        return redirect('/jumbotron/edit')->with('status', 'Jumbotron berhasil di perbarui');
+        return redirect('/jumbotron/edit')->with('success', 'Jumbotron berhasil di perbarui');
     }
 
 }

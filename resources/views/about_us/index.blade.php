@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-  <title>Laundry Jone | Tentang Kami</title>
+  <title>{{ $setting->app_name }} | Tentang Kami </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -28,25 +41,7 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <div class="row">
-          <div class="col-12 col-sm-8 col-lg-6 text-center">
-            <img class="img-fluid" src="{{ asset('storage/'. $about_us->image) }}">
-            @if(strlen($about_us->sumber_link) > 0)
-              <div class="d-flex justify-content-start">
-                <a href="https://{{ $about_us->sumber_link }}" target="_blank">{{ $about_us->sumber_label }}</a>
-              </div>
-            @endif
-          </div>
-          <div class="col-12 col-sm-8 col-lg-6 d-flex flex-column align-items-stretch  justify-content-center">
-              <div class="text-center">
-                @if(strlen($about_us->title) > 0)
-                  <h2>{{ $about_us->title }}</h2>
-                @endif
-                <p>{{ $about_us->description }}</p>
-              </div>
-            
-          </div>
-        </div>
+        @includeIf('comps.about_us', ['about_us' => $about_us])
       </div>
     </div>
   </div>

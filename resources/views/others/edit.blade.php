@@ -1,7 +1,20 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-	<title>Laundry Jone | Edit Lainnya </title>
+  <title>{{ $setting->app_name }} | Edit Lainnya </title>
+@endsection
+
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
 @endsection
 
 @section('content-header')
@@ -23,17 +36,18 @@
 @section('content')
   <div class="container">
     <div class="card">
+      @if(count($errors) > 0)
+        <div class="alert alert-danger">
+          Terjadi kesalahan ! atau data yang dimasukan tidak sesuai. Coba periksa kembali dan masukan data dengan benar.
+        </div>
+      @endif
+      @if(session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+      @endif 
+        
       <div class="card-body">
-        @if(count($errors) > 0)
-          <div class="alert alert-danger">
-            Terjadi kesalahan, atau data yang dimasukan tidak sesuai, Coba lagi.
-          </div>
-        @endif
-        @if(session('success'))
-          <div class="alert alert-success">
-            {{session('success')}}
-          </div>
-        @endif 
 
         <form enctype="multipart/form-data" action="{{ url('/others/update') }}" method="POST">
           @csrf

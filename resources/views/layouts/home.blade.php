@@ -7,25 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <!-- Custom Head -->
-    @yield('head')
-
-    <!-- Default Title -->
-    <title>
-      Laundry Jone | Profesional Laundry
-    </title>
-    <meta 
-      content="Laundry Jone | Profesional Laundry" 
-      name="descriptison"
-    >
-    <meta 
-      content="Laundry Jone | Profesional Laundry" 
-      name="keywords"
-    >
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     
     <link href="{{ asset('vendor/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
@@ -36,18 +20,22 @@
   
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     
+    <!-- Custom Head -->
+    @yield('head')
 </head>
 <body>
     <!-- Header -->
-    @include('comp.header')
+    @yield('header')
 
     <!-- Hero -->
     @yield('hero')
-
+    <br/><br/><br/>
     <main id="main">
       @yield('about_us')
-      
+        <br/><br/><br/>
+        
       @yield('carousel')
+        <br/><br/><br/>
       
       @yield('products')
 
@@ -58,13 +46,12 @@
       @yield('customer_service')
     </main>
 
-    @include('comp.footer')
+    @yield('footer')
 
     <!-- Back to Top -->
     <a href="#" class="text-center back-to-top">
       <i class="fas fa-angle-double-up fa-lg"></i>
     </a>
-
 
     <script src="{{ asset('vendor/fontawesome/js/all.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>

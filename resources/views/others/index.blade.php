@@ -1,7 +1,7 @@
-@extends('layouts.admin.dashboard')
+@extends('layouts.dashboard')
 
 @section('head')
-  <title>Laundry Jone | Lainnya</title>
+  <title>{{ $setting->app_name }} | Lainnya</title>
 
   <style>
     /*--------------------------------------------------------------
@@ -188,6 +188,19 @@
   </style>
 @endsection
 
+@section('nav')
+  @include('comps.admin.navbar')
+
+  @includeIf('comps.admin.sidebar', [
+    'setting' => $setting,
+    'user_admin' => $user_admin
+  ])
+@endsection
+
+@section('footer')
+  @include('comps.admin.footer')
+@endsection
+
 @section('content-header')
   <div class="container-fluid">
     <div class="row mb-2">
@@ -226,153 +239,21 @@
 
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="cs" role="tabpanel" aria-labelledby="cs-tab">
-            <div id="customer-service" class="p-3">
-              <div class="text-center my-5">
-                <h2>{{ $other->cs_title }}</h2>
-                <p>{{ $other->cs_caption }}</p>
-              </div>
-
-              <div class="row justify-content-center">
-
-                <div class="col-lg-6">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                      <div class="my-3"> 
-                        <i class="fas fa-map fa-3x"></i>
-                      </div>
-                      <h4>{{ $other->cs_address_title }}</h4>
-                      <p>{{ $other->cs_address }}</p>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                      <div class="my-3"> 
-                        <i class="fas fa-phone fa-3x"></i>
-                      </div>
-                      <h4>{{ $other->cs_phone_title }}</h4>
-                      <p>{{ $other->cs_phone }}</p>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                      <div class="my-3"> 
-                        <i class="fas fa-envelope fa-3x"></i>
-                      </div>
-                      <h4>{{ $other->cs_email_title }}</h4>
-                      <p>{{ $other->cs_email }}</p>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                      <div class="my-3"> 
-                        <i class="fas fa-envelope fa-3x"></i>
-                      </div>
-                      <h4>{{ $other->cs_work_hours_title }}</h4>
-                      <p>{{ $other->cs_work_hours }}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-6">
-                  <form action="{{ url('/customer-service/store') }}" method="POST" role="form">
-                    <div class="form-group">
-                      <input placeholder="Nama Anda" type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Mohon isikan setidaknya 4 karakter !" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="form-group">
-                      <input placeholder="Email Anda" type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Mohon isikan email dengan benar !" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="form-group">
-                      <input placeholder="Subjek" type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Mohon isikan setidaknya 8 karakter !" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="form-group">
-                      <textarea placeholder="Pesan...." class="form-control" name="message" rows="5" data-rule="required" data-msg="Mohon isikan pesan pesan untuk kami..."></textarea>
-                      <div class="validate"></div>
-                    </div>
-                    <div class="text-center">
-                      <button class="btn btn-outline-primary w-100" style="border-radius: 15px;" type="submit">Kirim Pesan</button>
-                    </div>
-                  </form>
-                </div>
-
-              </div>
-            </div>
+            @includeIf('comps.customer_service', ['other' => $other])
           </div>
 
           <div class="tab-pane fade" id="buletin" role="tabpanel" aria-labelledby="buletin-tab">
             <footer id="footer"> 
-              <!-- Newsletter -->
-              <div class="footer-newsletter" data-aos="fade-up">
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                      <h4>{{ $other->buletin_title }}</h4>
-                      <p>{{ $other->buletin_caption }}</p>
-                      <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              @includeIf('comps.buletin', ['other' => $other])
             </footer>
           </div>
 
           <div class="tab-pane fade" id="section-footer" role="tabpanel" aria-labelledby="section-footer-tab">
             <footer id="footer">
-              <div class="footer-top">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                      <h3>{{ $other->main_address_title }}</h3>
-                      <p>
-                        {{ $other->main_address }}<br/><br/>
-                        <strong>Phone:</strong> {{ $other->main_phone }}<br>
-                        <strong>Email:</strong> {{ $other->main_email }}<br>
-                      </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>{{ $other->cs_footer_title }}</h4>
-                      <ul>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->warranty_link }}" target="_blank">{{ $other->warranty_label }}</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->safety_guide_link }}" target="_blank">{{ $other->safety_guide_label }}</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->help_page_link }}" target="_blank">{{ $other->help_page_label }}</a></li>
-                      </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>{{ $other->about_us_title }}</h4>
-                      <ul>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->profile_link }}" target="_blank">{{ $other->profil_label }}</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->vision_and_mision_link }}" target="_blank">{{ $other->vision_and_mision_label }}</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->career_link }}" target="_blank">{{ $other->career_label }}</a></li>
-                      </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>{{ $other->sosial_media_title }}</h4>
-                      <p>{{ $other->sosial_media_caption }}</p>
-                      <div class="social-links mt-3">
-                        @if(strlen($other->instagram_link) > 0)
-                          <a href="https://{{ $other->instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
-                        @endif
-                        @if(strlen($other->instagram_link) > 0)
-                          <a href="https://{{ $other->twitter_link }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        @endif
-                        @if(strlen($other->instagram_link) > 0)
-                          <a href="https://{{ $other->facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        @endif
-                        @if(strlen($other->instagram_link) > 0)
-                          <a href="https://{{ $other->youtube_link }}" target="_blank"><i class="fab fa-youtube"></i></a>
-                        @endif
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+              @includeIf('coms.footer', ['other' => $other])
             </footer>
           </div>
         </div>
-
 
       </div>
     </div>

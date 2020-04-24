@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/jqvmap/jqvmap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
@@ -30,11 +30,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
 
-    <!-- Admin Navbar -->
-    @include('comp.admin.header')
-
-    <!-- Main Sidebar Container -->
-    @include('comp.admin.sidenav')
+    @yield('nav')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -53,8 +49,7 @@
 
   </div> <!-- End Wrapper -->
 
-  <!-- Main Footer  -->
-  @include('comp.admin.footer')
+  @yield('footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -78,7 +73,6 @@
   <script src="{{ asset('vendor/jquery-knob/jquery.knob.min.js') }}"></script>
   <script src="{{ asset('vendor/moment/moment.min.js') }}"></script>
   <script src="{{ asset('vendor/daterangepicker/daterangepicker.js') }}"></script>
-  <script src="{{ asset('vendor/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
   <script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
   <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 

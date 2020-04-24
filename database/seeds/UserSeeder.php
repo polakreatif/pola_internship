@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $user->email = 'admin@gmail.com';
         $user->email_verified_at = now();
         $user->password = Hash::make('123456789');
-        $user->avatar = 'images/avatar.jpg';
+        $user->avatar = 'images/avatar.png';
         $user->save();
     }
 }

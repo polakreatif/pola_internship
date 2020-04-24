@@ -10,15 +10,15 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: rgba(32, 33, 36, 1);
+  color: rgba(0,0,0, 1);
 }
 
 a {
-  color: rgba(32, 33, 36, 1);
+  color: rgba(0,0,0, 1);
 }
 
 a:hover {
-  color: rgba(32, 33, 36, 0.8);
+  color: #28a745;
   text-decoration: none;
 }
 
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: rgba(32, 33, 36, 1);
+  background: #28a745;
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -45,8 +45,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  color: rgba(32, 33, 36, 1);
-  border: 1px solid rgba(32, 33, 36, 0.8);
+  color: rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,1);
   background: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: background 0.2s ease-in-out;
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled {
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
 }
 
 #header .logo h1 {
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #5777ba;
+  color: #28a745;
   text-decoration: none;
 }
 
@@ -114,29 +114,31 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #47536e;
+  color: rgba(0,0,0,1);
   padding: 8px 15px 12px 15px;
   transition: 0.3s;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
 
-.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #5777ba;
+.nav-menu a:hover, .nav-menu li:hover > a {
+  color: #28a745;
   text-decoration: none;
 }
 
 .nav-menu .get-started a {
-  background: #5777ba;
+  background: #28a745;
   color: #fff;
   border-radius: 50px;
-  margin: 0 15px;
+  margin: 0 10px;
   padding: 10px 25px;
 }
 
 .nav-menu .get-started a:hover {
-  background: #748ec6;
-  color: #fff;
+  color: rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,1);
+  background: #fff;
+  transition: background 0.2s ease-in-out;
 }
 
 .nav-menu .drop-down ul {

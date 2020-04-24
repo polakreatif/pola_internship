@@ -46,6 +46,16 @@ class SettingController extends Controller
         $user_admin = \App\User::findOrFail(1);
         $user_admin->name = $request->input('name');
         $user_admin->email = $request->input('email');
+
+        if($request->hasFile('avatar')){
+            if($user_admin->avatar && file_exists(storage_path('app/public/'. $user_admin->avatar))){
+                \Storage::delete('public/'.$user_admin->avatar);
+            }
+            
+            $file = $request->file('avatar')->store('images', 'public');
+            $user_admin->avatar = $file;
+        }
+
         $user_admin->save();
 
         return redirect('/setting')->with('success', 'Berhasil di perbarui.');
