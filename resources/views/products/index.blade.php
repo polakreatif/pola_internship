@@ -55,6 +55,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nama</th>
+                <th scope="col">Slug/Url</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Tipe</th>
                 <th scope="col">Deskripsi</th>
@@ -69,6 +70,7 @@
                 <tr>
                   <th scope="row">{{ $loop->iteration }}</th>
                   <td>{{ $product->name }}</td>
+                  <td>{{ $product->slug }}</td>
                   <td>RP. {{ $product->price }}</td>
                   <td>
                     @if($product->type == 1)

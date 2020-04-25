@@ -1,4 +1,4 @@
-<div id="carousel-promotion" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carousel-promotion" class="carousel slide" data-ride="carousel" data-aos="fade-up">
   <ol class="carousel-indicators">
     @foreach($all_carousel as $carousel)
       @if($loop->first)
@@ -20,6 +20,7 @@
               background-repeat: : no-repeat;
               background-size: cover;
               background-position: center;
+              border-radius: 15px;
               height: 550px;
               width: 100%;
             "
@@ -40,6 +41,7 @@
               background-repeat: : no-repeat;
               background-size: cover;
               background-position: center;
+              border-radius: 15px;
               height: 550px;
               width: 100%;
             "

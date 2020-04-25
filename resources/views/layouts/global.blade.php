@@ -6,26 +6,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <!-- Custom Head -->
-    @yield('head')
-
-    <!-- Default Title -->
-    <title>
-      Laundry Jone | Profesional Laundry
-    </title>
-    <meta 
-      content="Laundry Jone | Profesional Laundry" 
-      name="descriptison"
-    >
-    <meta 
-      content="Laundry Jone | Profesional Laundry" 
-      name="keywords"
-    >
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     
     <link href="{{ asset('vendor/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/fontawesome/css/all.min.css') }}" rel="stylesheet">
@@ -36,18 +20,18 @@
   
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-  
+    
+    <!-- Custom Head -->
+    @yield('head')
 </head>
 <body>
-    @include('comp.header')
-
-    @yield('hero')
-
-    <main id="main">
+    @yield('header')
+    <br/><br/><br/>
+    <main id="main" style="margin-top:20px;">
       @yield('content')
     </main>
-
-    @include('comp.footer')
+    <br/><br/><br/>
+    @yield('footer')
 
     <a href="#" class="text-center back-to-top">
       <i class="fas fa-angle-double-up fa-lg"></i>
@@ -61,6 +45,7 @@
     <script src="{{ asset('vendor/venobox/venobox.min.js') }}"></script>
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
 
+    <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

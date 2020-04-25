@@ -35,6 +35,7 @@ class SettingController extends Controller
             "app_name" => "required|max:199",
             "app_slogan" => "max:199",
             "name" => "required|max:199",
+            "phone" => "required|min:10|max:15",
             "email" => "required|max:199",
         ])->validate();
 
@@ -45,6 +46,7 @@ class SettingController extends Controller
 
         $user_admin = \App\User::findOrFail(1);
         $user_admin->name = $request->input('name');
+        $user_admin->phone = $request->input('phone');
         $user_admin->email = $request->input('email');
 
         if($request->hasFile('avatar')){

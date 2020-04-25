@@ -41,7 +41,7 @@ class OtherSeeder extends Seeder
         $other->help_page_label = 'Halaman Bantuan';
         $other->help_page_link = 'domain.com/blog/halaman-bantuan';
 
-        $other->about_us_title = 'Layanan Konsumen';
+        $other->about_us_title = 'Tentang Kami';
         $other->profil_label = 'Profil Kami';
         $other->profil_link = 'domain.com/blog/profil-usaha';
         $other->vision_and_mision_label = 'Visi Misi';

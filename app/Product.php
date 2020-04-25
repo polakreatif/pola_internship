@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $fillable = [
     	'id', 
-        'name', 'price', 'type', 'description', 
+        'name', 'slug', 'price', 'type', 'description', 
         'image', 'sumber_link', 'sumber_label'
     ];
 }

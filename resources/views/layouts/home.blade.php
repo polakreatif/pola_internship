@@ -28,9 +28,10 @@
     @yield('header')
 
     <!-- Hero -->
-    @yield('hero')
+    @yield('jumbotron')
     <br/><br/><br/>
     <main id="main">
+        <br/><br/><br/>
       @yield('about_us')
         <br/><br/><br/>
         
@@ -42,8 +43,11 @@
       @yield('testimonials')
 
       @yield('faq')
+        <br/><br/><br/>
 
       @yield('customer_service')
+        <br/><br/><br/>
+        
     </main>
 
     @yield('footer')
@@ -61,6 +65,7 @@
     <script src="{{ asset('vendor/venobox/venobox.min.js') }}"></script>
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
 
+    <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

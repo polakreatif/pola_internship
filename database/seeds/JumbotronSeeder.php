@@ -14,8 +14,8 @@ class JumbotronSeeder extends Seeder
     {
         $jumbotron = new Jumbotron;
         $jumbotron->id = 1;
-        $jumbotron->title = 'Laundry Jone';
-        $jumbotron->caption = 'Profesional Laundry';
+        $jumbotron->title = 'Make Your Clothes and You Happy';
+        $jumbotron->caption = '" profesional laundry neat, clean, and fragnant. "';
         $jumbotron->image = 'images/jumbotron.jpg';
         $jumbotron->sumber_link = 'www.freepik.com';
         $jumbotron->sumber_label = 'Designed by Freepik';

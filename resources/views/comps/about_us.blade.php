@@ -1,12 +1,14 @@
 <div id="about-us" class="row">
   <div class="col-12 col-sm-8 col-lg-6 text-center" data-aos="fade-up">
     <div
+      class="shadow"
       style="
         background-image: url('{{ asset('storage/'.$about_us->image) }}');
         background-color: #fff;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        border-radius: 15px;
         height: 350px;
         width: 100%;
       "

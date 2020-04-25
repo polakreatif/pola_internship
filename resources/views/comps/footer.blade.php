@@ -1,8 +1,8 @@
- <div class="footer-top">
+ <div class="footer-top border-top">
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-3 col-md-6 footer-contact">
+        <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="0">
           <h3>{{ $other->main_address_title }}</h3>
           <p>
             {{ $other->main_address }}<br/><br/>
@@ -11,7 +11,7 @@
           </p>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
+        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="100">
           <h4>{{ $other->cs_footer_title }}</h4>
           <ul>
             <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->warranty_link }}" target="_blank">{{ $other->warranty_label }}</a></li>
@@ -20,7 +20,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
+        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
           <h4>{{ $other->about_us_title }}</h4>
           <ul>
             <li><i class="fas fa-chevron-right"></i> <a href="https://{{ $other->profile_link }}" target="_blank">{{ $other->profil_label }}</a></li>
@@ -29,7 +29,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
+        <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
           <h4>{{ $other->sosial_media_title }}</h4>
           <p>{{ $other->sosial_media_caption }}</p>
           <div class="social-links mt-3">

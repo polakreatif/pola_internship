@@ -1,4 +1,14 @@
-@extends('layouts.auth')
+@extends('layouts.global')
+
+@section('head')
+  <title>{{ $setting->app_name }} | {{ $setting->app_slogan }}</title>
+@endsection
+
+@section('header')
+
+  @includeIf('comps.header_global', ['setting' => $setting])
+
+@endsection
 
 @section('content')
 <div class="container">
@@ -51,7 +61,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-theme px-3">
                                     {{ __('Reset Password') }}
                                 </button>
                             </div>

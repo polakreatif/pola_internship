@@ -56,7 +56,7 @@
           value="PUT"
           name="_method" />
 
-          <label>Aplikasi</label>
+          <label>Nama Aplikasi</label>
           <div class="form-group">
             <label for="app_name">Nama Aplikasi</label>
             <input type="text" class="form-control" name="app_name" id="app_name" aria-describedby="app_nameHelp" value="{{ $setting->app_name }}" placeholder="Laundry RUUM">
@@ -86,6 +86,11 @@
             <label for="name">Nama</label>
             <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" value="{{ $user_admin->name }}" placeholder="Super Admin...">
             <small id="nameHelp" class="form-text text-muted">Nama Akun max 199 karakter.</small>
+          </div>
+          <div class="form-group">
+            <label for="phone">Nomer Hp / Whats App</label>
+            <input type="text" class="form-control" name="phone" id="phone" aria-describedby="phoneHelp" value="{{ $user_admin->phone }}" placeholder="08213317xxxx">
+            <small id="phoneHelp" class="form-text text-muted">Nomer Hp / Whats App min 10 max 15 karakter.</small>
           </div>
           <div class="form-group">
             <label for="email">Email</label>

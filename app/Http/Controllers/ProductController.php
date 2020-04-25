@@ -51,6 +51,7 @@ class ProductController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             "name" => "required|max:199",
+            "slug" => "required|max:199|unique:products",
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
@@ -61,6 +62,7 @@ class ProductController extends Controller
         $file = $request->file('image')->store('images', 'public');
         $product = new \App\Product;
         $product->name = $request->input('name');
+        $product->slug = $request->input('slug');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
         $product->description = $request->input('description');
@@ -83,9 +85,17 @@ class ProductController extends Controller
     // {
     //     //
     // }
-    public function show($id)
+    public function show($slug)
     {
-        return view('products.show');
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
+        $product = \App\Product::where('slug', $slug)->first();
+
+        return view('products.show', [
+            'setting' => $setting,
+            'other' => $other,
+            'product' => $product
+        ]);
     }
 
     /**
@@ -122,6 +132,7 @@ class ProductController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             "name" => "required|max:199",
+            "slug" => "required|max:199|unique:products",
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
@@ -130,6 +141,7 @@ class ProductController extends Controller
 
         $product = \App\Product::find($id);
         $product->name = $request->input('name');
+        $product->slug = $request->input('slug');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
         $product->description = $request->input('description');

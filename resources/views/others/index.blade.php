@@ -4,187 +4,204 @@
   <title>{{ $setting->app_name }} | Lainnya</title>
 
   <style>
-    /*--------------------------------------------------------------
-      # Footer
-      --------------------------------------------------------------*/
-      #footer {
-        background: #fff;
-        padding: 0 0 30px 0;
-        color: rgba(32, 33, 36, 0.8);
-        font-size: 14px;
-        background: #eff2f8;
-      }
-
-      #footer .footer-newsletter {
-        padding: 50px 0;
-        background: #f2f5fa;
-        text-align: center;
-        font-size: 15px;
-      }
-
-      #footer .footer-newsletter h4 {
-        font-size: 24px;
-        margin: 0 0 20px 0;
-        padding: 0;
-        line-height: 1;
-        font-weight: 600;
-        color: rgba(32, 33, 36, 1);
-      }
-
-      #footer .footer-newsletter form {
-        margin-top: 30px;
-        background: #fff;
-        padding: 6px 10px;
-        position: relative;
-        border-radius: 50px;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-        text-align: left;
-      }
-
-      #footer .footer-newsletter form input[type="email"] {
-        border: 0;
-        padding: 4px 8px;
-        width: calc(100% - 100px);
-      }
-
-      #footer .footer-newsletter form input[type="submit"] {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        border: 0;
-        background: none;
-        font-size: 16px;
-        padding: 0 20px;
-        background: rgba(32, 33, 36, 1);
-        color: #fff;
-        transition: 0.3s;
-        border-radius: 50px;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      #footer .footer-newsletter form input[type="submit"]:hover {
-        background: #fff;
-        color: rgba(32, 33, 36, 1);
-        border: 1px solid rgba(32, 33, 36, 1);
-      }
-
-      #footer .footer-top {
-        padding: 60px 0 30px 0;
-        background: #fff;
-      }
-
-      #footer .footer-top .footer-contact {
-        margin-bottom: 30px;
-      }
-
-      #footer .footer-top .footer-contact h4 {
-        font-size: 22px;
-        margin: 0 0 30px 0;
-        padding: 2px 0 2px 0;
-        line-height: 1;
-        font-weight: 700;
-        color: rgba(32, 33, 36, 1);
-      }
-
-      #footer .footer-top .footer-contact p {
-        font-size: 14px;
-        line-height: 24px;
-        margin-bottom: 0;
-        font-family: "Raleway", sans-serif;
-        color: rgba(32, 33, 36, 1);
-      }
-
-      #footer .footer-top h4 {
-        font-size: 16px;
-        font-weight: bold;
-        color: rgba(32, 33, 36, 1);
-        position: relative;
-        padding-bottom: 12px;
-      }
-
-      #footer .footer-top .footer-links {
-        margin-bottom: 30px;
-      }
-
-      #footer .footer-top .footer-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      #footer .footer-top .footer-links ul i {
-        padding-right: 2px;
-        color: rgba(32, 33, 36, 0.8);
-        font-size: 18px;
-        line-height: 1;
-      }
-
-      #footer .footer-top .footer-links ul li {
-        padding: 10px 0;
-        display: flex;
-        align-items: center;
-      }
-
-      #footer .footer-top .footer-links ul li:first-child {
-        padding-top: 0;
-      }
-
-      #footer .footer-top .footer-links ul a {
-        color: #8a8c95;
-        transition: 0.3s;
-        display: inline-block;
-        line-height: 1;
-      }
-
-      #footer .footer-top .footer-links ul a:hover {
-        text-decoration: none;
-        color: #fff;
-        background: rgba(32, 33, 36, 1);
-      }
-
-      #footer .footer-top .social-links a {
-        font-size: 18px;
-        display: inline-block;
-        background: rgba(32, 33, 36, 1);
-        color: #fff;
-        line-height: 1;
-        padding: 8px 0;
-        margin-right: 4px;
-        border-radius: 50%;
-        text-align: center;
-        width: 36px;
-        height: 36px;
-        transition: 0.3s;
-      }
-
-      #footer .footer-top .social-links a:hover {
-        background: #fff;
-        color: rgba(32, 33, 36, 1);
-        text-decoration: none;
-        border: 1px solid rgba(32, 33, 36, 1);
-      }
-
-      #footer .copyright {
-        text-align: center;
-        float: left;
-        color: rgba(32, 33, 36, 1);
-      }
-
-      #footer .credits {
-        float: right;
-        text-align: center;
-        font-size: 13px;
-        color: rgba(32, 33, 36, 1);
-      }
-
-      @media (max-width: 768px) {
-        #footer .copyright, #footer .credits {
-          float: none;
-          text-align: center;
-          padding: 5px 0;
-        }
+    .btn-theme {
+      border-radius: 15px;
+      background: #28a745;
+      color: #fff;
     }
+
+    .btn-theme:hover {
+      color: rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,1);
+      background: #fff;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease-in-out;
+    }
+    /*--------------------------------------------------------------
+    # Footer
+    --------------------------------------------------------------*/
+    #footer {
+      background: #fff;
+      padding: 0 0 30px 0;
+      color: rgba(0,0,0,1);
+      font-size: 14px;
+    }
+
+    #footer .footer-newsletter {
+      padding: 50px 0;
+      background: #fff;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    #footer .footer-newsletter h4 {
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 600;
+      color: rgba(32, 33, 36, 1);
+    }
+
+    #footer .footer-newsletter form {
+      margin-top: 30px;
+      background: #fff;
+      padding: 6px 10px;
+      position: relative;
+      border-radius: 50px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    #footer .footer-newsletter form input[type="email"] {
+      border: 0;
+      padding: 4px 8px;
+      width: calc(100% - 100px);
+    }
+
+    #footer .footer-newsletter form input[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border: 0;
+      background: none;
+      font-size: 16px;
+      padding: 0 20px;
+      background: #28a745;
+      color: #fff;
+      transition: 0.3s;
+      border-radius: 50px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #footer .footer-newsletter form input[type="submit"]:hover {
+      color: rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,1);
+      background: #fff;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease-in-out;
+    }
+
+    #footer .footer-top {
+      padding: 60px 0 30px 0;
+      background: #fff;
+    }
+
+    #footer .footer-top .footer-contact {
+      margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-contact h4 {
+      font-size: 22px;
+      margin: 0 0 30px 0;
+      padding: 2px 0 2px 0;
+      line-height: 1;
+      font-weight: 700;
+      color: rgba(0,0,0, 1);
+    }
+
+    #footer .footer-top .footer-contact p {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 0;
+      font-family: "Raleway", sans-serif;
+      color: rgba(0,0,0, 1);
+    }
+
+    #footer .footer-top h4 {
+      font-size: 16px;
+      font-weight: bold;
+      color: rgba(0,0,0, 1);
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    #footer .footer-top .footer-links {
+      margin-bottom: 30px;
+    }
+
+    #footer .footer-top .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #footer .footer-top .footer-links ul i {
+      padding-right: 2px;
+      color: rgba(0,0,0, 0.8);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    #footer .footer-top .footer-links ul li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    #footer .footer-top .footer-links ul li:first-child {
+      padding-top: 0;
+    }
+
+    #footer .footer-top .footer-links ul a {
+      padding:3px;
+      color: rgba(0,0,0,0.8);
+      transition: 0.3s;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    #footer .footer-top .footer-links ul a:hover {
+      text-decoration: none;
+      color: #fff;
+      background: #28a745;
+    }
+
+    #footer .footer-top .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+    #footer .footer-top .social-links a:hover {
+      background: #fff;
+      color: rgba(0,0,0, 1);
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0, 1);
+      transition: background 0.2s ease-in-out;
+    }
+
+    #footer .copyright {
+      text-align: center;
+      float: left;
+      color: rgba(32, 33, 36, 1);
+    }
+
+    #footer .credits {
+      float: right;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(32, 33, 36, 1);
+    }
+
+    @media (max-width: 768px) {
+      #footer .copyright, #footer .credits {
+        float: none;
+        text-align: center;
+        padding: 5px 0;
+      }
+    }
+
   </style>
 @endsection
 
@@ -250,7 +267,7 @@
 
           <div class="tab-pane fade" id="section-footer" role="tabpanel" aria-labelledby="section-footer-tab">
             <footer id="footer">
-              @includeIf('coms.footer', ['other' => $other])
+              @includeIf('comps.footer', ['other' => $other])
             </footer>
           </div>
         </div>

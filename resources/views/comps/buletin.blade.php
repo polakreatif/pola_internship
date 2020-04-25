@@ -5,7 +5,7 @@
         <h4>{{ $other->buletin_title }}</h4>
         <p>{{ $other->buletin_caption }}</p>
         <form action="" method="post">
-          <input type="email" name="email"><input type="submit" value="Subscribe">
+          <input type="email" name="email" placeholder="Tulis email kamu disini..."><input type="submit" value="Subscribe">
         </form>
       </div>
     </div>

@@ -13,7 +13,7 @@ class SettingSeeder extends Seeder
     {
         $setting = new \App\Setting;
         $setting->id = 1;
-        $setting->app_name = 'Laundry Jone';       
+        $setting->app_name = 'Laundry Ruum';       
         $setting->app_slogan = 'Make Your Clothes and You Happy';
         $setting->save();
     }
