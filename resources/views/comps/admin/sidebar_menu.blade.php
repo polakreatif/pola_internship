@@ -54,28 +54,14 @@
     </li> 
 
     <!-- Orders -->
-    <li id="orders" class="nav-item has-treeview">
-      <a href="#orders" class="nav-link">
+    <li id="orders" class="nav-item">
+      <a href="{{ url('/orders') }}" class="nav-link">
         <i class="nav-icon fas fa-dolly-flatbed"></i>
         <p>
-          Order
-          <i class="right fas fa-angle-left"></i>
+          Pesanan
+          <span class="right badge badge-danger"></span>
         </p>
       </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ url('/orders') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>All</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ url('/orders/create') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Create</p>
-          </a>
-        </li>
-      </ul>
     </li>
 
     <!-- Users -->

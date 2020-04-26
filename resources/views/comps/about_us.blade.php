@@ -1,16 +1,9 @@
 <div id="about-us" class="row">
-  <div class="col-12 col-sm-8 col-lg-6 text-center" data-aos="fade-up">
+  <div class="col-12 col-sm-8 col-lg-6 text-center mb-3" data-aos="fade-up">
     <div
-      class="shadow"
+      class="about-us-img shadow"
       style="
         background-image: url('{{ asset('storage/'.$about_us->image) }}');
-        background-color: #fff;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        border-radius: 15px;
-        height: 350px;
-        width: 100%;
       "
     ></div>
     @if(strlen($about_us->sumber_link) > 0)

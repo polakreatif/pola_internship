@@ -13,16 +13,9 @@
       @if($loop->first)
         <div class="carousel-item active">
           <div
-            class="d-block"
+            class="d-block carousel-img"
             style="
               background-image: url('{{ asset('storage/'. $carousel->image) }}');
-              background-color: #fff;
-              background-repeat: : no-repeat;
-              background-size: cover;
-              background-position: center;
-              border-radius: 15px;
-              height: 550px;
-              width: 100%;
             "
           ></div>
           <div class="carousel-caption d-none d-md-block" >
@@ -34,16 +27,9 @@
       @else             
         <div class="carousel-item">
          <div
-            class="d-block"
+            class="d-block carousel-img"
             style="
               background-image: url('{{ asset('storage/'. $carousel->image) }}');
-              background-color: #fff;
-              background-repeat: : no-repeat;
-              background-size: cover;
-              background-position: center;
-              border-radius: 15px;
-              height: 550px;
-              width: 100%;
             "
           ></div>
           <div class="carousel-caption d-none d-md-block" >

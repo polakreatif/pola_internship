@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
         $user->email_verified_at = now();
         $user->password = Hash::make('123456789');
         $user->avatar = 'images/avatar.png';
+        $user->address = 'Rt 04 Rw 02, Tambak Roto, Kesesi.';
         $user->save();
     }
 }

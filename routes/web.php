@@ -48,8 +48,18 @@ Route::get('/setting', 'SettingController@index');
 Route::put('/setting/update', 'SettingController@update');
 
 // Orders
+Route::get('/orders', 'OrderController@index_admin');
+Route::get('/orders/{id}/edit', 'OrderController@edit_admin');
+Route::post('/orders/{product_id}/store', 'OrderController@store');
+Route::put('/orders/{id}/update', 'OrderController@update');
+Route::delete('/orders/{id}', 'OrderController@destroy');
+Route::get('/my-order', 'OrderController@my_order');
 Route::get('/order', 'OrderController@index');
-Route::get('/order', 'OrderController@create');
+Route::get('/order/{product_slug}', 'OrderController@create');
+
+// Invoices
+Route::get('/invoice/{number}', 'InvoiceController@show');
+Route::post('/invoice', 'InvoiceController@store');
 
 // Users
 Route::resource('users', 'UserController');

@@ -49,7 +49,7 @@
 					<br/>
 					<p>{{ $product->description }}</p>
 					<br/><br/><br/>
-					<a href="" class="btn btn-theme w-100">Pesan Jasa</a>
+					<a href="{{ url('/order/'.$product->slug) }}" class="btn btn-theme w-100">Pesan Jasa</a>
 				</div>
 			</div>
 		</div>

@@ -95,7 +95,7 @@
                       value="Delete"
                       class="btn btn-outline-danger btn-sm">Hapus</button>
                     </form>
-                    
+                  </td>
                 </tr>
               @endforeach
               

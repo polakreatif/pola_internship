@@ -999,3 +999,43 @@ body::-webkit-scrollbar-thumb
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: background 0.2s ease-in-out;
 }
+
+.about-us-img {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  height: 150px;
+  width: 100%;
+}
+
+.carousel-img {
+  background-color: #fff;
+  background-repeat: : no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  height: 150px;
+  width: 100%;
+}
+
+.product-card-img {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  height: 100px;
+  width: 100%;
+}
+
+.product-card-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.product-card-price {
+  font-size: 12px;
+}
