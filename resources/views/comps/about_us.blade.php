@@ -1,5 +1,5 @@
-<div id="about-us" class="row">
-  <div class="col-12 col-sm-8 col-lg-6 text-center mb-3" data-aos="fade-up">
+<div id="about-us" class="row justify-content-center mt-sm-3">
+  <div class="col-12 col-lg-6 text-center mb-3">
     <div
       class="about-us-img shadow"
       style="
@@ -12,7 +12,7 @@
       </div>
     @endif
   </div>
-  <div class="col-12 col-sm-8 col-lg-6 d-flex flex-column align-items-stretch  justify-content-center" data-aos="fade-up">
+  <div class="col-12 col-lg-6 d-flex flex-column align-items-stretch  justify-content-center" data-aos="fade-up">
       <div class="text-center">
         @if(strlen($about_us->title) > 0)
           <h2>{{ $about_us->title }}</h2>

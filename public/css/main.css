@@ -273,14 +273,14 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #47536e;
+  color: rgba(0,0,0,1);
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #5777ba;
+  color: #28a745;
   text-decoration: none;
 }
 
@@ -1038,4 +1038,85 @@ body::-webkit-scrollbar-thumb
 
 .product-card-price {
   font-size: 12px;
+}
+
+.product-show-img {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 15px;
+  height: 150px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .about-us-img {
+    height: 250px;
+  }
+  .carousel-img {
+    height: 250px;
+  }
+  .product-card-img {
+    height: 200px;
+  }
+  .product-card-name {
+    font-size: 19px;
+  }
+  .product-card-price {
+    font-size: 16px;
+  }
+  .product-show-img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-us-img {
+    height: 350px;
+  }
+  .carousel-img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-img {
+    height: 450px;
+  }
+}
+
+@media (min-width: 1200px) {
+ .carousel-img {
+    height: 550px;
+  }
+  .product-show-img {
+    height: 500px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Whast App Customer Service
+--------------------------------------------------------------*/
+.wa-cs {
+  position: fixed;
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  right: 15px;
+  bottom: 15px;
+  background: #28a745;
+  color: #fff;
+  transition: display 0.5s ease-in-out;
+  z-index: 99999;
+  padding-top: 7px;
+}
+
+.wa-cs:hover {
+  color: rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,1);
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease-in-out;
 }

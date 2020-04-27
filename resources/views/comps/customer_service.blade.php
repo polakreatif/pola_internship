@@ -8,28 +8,28 @@
 
     <div class="col-lg-6" >
       <div class="row justify-content-center">
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="0">
+        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="0">
           <div class="my-3"> 
             <i class="fas fa-map fa-3x"></i>
           </div>
           <h4>{{ $other->cs_address_title }}</h4>
           <p>{{ $other->cs_address }}</p>
         </div>
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="my-3"> 
             <i class="fas fa-phone fa-3x"></i>
           </div>
           <h4>{{ $other->cs_phone_title }}</h4>
           <p>{{ $other->cs_phone }}</p>
         </div>
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="200">
           <div class="my-3"> 
             <i class="fas fa-envelope fa-3x"></i>
           </div>
           <h4>{{ $other->cs_email_title }}</h4>
           <p>{{ $other->cs_email }}</p>
         </div>
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="300">
           <div class="my-3"> 
             <i class="fas fa-clock fa-3x"></i>
           </div>

@@ -1,4 +1,4 @@
-<div id="carousel-promotion" class="carousel slide" data-ride="carousel" data-aos="fade-up">
+<div id="carousel-promotion" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     @foreach($all_carousel as $carousel)
       @if($loop->first)

@@ -1,6 +1,6 @@
 <div id="hero" class="d-flex align-items-center">
-  <div class="container">
-    <div class="row mt-5">
+  <div class="container mt-5 mt-lg-0">
+    <div class="row mt-5 mt-lg-0">
       <div class="col-lg-6 pt-5 order-2 order-lg-1 text-center">
         <h1 data-aos="zoom-in" data-aos-delay="0">{{ $jumbotron->title }}</h1>
         @if(strlen($jumbotron->caption) > 0)

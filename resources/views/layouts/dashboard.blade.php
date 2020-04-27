@@ -26,6 +26,116 @@
 
    <!-- Custom Head -->
   @yield('head')
+  <style>
+    .btn-theme {
+      border-radius: 15px;
+      background: #28a745;
+      color: #fff;
+    }
+
+    .btn-theme:hover {
+      color: rgba(0,0,0,1);
+      border: 1px solid rgba(0,0,0,1);
+      background: #fff;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease-in-out;
+    }
+
+    .about-us-img {
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 15px;
+      height: 150px;
+      width: 100%;
+    }
+
+    .carousel-img {
+      background-color: #fff;
+      background-repeat: : no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      height: 150px;
+      width: 100%;
+    }
+
+    .product-card-img {
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
+      height: 100px;
+      width: 100%;
+    }
+
+    .product-card-name {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .product-card-price {
+      font-size: 12px;
+    }
+
+    .product-show-img {
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 15px;
+      height: 150px;
+      width: 100%;
+    }
+
+    @media (min-width: 576px) {
+      .about-us-img {
+        height: 250px;
+      }
+      .carousel-img {
+        height: 250px;
+      }
+      .product-card-img {
+        height: 200px;
+      }
+      .product-card-name {
+        font-size: 19px;
+      }
+      .product-card-price {
+        font-size: 16px;
+      }
+      .product-show-img {
+        height: 350px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .about-us-img {
+        height: 350px;
+      }
+      .carousel-img {
+        height: 350px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .carousel-img {
+        height: 450px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+     .carousel-img {
+        height: 550px;
+      }
+      .product-show-img {
+        height: 500px;
+      }
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">

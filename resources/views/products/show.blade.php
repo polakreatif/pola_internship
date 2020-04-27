@@ -22,16 +22,9 @@
 			              </div>
 			            </div>
 			        @endif  
-					<div class="shadow mb-3"
+					<div class="shadow product-show-img mb-3"
 					style="
 						background-image: url('{{ asset('storage/'.$product->image) }}');
-						background-color: #fff;
-		              	background-repeat: no-repeat;
-		              	background-position: center;
-		              	background-size: contain;
-		              	border-radius: 15px;
-		              	height: 450px;
-		              	width: 100%;
 					"
 					></div>
 					@if(strlen($product->sumber_link) > 0)
@@ -48,7 +41,7 @@
 					<h3>Rp. {{ $product->price }}</h3>
 					<br/>
 					<p>{{ $product->description }}</p>
-					<br/><br/><br/>
+					<br/><br/>
 					<a href="{{ url('/order/'.$product->slug) }}" class="btn btn-theme w-100">Pesan Jasa</a>
 				</div>
 			</div>
