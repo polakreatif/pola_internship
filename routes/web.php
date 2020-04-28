@@ -18,3 +18,13 @@ Route::get('/', 'WelcomeController@index');
 Auth::routes();
 
 Route::resource('articles', 'ArticleController');
+
+Route::resource('dashboards', 'DashboardController');
+
+Route::resource('jumbotrons', 'JumbotronController');
+
+Route::resource('portfolios', 'PortfolioController');
+
+Route::resource('services', 'ServiceController');
+
+Route::resource('careers', 'CareerController');

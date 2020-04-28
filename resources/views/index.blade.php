@@ -204,7 +204,7 @@
                 <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                     <div class="flex-1 border-white text-white rounded-t rounded-b-none overflow-hidden shadow bg-secondary">
                         <a href="/articles/{{$article->id_artikel}}" class="flex flex-wrap no-underline hover:no-underline">
-                            <img src="/img/{{$article->gambar}}" alt="{{$article->gambar}}">
+                            <img src="/img/{{$article->gambar}}" alt="{{$article->gambar}}" class="height-auto">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2 text-center text-underline">{{$article->judul}}</div>
                                 <p class="text-base text-justify"> {{$article->isi}} </p>

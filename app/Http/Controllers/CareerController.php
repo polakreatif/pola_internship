@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
 
-class ArticleController extends Controller
+class CareerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->take(3)->get();
-        return view('dashboards.articles.index', compact('articles'));
+        return view('dashboards.careers.index');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -48,8 +45,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $articles = Article::find($id);
-        return view('articles.show')->with('articles', $articles);
+        //
     }
 
     /**
