@@ -14,11 +14,9 @@ class DashboardController extends Controller
     public function index()
     {
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('dashboard', [
             'setting' => $setting,
-            'user_admin' => $user_admin
         ]);
     }
 }

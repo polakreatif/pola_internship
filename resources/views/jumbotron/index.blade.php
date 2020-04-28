@@ -7,10 +7,7 @@
 @section('nav')
   @include('comps.admin.navbar')
 
-  @includeIf('comps.admin.sidebar', [
-    'setting' => $setting,
-    'user_admin' => $user_admin
-  ])
+  @includeIf('comps.admin.sidebar', ['setting' => $setting])
 @endsection
 
 @section('footer')

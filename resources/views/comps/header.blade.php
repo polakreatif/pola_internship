@@ -12,7 +12,6 @@
         <li class="active"><a href="#header">Home</a></li>
         <li><a href="#jasa">Jasa</a></li>
         <li><a href="#customer-service">Layanan Konsumen</a></li>
-        <li><a href="#faq">F.A.Q</a></li>
 
         @guest
           <li class="get-started"><a href="{{ url('/login') }}">Masuk</a></li>
@@ -20,6 +19,7 @@
         @else
           <li class="drop-down"><a href="">{{ Auth::user()->name }}</a>
             <ul>
+              <li><a href="{{ url('/my-order') }}">Pesanan Saya</a>
               <li>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

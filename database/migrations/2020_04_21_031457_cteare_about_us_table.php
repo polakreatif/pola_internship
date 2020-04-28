@@ -15,12 +15,27 @@ class CteareAboutUsTable extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 255)->nullable($value = true)->default('');
+            $table->string('title', 255)
+                ->nullable()->default('');
             $table->string('description', 255);
-            $table->string('image', 255)->default('images/image.jpg');
-            $table->string('sumber_link', 255)->nullable($value = true)->default('www.freepik.com');
-            $table->string('sumber_label', 255)->nullable($value = true)->default('Designed by Freepik');
+
+            $table->string('image', 255)
+                ->default('images/image.jpg');
+            $table->string('sumber_link', 255)
+                ->nullable()
+                ->default('www.freepik.com');
+            $table->string('sumber_label', 255)
+                ->nullable()
+                ->default('Designed by Freepik');
+                
+            $table->unsignedBigInteger('updated_by')
+                ->nullable();
             $table->timestamps();
+
+            $table->foreign('updated_by')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

@@ -15,12 +15,10 @@ class ProductController extends Controller
     {
         $products = \App\Product::all();
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('products.index', [
             "products" => $products,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -31,13 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products = \App\Product::all();
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('products.create', [
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -51,7 +46,6 @@ class ProductController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             "name" => "required|max:199",
-            "slug" => "required|max:199|unique:products",
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
@@ -62,14 +56,14 @@ class ProductController extends Controller
         $file = $request->file('image')->store('images', 'public');
         $product = new \App\Product;
         $product->name = $request->input('name');
-        $product->slug = $request->input('slug');
+        $product->slug = \Str::slug($request->input('name'), '-');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
         $product->description = $request->input('description');
         $product->sumber_link = $request->input('sumber_link');
         $product->sumber_label = $request->input('sumber_label');    
         $product->image = $file;
-       
+        $product->created_by = \Auth::user()->id;
         $product->save();
 
         return redirect('/products')->with('success', 'Produk berhasil di perbarui.');
@@ -112,12 +106,10 @@ class ProductController extends Controller
     {
         $product = \App\Product::findOrFail($id);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('products.edit', [
             "product" => $product,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -132,7 +124,6 @@ class ProductController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             "name" => "required|max:199",
-            "slug" => "required|max:199|unique:products",
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
@@ -141,13 +132,14 @@ class ProductController extends Controller
 
         $product = \App\Product::find($id);
         $product->name = $request->input('name');
-        $product->slug = $request->input('slug');
+        $product->slug = \Str::slug($request->input('name'), '-');
         $product->price = $request->input('price');
         $product->type = $request->input('type');
         $product->description = $request->input('description');
         $product->sumber_link = $request->input('sumber_link');
         $product->sumber_label = $request->input('sumber_label');
-
+        $product->updated_by = \Auth::user()->id;
+        
         if($request->hasFile('image')){
             if($product->image && file_exists(storage_path('app/public/'. $product->image))){
                 \Storage::delete('public/'.$product->image);

@@ -22,6 +22,7 @@ class ProductSeeder extends Seeder
         $produk01->image = 'images/produk-01.jpg';
         $produk01->sumber_link = 'www.freepik.com';
         $produk01->sumber_label = 'Designed by Freepik';
+        $produk01->created_by = 1;
         $produk01->save();
 
         $produk02 = new Product;
@@ -33,6 +34,7 @@ class ProductSeeder extends Seeder
         $produk02->image = 'images/produk-02.jpg';
         $produk02->sumber_link = 'www.freepik.com';
         $produk02->sumber_label = 'Designed by Freepik';
+        $produk02->created_by = 1;
         $produk02->save();
 
         $produk03 = new Product;
@@ -44,6 +46,7 @@ class ProductSeeder extends Seeder
         $produk03->image = 'images/produk-03.jpg';
         $produk03->sumber_link = 'www.freepik.com';
         $produk03->sumber_label = 'Designed by brgfx';
+        $produk03->created_by = 1;
         $produk03->save();
 
         $produk04 = new Product;
@@ -55,6 +58,7 @@ class ProductSeeder extends Seeder
         $produk04->image = 'images/produk-04.jpg';
         $produk04->sumber_link = 'www.freepik.com';
         $produk04->sumber_label = 'Designed by brgfx';
+        $produk04->created_by = 1;
         $produk04->save(); 
 
         $produk05 = new Product;
@@ -66,6 +70,7 @@ class ProductSeeder extends Seeder
         $produk05->image = 'images/produk-05.jpg';
         $produk05->sumber_link = 'www.freepik.com';
         $produk05->sumber_label = 'Designed by gstudioimagen';
+        $produk05->created_by = 1;
         $produk05->save();
 
         $produk06 = new Product;
@@ -77,6 +82,7 @@ class ProductSeeder extends Seeder
         $produk06->image = 'images/produk-06.jpg';
         $produk06->sumber_link = 'www.freepik.com';
         $produk06->sumber_label = 'Designed by studiogstock';
+        $produk06->created_by = 1;
         $produk06->save();
     }
 }

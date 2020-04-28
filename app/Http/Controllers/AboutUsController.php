@@ -15,12 +15,10 @@ class AboutUsController extends Controller
     {
         $about_us = \App\AboutUs::findOrFail(1);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('about_us.index', [
             "about_us" => $about_us,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -33,12 +31,10 @@ class AboutUsController extends Controller
     {
         $about_us = \App\AboutUs::findOrFail(1);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('about_us.edit', [
             "about_us" => $about_us,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -60,6 +56,7 @@ class AboutUsController extends Controller
         $about_us->description = $request->input('description');
         $about_us->sumber_link = $request->input('sumber_link');
         $about_us->sumber_label = $request->input('sumber_label');
+        $about_us->updated_by = \Auth::user()->id;
 
         if($request->hasFile('image')){
             if($about_us->image && file_exists(storage_path('app/public/'. $about_us->image))){

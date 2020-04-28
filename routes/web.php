@@ -56,10 +56,7 @@ Route::delete('/orders/{id}', 'OrderController@destroy');
 Route::get('/my-order', 'OrderController@my_order');
 Route::get('/order', 'OrderController@index');
 Route::get('/order/{product_slug}', 'OrderController@create');
-
-// Invoices
-Route::get('/invoice/{number}', 'InvoiceController@show');
-Route::post('/invoice', 'InvoiceController@store');
+Route::get('/payments', 'OrderController@payments');
 
 // Users
 Route::resource('users', 'UserController');

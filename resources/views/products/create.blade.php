@@ -7,10 +7,7 @@
 @section('nav')
   @include('comps.admin.navbar')
 
-  @includeIf('comps.admin.sidebar', [
-    'setting' => $setting,
-    'user_admin' => $user_admin
-  ])
+  @includeIf('comps.admin.sidebar', ['setting' => $setting])
 @endsection
 
 @section('footer')
@@ -51,11 +48,7 @@
 				    <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Laundry Kiloan...">
 				    <small id="nameHelp" class="form-text text-muted">Nama max 199 karakter.</small>
 				  </div>
-				  <div class="form-group">
-				    <label for="name">Slug / Url</label>
-				    <input type="text" class="form-control" name="slug" id="slug" aria-describedby="slugHelp" placeholder="laundry-kiloan">
-				    <small id="slugHelp" class="form-text text-muted">Slug harus unik, max 199 karakter, tidak ada spasi, digunakan untuk url link !.</small>
-				  </div>
+			
 				  <div class="row">
 					  <div class="col-12 col-sm-12 col-md-6 col-lg-4">
 					  	<div class="form-group">

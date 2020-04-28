@@ -15,12 +15,10 @@ class OtherController extends Controller
     {
         $other = \App\Other::findOrFail(1);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('others.index', [
             "other" => $other,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -34,12 +32,10 @@ class OtherController extends Controller
     {
         $other = \App\Other::findOrFail(1);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('others.edit', [
             "other" => $other,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -140,6 +136,7 @@ class OtherController extends Controller
         $other->facebook_link = $request->input('facebook_link');
         $other->youtube_link = $request->input('youtube_link');
         
+        $other->updated_by = \Auth::user()->id;
         $other->save();
 
         return redirect('/others/edit')->with('success', 'Berhasil di perbarui.');

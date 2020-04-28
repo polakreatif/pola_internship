@@ -20,10 +20,22 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('avatar')->nullable($value = true)->default('images/avatar.png');
-            $table->string('address')->nullable($value = true)->default('');
+
+            $table->string('avatar')
+                ->nullable()
+                ->default('images/avatar.png');
+            $table->string('address')
+                ->nullable()
+                ->default('');
+            $table->unsignedInteger('role_id')->default(3);
+            
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('role_id')
+                ->references('id')->on('roles')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

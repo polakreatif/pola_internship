@@ -11,10 +11,15 @@ class Order extends Model
 
     protected $fillable = [
         'product_id', 'weight', 
-        'name', 'phone', 'address', 'note'
+        'name', 'phone', 'address', 'note',
+        'created_by', 'updated_by'
     ];
 
     public function product(){
     	return $this->hasOne('App\Product', 'id', 'product_id');
+    }
+
+    public function status(){
+        return $this->hasOne('App\OrderStatus', 'id', 'status_id');
     }
 }

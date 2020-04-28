@@ -1,16 +1,13 @@
 @extends('layouts.dashboard')
 
 @section('head')
-  <title>{{ $setting->app_name }} | Tentang Kami </title>
+  <title>{{ $setting->app_name }} | Pesanan </title>
 @endsection
 
 @section('nav')
   @include('comps.admin.navbar')
 
-  @includeIf('comps.admin.sidebar', [
-    'setting' => $setting,
-    'user_admin' => $user_admin
-  ])
+  @includeIf('comps.admin.sidebar', ['setting' => $setting])
 @endsection
 
 @section('footer')
@@ -61,6 +58,7 @@
 		                <th scope="col">Nomer Hp / WA</th>
 		                <th scope="col">Alamat</th>
 		                <th scope="col">Catatan</th>
+		                <th scope="col">Status</th>
 		                <th scope="col"></th>
 		              </tr>
 		            </thead>
@@ -93,6 +91,9 @@
 		                  </td>
 		                  <td>
 		                    {{ $order->note }}
+		                  </td>
+		                  <td>
+		                    {{ $order->status->name }}
 		                  </td>
 		                  <td>
 		                    <a href="{{ url('/orders/' . $order->id . '/edit') }}" class="btn btn-sm btn-outline-primary mx-1">Edit</a>

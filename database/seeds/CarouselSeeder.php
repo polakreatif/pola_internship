@@ -18,6 +18,7 @@ class CarouselSeeder extends Seeder
         $carousel01->image = 'images/carousel-01.jpg';
         $carousel01->sumber_link = 'www.freepik.com';
         $carousel01->sumber_label = 'Designed by Freepik';
+        $carousel01->created_by = 1;
         $carousel01->save();
 
         $carousel02 = new Carousel;
@@ -26,6 +27,7 @@ class CarouselSeeder extends Seeder
         $carousel02->image = 'images/carousel-02.jpg';
         $carousel02->sumber_link = 'www.freepik.com';
         $carousel02->sumber_label = 'Designed by BiZkettE1';
+        $carousel02->created_by = 1;
         $carousel02->save();
 
         $carousel03 = new Carousel;
@@ -34,6 +36,7 @@ class CarouselSeeder extends Seeder
         $carousel03->image = 'images/carousel-03.jpg';
         $carousel03->sumber_link = 'www.freepik.com';
         $carousel03->sumber_label = 'Designed by Freepik';
+        $carousel03->created_by = 1;
         $carousel03->save();
     }
 }

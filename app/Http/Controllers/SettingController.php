@@ -14,11 +14,11 @@ class SettingController extends Controller
     public function index()
     {
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
+        $user_admin = \App\User::findOrFail(\Auth::user()->id);
 
         return view('setting.index', [
             "setting" => $setting,
-            "user_admin" => $user_admin
+            'user_admin' => $user_admin
         ]);
     }
 
@@ -42,6 +42,7 @@ class SettingController extends Controller
         $setting = \App\Setting::findOrFail(1);
         $setting->app_name = $request->input('app_name');
         $setting->app_slogan = $request->input('app_slogan');
+        $setting->updated_at = \Auth::user()->id;
         $setting->save();
 
         $user_admin = \App\User::findOrFail(1);

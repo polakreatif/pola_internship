@@ -7,10 +7,7 @@
 @section('nav')
   @include('comps.admin.navbar')
 
-  @includeIf('comps.admin.sidebar', [
-    'setting' => $setting,
-    'user_admin' => $user_admin
-  ])
+  @includeIf('comps.admin.sidebar', ['setting' => $setting])
 @endsection
 
 @section('footer')
@@ -126,7 +123,24 @@
 						<textarea type="text" rows="4" class="form-control" name="note" id="note" aria-describedby="noteHelp" placeholder="Barang ada di teras...">{{ $order->note }}</textarea>
 						<small id="noteHelp" class="form-text text-muted">Catatan max 245 angka.</small>
 					</div>
+					<div class="form-group">
+					    <label for="status_id">Status</label>
+					    <select class="form-control" id="status_id" name="status_id">
+				    		@for($x = 0; $x < count($order_status); $x++)
+				    			@if($order_status[$x]->id == $order->status->status_id)
+						    		<option value="{{ $order_status[$x]->id }}" selected>
+						    			{{ $order_status[$x]->name }}
+						    		</option>
+						    	@else
+						    		<option value="{{ $order_status[$x]->id }}">
+						    			{{ $order_status[$x]->name }}
+						    		</option>
+						    	@endif
+				    		@endfor
+					    </select>
+					 </div>
 					<hr/>
+
 					<button type='submit' class="btn btn-primary w-100">Simpan Perubahan</button>
 				</form>
 			</div>

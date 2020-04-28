@@ -15,12 +15,10 @@ class CarouselController extends Controller
     {
         $all_carousel = \App\Carousel::all();
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('carousel.index', [
             "all_carousel" => $all_carousel,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -32,11 +30,9 @@ class CarouselController extends Controller
     public function create()
     {
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
         
         return view('carousel.create', [
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -63,6 +59,7 @@ class CarouselController extends Controller
         $new_carousel->sumber_link = $request->input('sumber_link');
         $new_carousel->sumber_label = $request->input('sumber_label');
         $new_carousel->image = $file;
+        $new_carousel->created_by = \Auth::user()->id;
         $new_carousel->save();
 
         return redirect('/carousel')->with('success', 'Carousel Promosi berhasil di buat');
@@ -78,12 +75,10 @@ class CarouselController extends Controller
     {
         $carousel = \App\Carousel::findOrFail($id);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('carousel.edit', [
             "carousel" => $carousel,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -107,6 +102,7 @@ class CarouselController extends Controller
         $carousel->caption = $request->input('caption');
         $carousel->sumber_link = $request->input('sumber_link');
         $carousel->sumber_label = $request->input('sumber_label');
+        $carousel->updated_by = \Auth::user()->id;
 
         if($request->hasFile('image')){
             if($carousel->image && file_exists(storage_path('app/public/'. $carousel->image))){

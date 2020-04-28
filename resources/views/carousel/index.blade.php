@@ -7,10 +7,7 @@
 @section('nav')
   @include('comps.admin.navbar')
 
-  @includeIf('comps.admin.sidebar', [
-    'setting' => $setting,
-    'user_admin' => $user_admin
-  ])
+  @includeIf('comps.admin.sidebar', ['setting' => $setting])
 @endsection
 
 @section('footer')
@@ -39,12 +36,14 @@
 @section('content')
   <div class="container">
     <div class="card">
-      <div class="card-body">
-        @if(session('success'))
+      @if(session('success'))
           <div class="alert alert-success">
             {{session('success')}}
           </div>
         @endif 
+        
+      <div class="card-body">
+        
 
         @includeIf('comps.carousel', ['all_carousel' => $all_carousel])
         <hr/>

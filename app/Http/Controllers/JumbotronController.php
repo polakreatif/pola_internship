@@ -15,12 +15,10 @@ class JumbotronController extends Controller
     {
         $jumbotron = \App\Jumbotron::findOrFail(1);
         $setting = \App\Setting::findOrFail(1);
-        $user_admin = \App\User::findOrFail(1);
 
         return view('jumbotron.index', [
             'jumbotron' => $jumbotron,
             "setting" => $setting,
-            "user_admin" => $user_admin
         ]);
     }
 
@@ -58,11 +56,12 @@ class JumbotronController extends Controller
             "sumber_label" => "max:199"
         ])->validate();
 
-        $jumbotron = Jumbotron::find(1);
+        $jumbotron = \App\Jumbotron::find(1);
         $jumbotron->title = $request->input('title');
         $jumbotron->caption = $request->input('caption');
         $jumbotron->sumber_link = $request->input('sumber_link');
         $jumbotron->sumber_label = $request->input('sumber_label');
+        $jumbotron->updated_by = \Auth::user()->id;
 
         if($request->hasFile('image')){
             if($jumbotron->image && file_exists(storage_path('app/public/'. $jumbotron->image))){

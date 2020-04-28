@@ -10,8 +10,8 @@ class Jumbotron extends Model
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-    	'id',
         'title', 'caption', 'image',
-        'sumber_link', 'sumber_label'
+        'sumber_link', 'sumber_label',
+        'updated_by'
     ];
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -16,17 +15,16 @@ class OrderController extends Controller
     {
         $setting = \App\Setting::findOrfail(1);
         $other = \App\Other::findOrfail(1);
-        $user_admin = \App\User::findOrfail(1);
         $orders = \App\Order::all();
         
         for($i = 0; $i < count($orders); $i++){
             $product = $orders[$i]->product;
+            $status = $orders[$i]->status;
         }
 
         return view('orders.index_admin', [
             'setting' => $setting,
             'other' => $other,
-            'user_admin' => $user_admin,
             'orders' => $orders
         ]);
     }
@@ -58,12 +56,37 @@ class OrderController extends Controller
     {
         $setting = \App\Setting::findOrfail(1);
         $other = \App\Other::findOrfail(1);
+        $orders = \App\Order::where('created_by', \Auth::user()->id)
+            ->orderBy('created_at', 'desc')->get();
+
+        for($i = 0; $i < count($orders); $i++){
+            $product = $orders[$i]->product;
+            $status = $orders[$i]->status;
+        }
 
         return view('orders.my_order', [
             'setting' => $setting,
             'other' => $other,
+            'orders' => $orders
         ]);
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function payments()
+    {
+        $setting = \App\Setting::findOrfail(1);
+        $other = \App\Other::findOrfail(1);
+
+        return view('orders.payments', [
+            'setting' => $setting,
+            'other' => $other
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      * @param  \App\Product $product
@@ -105,9 +128,11 @@ class OrderController extends Controller
         $new_order->phone = $request->input('phone');
         $new_order->address = $request->input('address');
         $new_order->note = $request->input('note');
+        $new_order->status_id = 1;
+        $new_order->created_by = \Auth::user()->id;
         $new_order->save();
 
-        return redirect('/my-order')->with('success', 'Pemesanan berhasil di kirim.');
+        return redirect('/my-order')->with('success', 'Pemesanan berhasil di kirim. Tekan tombol pembayaran untuk proses pembayaran.');
     }
 
     /**
@@ -131,15 +156,16 @@ class OrderController extends Controller
     {
         $setting = \App\Setting::findOrfail(1);
         $other = \App\Other::findOrfail(1);
-        $user_admin = \App\User::findOrfail(1);
         $order = \App\Order::findOrFail($id);
         $product = $order->product;
+        $status = $order->status;
+        $order_status = \App\OrderStatus::all();
 
         return view('orders.edit_admin', [
             'setting' => $setting,
             'other' => $other,
-            'user_admin' => $user_admin,
-            'order' => $order
+            'order' => $order,
+            'order_status' => $order_status
         ]);
     }
 
@@ -157,7 +183,8 @@ class OrderController extends Controller
             "name" => "required|max:199",
             "phone" => "required|min:10|max:15",
             "address" => "required|max:245",
-            "note" => "max:245"
+            "note" => "max:245",
+            "status_id" => "required"
         ])->validate();
 
         $order = \App\Order::findOrFail($id);
@@ -166,6 +193,8 @@ class OrderController extends Controller
         $order->phone = $request->input('phone');
         $order->address = $request->input('address');
         $order->note = $request->input('note');
+        $order->status_id = $request->input('status_id');
+        $order->updated_by = \Auth::user()->id;
         $order->save();
 
         return redirect('/orders/'.$id.'/edit')->with('success', 'Pemesanan berhasil diperbarui.');

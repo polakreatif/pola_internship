@@ -18,6 +18,8 @@ class OrderSeeder extends Seeder
         $order01->phone = '085875204463';
         $order01->address = 'Rt 04 Rw 02, Pekiringan Ageng, Kajen.';
         $order01->note = 'Pakaian di depan rumah ambil seperti biasa.';
+        $order01->created_by = 3;
+        $order01->status_id = 3;
         $order01->save();
 
         $order02 = new \App\Order;
@@ -27,6 +29,8 @@ class OrderSeeder extends Seeder
         $order02->phone = '082133170120';
         $order02->address = 'jalan salak no. 13, Gandarum, Kajen.';
         $order02->note = 'Klo dah sampai telepon yaa.';
+        $order02->created_by = 3;
+        $order02->status_id = 5;
         $order02->save();
 
         $order03 = new \App\Order;
@@ -36,6 +40,8 @@ class OrderSeeder extends Seeder
         $order03->phone = '08213317599';
         $order03->address = 'jalan mengkudu no. 31, Gandarum, Kajen.';
         $order03->note = 'Klo dah sampai telepon yaa.';
+        $order03->created_by = 4;
+        $order03->status_id = 7;
         $order03->save();
     }
 }

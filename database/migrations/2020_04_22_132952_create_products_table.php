@@ -19,11 +19,29 @@ class CreateProductsTable extends Migration
             $table->string('slug', 255)->unique();
             $table->decimal('price', 19,2);
             $table->unsignedInteger('type')->default(2);
-            $table->mediumText('description')->nullable($value=true)->default('');
+            $table->mediumText('description')->default('');
+
             $table->string('image', 255)->default('images/image.jpg');
-            $table->string('sumber_link', 255)->nullable($value = true)->default('www.freepik.com');
-            $table->string('sumber_label', 255)->nullable($value = true)->default('Designed by Freepik');
+            $table->string('sumber_link', 255)
+                ->nullable()
+                ->default('www.freepik.com');
+            $table->string('sumber_label', 255)
+                ->nullable()
+                ->default('Designed by Freepik');
+
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')
+                ->nullable();
             $table->timestamps();
+
+            $table->foreign('created_by')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            $table->foreign('updated_by')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

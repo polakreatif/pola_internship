@@ -14,12 +14,19 @@ class CreateSettingTable extends Migration
     public function up()
     {
         Schema::create('setting', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            
+            $table->bigIncrements('id');            
             $table->string('app_name', 255);
-            $table->string('app_slogan', 255)->nullable($value=true)->default('');
+            $table->string('app_slogan', 255)
+                ->nullable()
+                ->default('');
 
+            $table->unsignedBigInteger('updated_by')->nullable($value = true);
             $table->timestamps();
+
+            $table->foreign('updated_by')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

@@ -10,7 +10,6 @@ class Other extends Model
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id',
         
         'cs_title', 'cs_caption', 'cs_address_title', 'cs_address', 'cs_phone_title', 'cs_phone', 'cs_email_title', 'cs_email', 'cs_work_hours_title', 'cs_work_hours',
 
@@ -25,6 +24,8 @@ class Other extends Model
         'profil_link', 'vision_and_mision_link', 'career_link',
 
         'sosial_media_title', 'sosial_media_caption',
-        'instragram_link', 'twitter_link', 'facebook_link', 'youtube_link'
+        'instragram_link', 'twitter_link', 'facebook_link', 'youtube_link',
+
+        'updated_by'
     ];
 }

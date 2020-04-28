@@ -66,27 +66,13 @@
 
     <!-- Users -->
     <li id="users" class="nav-item has-treeview">
-      <a href="#users" class="nav-link">
+      <a href="{{ url('/users') }}" class="nav-link">
         <i class="nav-icon fas fa-user-friends"></i>
         <p>
-          Users
-          <i class="right fas fa-angle-left"></i>
+          Pengguna
+         <span class="right badge badge-danger"></span>
         </p>
       </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{{ url('/users') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>All</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ url('/users') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Create</p>
-          </a>
-        </li>
-      </ul>
     </li>  
 
     <!-- Setting -->

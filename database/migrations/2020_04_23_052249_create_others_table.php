@@ -17,7 +17,8 @@ class CreateOthersTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('cs_title', 255);
-            $table->string('cs_caption', 255)->nullable($value=true)->default('');
+            $table->string('cs_caption', 255)
+                ->nullable()->default('');
             $table->string('cs_address_title', 255);
             $table->string('cs_address', 255);
             $table->string('cs_phone_title', 255);
@@ -28,9 +29,13 @@ class CreateOthersTable extends Migration
             $table->string('cs_work_hours', 255);
 
             $table->string('buletin_title', 255);
-            $table->string('buletin_caption', 255)->nullable($value=true)->default('');
+            $table->string('buletin_caption', 255)
+                ->nullable()
+                ->default('');
 
-            $table->string('main_address_title', 255)->nullable($value=true)->default('');
+            $table->string('main_address_title', 255)
+                ->nullable()
+                ->default('');
             $table->string('main_address', 255);
             $table->string('main_phone', 255);
             $table->string('main_email', 255);
@@ -52,12 +57,29 @@ class CreateOthersTable extends Migration
             $table->string('career_link', 255);
 
             $table->string('sosial_media_title', 255);
-            $table->string('sosial_media_caption', 255)->nullable($value=true)->default('');;
-            $table->string('instagram_link', 255)->nullable($value=true)->default('');
-            $table->string('twitter_link', 255)->nullable($value=true)->default('');
-            $table->string('facebook_link', 255)->nullable($value=true)->default('');
-            $table->string('youtube_link', 255)->nullable($value=true)->default('');
+            $table->string('sosial_media_caption', 255)
+                ->nullable()
+                ->default('');;
+            $table->string('instagram_link', 255)
+                ->nullable()
+                ->default('');
+            $table->string('twitter_link', 255)
+                ->nullable()
+                ->default('');
+            $table->string('facebook_link', 255)
+                ->nullable()
+                ->default('');
+            $table->string('youtube_link', 255)
+                ->nullable()
+                ->default('');
+
+            $table->unsignedBigInteger('updated_by')->nullable($value = true);
             $table->timestamps();
+
+            $table->foreign('updated_by')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 

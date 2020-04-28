@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model
+class Role extends Model
 {
-    protected $table = 'setting';
+    protected $table = 'roles';
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-    	
-        'app_name', 'app_slogan', 
-        'updated_by'
+        "name"
     ];
 }

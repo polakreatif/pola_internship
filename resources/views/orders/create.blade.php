@@ -5,9 +5,7 @@
 @endsection
 
 @section('header')
-
   @includeIf('comps.header_global', ['setting' => $setting])
-
 @endsection
 
 @section('content')

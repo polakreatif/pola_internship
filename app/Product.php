@@ -10,8 +10,8 @@ class Product extends Model
 	protected $primaryKey = 'id';
 
     protected $fillable = [
-    	'id', 
         'name', 'slug', 'price', 'type', 'description', 
-        'image', 'sumber_link', 'sumber_label'
+        'image', 'sumber_link', 'sumber_label',
+        'created_by', 'updated_by'
     ];
 }
