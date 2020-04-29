@@ -19,6 +19,9 @@
         @else
           <li class="drop-down"><a href="">{{ Auth::user()->name }}</a>
             <ul>
+              @if((Auth::user()->role_id == 1) || (Auth::user()->role_id == 2))
+                <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+              @endif
               <li><a href="{{ url('/my-order') }}">Pesanan Saya</a>
               <li>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();

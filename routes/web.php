@@ -12,59 +12,59 @@
 |
 */
 // Jumbotron
-Route::get('/jumbotron', 'JumbotronController@index');
-Route::get('/jumbotron/edit', 'JumbotronController@edit');
-Route::put('/jumbotron/update', 'JumbotronController@update');
+Route::get('/jumbotron', 'JumbotronController@index')->middleware('auth', 'admin');
+Route::get('/jumbotron/edit', 'JumbotronController@edit')->middleware('auth', 'admin');
+Route::put('/jumbotron/update', 'JumbotronController@update')->middleware('auth', 'admin');
 
 // About Us
-Route::get('/about-us', 'AboutUsController@index');
-Route::get('/about-us/edit', 'AboutUsController@edit');
-Route::put('/about-us/update', 'AboutUsController@update');
+Route::get('/about-us', 'AboutUsController@index')->middleware('auth', 'admin');
+Route::get('/about-us/edit', 'AboutUsController@edit')->middleware('auth', 'admin');
+Route::put('/about-us/update', 'AboutUsController@update')->middleware('auth', 'admin');
 
 // Carousel Promotion
-Route::get('/carousel/create', 'CarouselController@create');
-Route::get('/carousel', 'CarouselController@index');
-Route::get('/carousel/{id}/edit', 'CarouselController@edit');
-Route::post('/carousel/store', 'CarouselController@store');
-Route::put('/carousel/{id}', 'CarouselController@update');
-Route::delete('/carousel/{id}', 'CarouselController@destroy');
+Route::get('/carousel/create', 'CarouselController@create')->middleware('auth', 'admin');
+Route::get('/carousel', 'CarouselController@index')->middleware('auth', 'admin');
+Route::get('/carousel/{id}/edit', 'CarouselController@edit')->middleware('auth', 'admin');
+Route::post('/carousel/store', 'CarouselController@store')->middleware('auth', 'admin');
+Route::put('/carousel/{id}', 'CarouselController@update')->middleware('auth', 'admin');
+Route::delete('/carousel/{id}', 'CarouselController@destroy')->middleware('auth', 'admin');
 
 // Products
-Route::get("/products/create", "ProductController@create");
-Route::get("/products/{id}/edit", "ProductController@edit");
-Route::get("/products", "ProductController@index");
+Route::get("/products/create", "ProductController@create")->middleware('auth', 'admin');
+Route::get("/products/{id}/edit", "ProductController@edit")->middleware('auth', 'admin');
+Route::get("/products", "ProductController@index")->middleware('auth', 'admin');
 Route::get("/p/{id}", "ProductController@show");
-Route::post("/products", "ProductController@store");
-Route::put("/products/{id}", "ProductController@update");
-Route::delete("/products/{id}", "ProductController@destroy");
+Route::post("/products", "ProductController@store")->middleware('auth', 'admin');
+Route::put("/products/{id}", "ProductController@update")->middleware('auth', 'admin');
+Route::delete("/products/{id}", "ProductController@destroy")->middleware('auth', 'admin');
 
 // Others
-Route::get('/others', 'OtherController@index');
-Route::get('/others/edit', 'OtherController@edit');
-Route::put('/others/update', 'OtherController@update');
+Route::get('/others', 'OtherController@index')->middleware('auth', 'admin');
+Route::get('/others/edit', 'OtherController@edit')->middleware('auth', 'admin');
+Route::put('/others/update', 'OtherController@update')->middleware('auth', 'admin');
 
 // Setting
-Route::get('/setting', 'SettingController@index');
-Route::put('/setting/update', 'SettingController@update');
+Route::get('/setting', 'SettingController@index')->middleware('auth', 'admin');
+Route::put('/setting/update', 'SettingController@update')->middleware('auth', 'admin');
 
 // Orders
-Route::get('/orders', 'OrderController@index_admin');
-Route::get('/orders/{id}/edit', 'OrderController@edit_admin');
-Route::post('/orders/{product_id}/store', 'OrderController@store');
-Route::put('/orders/{id}/update', 'OrderController@update');
-Route::delete('/orders/{id}', 'OrderController@destroy');
-Route::get('/my-order', 'OrderController@my_order');
-Route::get('/order', 'OrderController@index');
-Route::get('/order/{product_slug}', 'OrderController@create');
+Route::get('/orders', 'OrderController@index_admin')->middleware('auth', 'admin');
+Route::get('/orders/{id}/edit', 'OrderController@edit_admin')->middleware('auth', 'admin');
+Route::post('/orders/{product_id}/store', 'OrderController@store')->middleware('auth');
+Route::put('/orders/{id}/update', 'OrderController@update')->middleware('auth', 'admin');
+Route::delete('/orders/{id}', 'OrderController@destroy')->middleware('auth', 'admin');
+Route::get('/my-order', 'OrderController@my_order')->middleware('auth');
+Route::get('/order', 'OrderController@index')->middleware('auth');
+Route::get('/order/{product_slug}', 'OrderController@create')->middleware('auth');
 Route::get('/payments', 'OrderController@payments');
 
 // Users
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController')->middleware('auth', 'admin');
 
 Auth::routes();
 
 // Dashboard
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth', 'admin');
 
 // Home
 Route::get('/', "HomeController@index");

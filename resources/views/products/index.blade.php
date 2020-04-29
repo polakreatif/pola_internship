@@ -81,7 +81,7 @@
                   <td>{{ $product->description }}</td>
                   <td>
                     <div style="max-width: 75px;">
-                      <img src="{{ asset('storage/'. $product->image ) }}" class="img-fluid" alt="products Promotion"/>
+                      <img src="{{ asset('storage/'. $product->image ) }}" class="img-fluid" alt="Produk"/>
                     </div>
                   </td>
                   <td>{{ $product->sumber_link }}</td>

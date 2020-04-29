@@ -14,12 +14,14 @@ class HomeController extends Controller
      */
     public function index()
     {   
+
         $setting = \App\Setting::findOrFail(1);
         $jumbotron = \App\Jumbotron::findOrFail(1);
         $about_us = \App\AboutUs::findOrFail(1);
         $all_carousel = \App\Carousel::all();
         $products = \App\Product::all();
         $other = \App\other::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('home', [
             'setting' => $setting,
@@ -27,7 +29,8 @@ class HomeController extends Controller
             'about_us' => $about_us,
             'all_carousel' => $all_carousel,
             'products' => $products,
-            'other' => $other
+            'other' => $other,
+            'user_admin' => $user_admin
         ]);
     }
 }

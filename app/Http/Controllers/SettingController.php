@@ -35,17 +35,17 @@ class SettingController extends Controller
             "app_name" => "required|max:199",
             "app_slogan" => "max:199",
             "name" => "required|max:199",
-            "phone" => "required|min:10|max:15",
-            "email" => "required|max:199",
+            "phone" => "required|min:10|max:15|unique:users,phone,". \Auth::user()->id,
+            "email" => "required|max:199|unique:users,email,". \Auth::user()->id,
         ])->validate();
 
         $setting = \App\Setting::findOrFail(1);
         $setting->app_name = $request->input('app_name');
         $setting->app_slogan = $request->input('app_slogan');
-        $setting->updated_at = \Auth::user()->id;
+        $setting->updated_by = \Auth::user()->id;
         $setting->save();
 
-        $user_admin = \App\User::findOrFail(1);
+        $user_admin = \App\User::findOrFail(\Auth::user()->id);
         $user_admin->name = $request->input('name');
         $user_admin->phone = $request->input('phone');
         $user_admin->email = $request->input('email');

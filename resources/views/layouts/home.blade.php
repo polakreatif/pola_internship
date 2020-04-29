@@ -40,11 +40,6 @@
       
       @yield('products')
 
-      @yield('testimonials')
-
-      @yield('faq')
-        <br/><br/><br/>
-
       @yield('customer_service')
         <br/><br/><br/>
         

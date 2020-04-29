@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
         $user02->email = 'admin@gmail.com';
         $user02->email_verified_at = now();
         $user02->password = Hash::make('123456789');
-        $user02->avatar = 'images/avatar.png';
+        $user02->avatar = 'images/avatar-01.jpg';
         $user02->address = 'Rt 04 Rw 02, Tambak Roto, Kesesi.';
         $user02->role_id = 2;
         $user02->save();
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
         $user03->email = 'steve@gmail.com';
         $user03->email_verified_at = now();
         $user03->password = Hash::make('123456789');
-        $user03->avatar = 'images/avatar.png';
+        $user03->avatar = 'images/avatar-02.jpg';
         $user03->address = 'Rt 04 Rw 03, Gandarum, Kajen.';
         $user03->role_id = 3;
         $user03->save();
@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
         $user04->email = 'brook@gmail.com';
         $user04->email_verified_at = now();
         $user04->password = Hash::make('123456789');
-        $user04->avatar = 'images/avatar.png';
+        $user04->avatar = 'images/avatar-03.jpg';
         $user04->address = 'Rt 04 Rw 04, Gandarum, Kajen.';
         $user04->role_id = 3;
         $user04->save();
@@ -68,7 +68,7 @@ class UserSeeder extends Seeder
         $user05->email = 'mail@gmail.com';
         $user05->email_verified_at = now();
         $user05->password = Hash::make('123456789');
-        $user05->avatar = 'images/avatar.png';
+        $user05->avatar = 'images/avatar-04.jpg';
         $user05->address = 'Rt 05 Rw 05, Gandarum, Kajen.';
         $user05->role_id = 3;
         $user05->save();
