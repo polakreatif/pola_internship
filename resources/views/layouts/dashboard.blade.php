@@ -16,11 +16,6 @@
 
   <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/jqvmap/jqvmap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/daterangepicker/daterangepicker.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
 
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
 
@@ -176,15 +171,6 @@
   </script>
 
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-  <script src="{{ asset('vendor/sparklines/sparkline.js') }}"></script>
-  <script src="{{ asset('vendor/jqvmap/jquery.vmap.min.js') }}"></script>
-  <script src="{{ asset('vendor/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-  <script src="{{ asset('vendor/jquery-knob/jquery.knob.min.js') }}"></script>
-  <script src="{{ asset('vendor/moment/moment.min.js') }}"></script>
-  <script src="{{ asset('vendor/daterangepicker/daterangepicker.js') }}"></script>
-  <script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
-  <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 
   <script src="{{ asset('js/adminlte.js') }}"></script>
   

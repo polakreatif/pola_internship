@@ -37,7 +37,6 @@
       <i class="fas fa-angle-double-up fa-lg"></i>
     </a>
 
-    <script src="{{ asset('vendor/fontawesome/js/all.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery.easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -45,7 +44,6 @@
     <script src="{{ asset('vendor/venobox/venobox.min.js') }}"></script>
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
 
-    <script src="{{ asset('js/popper.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
