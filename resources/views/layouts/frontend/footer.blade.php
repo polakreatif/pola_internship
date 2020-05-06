@@ -1,6 +1,5 @@
 
-  
-    <!-- Footer Section Start-->
+   <!-- Footer Section Start-->
       <div class="footer-main-container">
          <div class="footer-inner">
             <div class="container">
@@ -27,44 +26,22 @@
                      </ul>
                      <ul class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                         <h5>Contact Us</h5>
-                        <li><a href="#">support@exclusive-media.com</a></li>
-                        <li><a href="#">0812 3456 7890</a></li>
-                        <li class="foot-top-right social-icon">
-                           <a href="#">
-                             <i class="fa fa-facebook"></i>
-                           </a>
-                           <a href="#">
-                             <i class="fa fa-twitter"></i>
-                           </a>
-                           <a href="#">
-                             <i class="fa fa-instagram"></i>
-                           </a>
-                        </li>
+                        <div class="social-media">
+                     <a href="#"><i class="fab fa-whatsapp whatsapp"></i></a>
+                     <a href="#"><i class="fab fa-instagram instagram"></i></a>
+                     <a href="#"><i class="fab fa-facebook-f facebook"></i></a>
+                     <a href="#"><i class="fab fa-twitter twitter"></i></a>
+                     <a href="#"><i class="fab fa-youtube youtube"></i></a>
+                  </div>
                      </ul>
                   </div>
                </div>
                <div class="foot-info col-lg-12 text-center">
-                  <a href="#"><i class="fa fa-copyright"></i> 2020 Landing Page , All right reserved</a>
+                  <p><a href="/" style="text-decoration: none;">&copy; 2020 Inspiring Media All Rights Reserved.</a></p>
                </div>
             </div>
          </div>
       </div>
       <!--Footer Section End-->
-
-    <!-- Optional JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      $(".menu-toggle-btn").click(function() {
-        $(this).toggleClass("fa-times");
-        $(".navigation-menu").toggleClass("active");
-      })
-    </script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('asset/js/jquery-3.4.1.slim.min.js') }}"></script>
-    <script src="{{ asset('asset/js/popper.min.js') }}"></script>
-    <script src="{{ asset('asset/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('asset/js/fontawesome.min.js') }}"></script>
-    <script src="{{ asset('asset/js/fontawesome.js') }}"></script>
-    
-  </body>
+</body>
 </html>
