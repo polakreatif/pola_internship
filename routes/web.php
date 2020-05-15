@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +13,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@index');
+
+Auth::routes();
+
+Route::get('/dashboards', 'DashboardController@index');
+
+// Route::post('store', 'HeaderController@store');
+
+Route::resource('/dashboards/headers', 'HeaderController');
+
+Route::resource('/dashboards/artikels', 'ArtikelController');
+
+Route::resource('/dashboards/portofolios', 'PortofolioController');
+
+Route::resource('/dashboards/careers', 'CareerController');
+
+Route::resource('/dashboards/services', 'ServiceController');
+
+
