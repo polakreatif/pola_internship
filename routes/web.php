@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index');
 
+Route::get('/careers', 'PageController@showCareer');
+
+Route::get('/careers/create', 'SubmitCareerController@create');
+
 Auth::routes();
 
 Route::get('/dashboards', 'DashboardController@index');
@@ -30,5 +34,7 @@ Route::resource('/dashboards/portofolios', 'PortofolioController');
 Route::resource('/dashboards/careers', 'CareerController');
 
 Route::resource('/dashboards/services', 'ServiceController');
+
+Route::resource('/dashboards/submitCareers', 'SubmitCareerController');
 
 

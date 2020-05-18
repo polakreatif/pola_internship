@@ -43,3 +43,54 @@
   .landing-page-bg {
     background: linear-gradient(90deg, #f869d5 0%, #6454f0 100%);
   }
+
+  .color-one {
+    color: #6454f0;
+  }
+
+  .color-two {
+    color: #f869d5;
+  }
+
+  hr.divider {
+    border-radius: 50px 50px 5px 5px;
+    background: linear-gradient(90deg, #f869d5 0%, #6454f0 100%);
+    padding: 2px;
+    width: 200px;
+    height: 2px;
+  }
+  hr.head {
+    border-radius: 5px 5px 50px 50px;
+    background: white;
+    padding: 1px;
+    width: 400px;
+    height: 1px;
+  }
+
+  .btn-gradient {
+    color: #fff;
+    background-color: #6454f0;
+  }
+
+  .btn-gradient:hover {
+    color: #f869d5;
+    background-color: white;
+    border-color: #6454f0;
+  }
+
+  .btn-gradient-two {
+    color: #fff;
+    background-color: #f869d5;
+  }
+
+  .btn-gradient-two:hover {
+    color: #6454f0;
+    background-color: white;
+    border-color: #f869d5;
+  }
+
+  .overflow-y{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }  
+  

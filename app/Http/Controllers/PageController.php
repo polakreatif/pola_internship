@@ -17,9 +17,15 @@ class PageController extends Controller
         $headers = Header::latest()->get();
         $portofolios = Portofolio::latest()->get();
         $services = Service::latest()->get();
+        
+
+
+        return view('landingPage', compact('artikels','headers','portofolios','services'));
+    }
+
+    public function showCareer()
+    {
         $careers = Career::latest()->get();
-
-
-        return view('landingPage', compact('artikels','headers','portofolios','services','careers'));
+        return view('pages.listCareer', compact('careers')); 
     }
 }

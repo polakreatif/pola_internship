@@ -30,6 +30,7 @@
                 <a href="/dashboards/services" class="list-group-item list-group-item-action bg-light">Layanan</a>
                 <a href="/dashboards/artikels" class="list-group-item list-group-item-action bg-light">Artikel</a>
                 <a href="/dashboards/careers" class="list-group-item list-group-item-action bg-light">Career</a>
+                <a href="/dashboards/submitCareers" class="list-group-item list-group-item-action bg-light">Pendaftar Kerja</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
