@@ -31,25 +31,26 @@ Aplikasi website laundry sederhana. Fitur (edit, tambah, hapus) jumbotron, tenta
 ```sh
     php artisan key:generate
 ```
-8. Jalankan perintah berikut di cmd.
+8. Jalankan terlebih dahulu Xampp di perangkat. Lalu start pada php dan mysql.
+9. Jalankan perintah berikut di cmd.
 ```sh
     composer dump-autoload
 ```
-9. Lalu alankan perintah berikut di cmd untuk membuat isian data aplikasi awal.
+10. Lalu jalankan perintah berikut di cmd untuk membuat isian data aplikasi awal.
 ```sh
     php artisan migrate --seed
 ```
-10. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
-11. Copy semua file Gambar di forder public/images dan paste-kan di forder storage/app/public/images
-12. Lalu jalankan perintah berikut di cmd.
+11. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
+12. Copy semua file Gambar di forder public/images dan paste-kan di forder storage/app/public/images
+13. Lalu jalankan perintah berikut di cmd.
 ```sh
     php artisan storage:link
 ```
-13. Lalu jalankan aplikasi dengan perintah berikut di cmd.
+14. Lalu jalankan aplikasi dengan perintah berikut di cmd.
 ```sh
     php artisan serve
 ```
-14. Buka pada web broser url berikut localhost:8000
+15. Buka pada web broser url berikut localhost:8000
 ```sh
     localhost:8000
 ```
