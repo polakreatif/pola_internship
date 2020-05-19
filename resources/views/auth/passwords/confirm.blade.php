@@ -1,12 +1,12 @@
 @extends('layouts.global')
 
 @section('head')
-  <title>{{ $setting->app_name }} | {{ $setting->app_slogan }}</title>
+  <title>Confirm Password</title>
 @endsection
 
 @section('header')
 
-  @includeIf('comps.header_global', ['setting' => $setting])
+  @includeIf('comps.header_auth')
 
 @endsection
 

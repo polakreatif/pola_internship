@@ -31,16 +31,25 @@ Aplikasi website laundry sederhana. Fitur (edit, tambah, hapus) jumbotron, tenta
 ```sh
     php artisan key:generate
 ```
-8. Jalankan perntah berikut di cmd untuk membuat isian data aplikasi awal.
+8. Jalankan perintah berikut di cmd.
+```sh
+    composer dump-autoload
+```
+9. Lalu alankan perintah berikut di cmd untuk membuat isian data aplikasi awal.
 ```sh
     php artisan migrate --seed
 ```
-9. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
-10. Lalu jalankan aplikasi dengan perintah berikut di cmd.
+10. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
+11. Copy semua file Gambar di forder public/images dan paste-kan di forder storage/app/public/images
+12. Lalu jalankan perintah berikut di cmd.
+``sh
+    php artisan storage:link
+``
+13. Lalu jalankan aplikasi dengan perintah berikut di cmd.
 ```sh
     php artisan serve
 ```
-11. Buka pada web broser url berikut localhost:8000
+14. Buka pada web broser url berikut localhost:8000
 ```sh
     localhost:8000
 ```
@@ -56,6 +65,5 @@ Aplikasi website laundry sederhana. Fitur (edit, tambah, hapus) jumbotron, tenta
     Email : steve@gmail.com Password: 123456789 atau 
     Email : brook@gmail.com Password: 123456789 atau 
     Email : main@gmail.com Password: 123456789
-
 ```
 
