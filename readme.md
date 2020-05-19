@@ -42,9 +42,9 @@ Aplikasi website laundry sederhana. Fitur (edit, tambah, hapus) jumbotron, tenta
 10. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
 11. Copy semua file Gambar di forder public/images dan paste-kan di forder storage/app/public/images
 12. Lalu jalankan perintah berikut di cmd.
-``sh
+```sh
     php artisan storage:link
-``
+```
 13. Lalu jalankan aplikasi dengan perintah berikut di cmd.
 ```sh
     php artisan serve
