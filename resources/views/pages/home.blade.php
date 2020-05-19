@@ -2,16 +2,16 @@
 @section('content')
 
       <!-- Jumbotron Start -->
-      <div class="jumbotron" id="home">
+      <div class="jumbotron" style="background: url('/storage/img/jumbotron/{{ $jumbotrons->background }}'); background-size: 100% 100%;">
         <div class="row">
           <div class="col-sm-6">
-            <h1 class="display-4"><h1>Get Started</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt harum repellat quam eligendi a pariatur, animi ipsa laborum delectus eius quia voluptatibus officiis vitae numquam itaque architecto adipisci neque at!</p>
+            <h1 class="display-4"><h1>{{ $jumbotrons->header }}</h1>
+            <p class="lead">{!! $jumbotrons->konten !!}</p>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
           </div>
           <div class="col-sm-6">  
-            <span><img src="{{ asset('/img/1585322535472.png') }}" class="banner img-fluid" alt="Jumbotron Images"></span>
+            <span><img src="/storage/img/jumbotron/{{ $jumbotrons->gambar_jumbo }}" class="banner img-fluid" alt="{{ $jumbotrons->header }}"></span>
           </div>
         </div>
       </div>
@@ -23,39 +23,19 @@
           <p>Berikut adalah layanan kami sediakan untuk anda.</p>
         <div class="row text-center">
           <div class="row">
+            @foreach($products as $product)
             <div class="col-sm-4">
               <div class="box">
                 <div class="card-body">
                   <a href="#" style="text-decoration:none">
-                    <img src="{{ asset('/img/1585323126329.png') }}" class="card-img-top" alt="Website Development">
-                    <h5 class="card-title">Website Development.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, pariatur.</p>
+                    <img src="/storage/img/product/{{ $product->product_image }}" class="card-img-top" alt="{{ $product->name_product }}">
+                    <h5 class="card-title">{{ $product->name_product }}</h5>
+                    <p class="card-text" style="color: #000;">{!! $product->desc_product !!}</p>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="box">
-                <div class="card-body text-center">
-                  <a href="#" style="text-decoration:none">
-                    <img src="{{ asset('/img/1585323418010.png') }}" class="card-img-top" alt="Desain UI/UX">
-                    <h5 class="card-title">Desain UI / UX</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, doloremque.</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="box">
-                <div class="card-body text-center">
-                  <a href="#" style="text-decoration:none">
-                    <img src="{{ asset('/img/1585323920344.png') }}" class="card-img-top" alt="3D Modelling">
-                    <h5 class="card-title">3D Modelling</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, unde.</p>
-                  </a>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
         <!-- Product End -->
@@ -69,18 +49,17 @@
               <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="#"><img src="{{ asset('/img/website-development-banner_33099-1687.jpg') }}" class="d-block img-fluid" alt="Website Development"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="#"><img src="{{ asset('/img/mobile-app-concept_52683-5158.jpg') }}" class="d-block img-fluid" alt="Desain UI/UX"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="#"><img src="{{ asset('/img/3d-printing-flat-horizontal-banners-set_1284-7494.jpg') }}" class="d-block img-fluid" alt="3D Modelling"></a>
-              </div>
-              <div class="carousel-item">
-                <a href="#"><img src="{{ asset('/img/set-modern-abstract-web-buttons-with-ability-edit_110464-82.jpg') }}" class="d-block img-fluid" alt="3D Modelling"></a>
-              </div>
+              @foreach($carousels as $carousel)
+                @if($carousel->id == 1)
+                  <div class="carousel-item active">
+                    <img src="/storage/img/carousel/{{ $carousel->gambar }}" class="d-block img-fluid" alt="{{ $carousel->nama }}">
+                  </div>
+                @else
+                  <div class="carousel-item">
+                    <img src="/storage/img/carousel/{{ $carousel->gambar }}" class="d-block img-fluid" alt="{{ $carousel->nama }}">
+                  </div>
+                @endif
+              @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -106,7 +85,7 @@
                 <div class="col-md-8">
                   <div class="card-body">
                     <h3 class="card-title" id="title-about">Tentang Kami</h3>
-                    <p class="card-text" id="text-about">Inspiring Media adalah sebuah penyedia jasa pembuatan web dan juga desain. Inspiring media sendiri telah berdiri tahun 2016. Inspiring Media dulunya bernama ....</p>
+                    <p class="card-text" id="text-about">{!! \Illuminate\Support\Str::limit($companies->about, 150, $end='...') !!}</p>
                     <a class="btn btn-outline-info" href="#" role="button" id="click">See More</a>
                   </div>
                 </div>
@@ -116,4 +95,26 @@
         </div>
       </div>
       <!-- About Us End -->
+      <!-- Contact Form Start -->
+      <div class="about-us-container">
+        <div class="container">
+          <div style="text-align:center">
+            <h2>Hubungi Kami</h2>
+            <p>Silahkan Hubungi Kami via Whatsapp</p>
+          </div>
+          <div class="row">
+            <div class="column-contact-us">
+              <img src="{{ asset('/img/contact.png') }}" style="width:100%">
+            </div>
+            <div class="column-contact-us">
+              <form action="https://wa.me/{{ $companies->whatsapp }}">
+                <label for="isi">Isi Pesan</label>
+                <textarea id="isi" name="text" placeholder="Tuliskan pesan anda disini.." style="height:170px"></textarea>
+                <button type="submit"><i class="fab fa-whatsapp whatsapp"></i> Kirim Pesan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Form End -->
 @endsection

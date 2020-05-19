@@ -15,10 +15,10 @@ class Article extends Model
     const UPDATED_AT = 'tanggal_diperbarui';
 
     protected $fillable = [
-        'id_artikel',
         'judul',
         'isi',
-        'is_published',
+        'gambar',
+        'is_published'
     ];
 
     protected $casts = [

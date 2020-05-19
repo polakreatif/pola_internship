@@ -63,60 +63,11 @@
 	color: #fff!important;
 }
 
-@media only screen and (max-width: 1000px) {
-	.nav-link:hover {
-		border-bottom: none!important;
-		align-items: center;
-	}
-}
-
-.social-media {
-	margin: 20px 0;
-}
-
-.social-media a {
-	color: #001a21;
-	margin-right: 25px;
-	font-size: 22px;
-	text-decoration: none;
-	transition: .3s linear;
-}
-
-.instagram:hover {
-	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.whatsapp:hover {
-	color: #2fd62f;
-}
-
-.facebook:hover {
-	color: #006eff;
-}
-
-.twitter:hover {
-	color: #49bdf2;
-}
-
-.youtube:hover {
-	color: #ff0000;
-}
-
-.footer-main-container {
-	background: #f5f6f9;
-}
-
-.blog-us .container h1{
-	padding-top: 30px;
-}
-
-.login {
+.auth {
 	padding: 50px 0;
 }
 
-.header-login {
+.header-auth {
 	font-style: bold;
 	text-align: center;
 	padding: 0;
@@ -125,10 +76,8 @@
 }
 
 .jumbotron {
-	background: url('../img/background.jpg');
 	background-position: top left;
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
 	height: 100%;
 	color:#fff;
 }
@@ -144,7 +93,6 @@
 
 @media screen and (max-width: 700px) {
 	.jumbotron {
-		background: url('../img/background.jpg');
 		background-position: top left;
 		background-repeat: no-repeat;
 		background-size: 700px;
@@ -193,7 +141,7 @@
 }
 
 .card-img-top {
-	height: 260px;
+	height: 400px;
 }
 
 .row {
@@ -238,6 +186,10 @@
 	float: right;
 }
 
+.blog-us .container h1{
+	padding-top: 30px;
+}
+
 .blog-us-details h1 {
 	padding-top: 20px;
 }
@@ -249,6 +201,107 @@
 .blog-us-details p {
 	padding-top: 20px;
 	text-align: justify;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+button[type=submit] {
+  float: right;
+  background-color: #6C63FF;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #2fd62f;
+  color: #fff;
+}
+
+/* Style the container/contact section */
+.container-contact-us {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column-contact-us {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-register {
+  float: left;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+	.nav-link:hover {
+		border-bottom: none!important;
+		align-items: center;
+	}
+}
+
+.social-media {
+	margin: 20px 0;
+}
+
+.social-media a {
+	color: #001a21;
+	margin-right: 25px;
+	font-size: 22px;
+	text-decoration: none;
+	transition: .3s linear;
+}
+
+.instagram:hover {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.whatsapp:hover {
+	color: #2fd62f;
+}
+
+.facebook:hover {
+	color: #006eff;
+}
+
+.twitter:hover {
+	color: #49bdf2;
+}
+
+.youtube:hover {
+	color: #ff0000;
+}
+
+.footer-main-container {
+	background: #f5f6f9;
 }
 
 .footer-box {
@@ -298,6 +351,7 @@
 
 .foot-top-right ul li {
 	margin-bottom: 10px;
+	list-style-type: none;
 }
 
 .foot-top-right ul li a {

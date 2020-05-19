@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Company;
 
 class AdminController extends Controller
 {
@@ -23,7 +24,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $companies = Company::latest()->take(1)->get();
+        return view('home', compact('companies'));
     }
 
     /**

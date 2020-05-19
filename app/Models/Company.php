@@ -16,9 +16,18 @@ class Company extends Model
 
     protected $fillable = [
         'id_company',
-        'nama',
+        'nama_company',
         'slogan',
-        'short_about',
         'about',
+        'whatsapp',
+        'facebook',
+        'instagram',
+        'youtube',
+        'twitter',
+        'logo',
+        'about_image'
+    ];
+    protected $casts = [
+        'is_published' => 'boolean',
     ];
 }

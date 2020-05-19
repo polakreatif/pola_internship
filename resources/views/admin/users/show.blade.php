@@ -31,7 +31,7 @@
                                     <div class="card-footer">
                                         <div class="row">
                                             <div class="col-lg-6 col-sm-12 col-md-12 col-xl-6">
-                                                <a href="{{ url('/admin/users') }}" title="Back">
+                                                <a href="javascript:history.go(-1)" title="Back">
                                                     <button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
                                                 </a>
                                             </div>

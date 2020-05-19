@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.auth.master')
 
 @section('content')
-<div class="container">
+<div class="container auth">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header header-auth">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

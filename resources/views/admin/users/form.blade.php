@@ -24,5 +24,5 @@
     {!! Form::select('roles[]', $roles, isset($user_roles) ? $user_roles : [], ['class' => 'form-control', 'multiple' => true]) !!}
 </div>
 <div class="form-group">
-    {!! Form::submit($formMode === 'edit' ? 'Update' : 'Tambah', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit($formMode === 'edit' ? 'Update' : 'Create', ['class' => 'btn btn-primary']) !!}
 </div>

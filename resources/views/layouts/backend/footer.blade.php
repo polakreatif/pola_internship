@@ -1,7 +1,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © <script>new Date().getFullYear()>2013&&document.write(+new Date().getFullYear());</script> Inspiring Media. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © <script>new Date().getFullYear()>2013&&document.write(+new Date().getFullYear());</script> {{ $companies->nama_company }}. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,10 @@
 
     <!-- Main JS-->
     <script src="{{ asset('admin/js/main.js') }}"></script>
-
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'konten' );
+    </script>
 </body>
 
 </html>

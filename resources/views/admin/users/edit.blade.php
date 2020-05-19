@@ -1,39 +1,61 @@
-@extends('layouts.backend')
+@include('layouts.backend.header')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2 class="title-1 m-b-25">Artikel</h2>
+                                @if(count($errors) > 0)
+                                    @foreach($errors->all() as $error)
+                                        <div class="alert alert-danger">
+                                            {{ $error }}
+                                        </div>
+                                    @endforeach
+                                @endif
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Edit User</div>
-                    <div class="card-body">
-                        <a href="{{ url('/admin/users') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
-
-                        @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-
-                        {!! Form::model($user, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/users', $user->id],
-                            'class' => 'form-horizontal'
-                        ]) !!}
-
-                        @include ('admin.users.form', ['formMode' => 'edit'])
-
-                        {!! Form::close() !!}
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+                                @if(session('error'))
+                                    <div class="alert alert-danger">
+                                        {{session('error')}}
+                                    </div>
+                                @endif
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Edit</strong> Artikel
+                                    </div>
+                                    <div class="card-body card-block">
+                                        {!! Form::open(['action' => 'Admin\UsersController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                                            <div class="form-group">
+                                                {{ Form::label('name',  'Nama Pengguna') }}
+                                                {{ Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Masukkan nama pengguna', 'autocomplete' => 'off']) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('email',  'Email Pengguna') }}
+                                                {{ Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Masukkan email pengguna', 'autocomplete' => 'off']) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('password',  'Password Pengguna (jika tidak ingin diubah silahkan masukkan password lagi)') }}
+                                                {{ Form::text('password', '', ['class' => 'form-control', 'placeholder' => 'Masukkan password pengguna', 'autocomplete' => 'off']) }}
+                                            </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-6 col-md-6 col-xl-6">
+                                                <a href="javascript:history.go(-1)" title="Back">
+                                                    <button class="btn btn-info btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6 col-md-6 col-xl-6" style="text-align: right;">
+                                                {{ Form::hidden('_method', 'PUT') }}
+                                                {{ Form::submit('Ubah',  ['class'=>'btn btn-primary']) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                        {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
+                        
+@include('layouts.backend.footer')

@@ -15,7 +15,9 @@ class ViewController extends Controller
     public function index()
     {
         $articles = Article::latest()->take(3)->get();
-        return view('pages.blogs.index', compact('articles'));
+        $companies = \App\Models\Company::findOrFail(1);
+        $products = \App\Models\Product::all();
+        return view('pages.blogs.index', compact('articles', 'companies', 'products'));
     }
 
     /**
@@ -48,7 +50,9 @@ class ViewController extends Controller
     public function show($id)
     {
         $articles = Article::find($id);
-        return view('pages.blogs.details')->with('articles', $articles);
+        $companies = \App\Models\Company::findOrFail(1);
+        $products = \App\Models\Product::all();
+        return view('pages.blogs.details', compact('companies', 'products'))->with('articles', $articles);
     }
 
     /**

@@ -8,15 +8,15 @@
             <hr class="my-4" id="line-blog">
             <div class="row text-center">
                 <div class="row">
-                    @if(count($articles) > 1)
+                    @if($articles->isNotEmpty())
                         @foreach($articles as $article)
-                            <div class="col-sm-4 blog">
+                            <div class="col-md-4 blog">
                                 <div class="box">
                                     <div class="card-body">
-                                      <a href="/blog/{{ $article->id_artikel }}" style="text-decoration:none">
-                                        <img src="https://assets.zoom.us/images/en-us/desktop/generic/video-not-working.PNG" class="card-img-top" alt="Website Development">
+                                      <a href="/blogs/{{ $article->id_artikel }}" style="text-decoration:none">
+                                        <img src="/storage/img/article/{{ $article->gambar }}" class="card-img-top" alt="{{ $article->judul }}">
                                         <h5 class="card-title">{{ $article->judul }}</h5>
-                                        <p class="card-text">{{ \Illuminate\Support\Str::limit($article->isi, 150, $end='...') }}</p>
+                                        <p class="card-text">{!! \Illuminate\Support\Str::limit($article->isi, 150, $end='...') !!}</p>
                                       </a>
                                     </div>
                                 </div>
