@@ -12,35 +12,35 @@ Aplikasi website laundry sederhana. Fitur (edit, tambah, hapus) jumbotron, tenta
 ## Cara Instalasi Lokal di Komputer/Laptop
 1. Clone/dapatkan code ini.
 2. Jalankan Xampp dan buatlah database laundry (atau nama lain terserah anda)
-2. Di dalam projek yang sudah diclone copy lah file .env.example di folder yang sama.
-3. Gantilah nama file copy tersebut ke nama .env
-4. Ubah file .env Arahkan pada database yang telah dibuat. Isikan sesuai dengan database Anda. Pastikan semuanya benar.
+3. Di dalam projek yang sudah diclone copy lah file .env.example di folder yang sama.
+4. Gantilah nama file copy tersebut ke nama .env
+5. Ubah file .env Arahkan pada database yang telah dibuat. Isikan sesuai dengan database Anda. Pastikan semuanya benar.
 ```sh
-	DB_CONNECTION=mysql
-	DB_HOST=127.0.0.1
-	DB_PORT=3307
-	DB_DATABASE=laundry
-	DB_USERNAME=root
-	DB_PASSWORD=
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3307
+    DB_DATABASE=laundry
+    DB_USERNAME=root
+    DB_PASSWORD=
 ```
-5. Melalui cmd jalankan perintah berikut(posisi cmd harus dalam folder projek)
+6. Melalui cmd jalankan perintah berikut(posisi cmd harus dalam folder projek)
 ```sh
     composer update
 ```
-6. Generate key aplikasi dengan perintah berikut di cmd.
+7. Generate key aplikasi dengan perintah berikut di cmd.
 ```sh
     php artisan key:generate
 ```
-7. Jalankan perntah berikut di cmd untuk membuat isian data aplikasi awal.
+8. Jalankan perntah berikut di cmd untuk membuat isian data aplikasi awal.
 ```sh
     php artisan migrate --seed
 ```
-8. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
-9. Lalu jalankan aplikasi dengan perintah berikut di cmd.
+9. Pastikan Database telah terisi dengan sejumlah table dan isian data table.
+10. Lalu jalankan aplikasi dengan perintah berikut di cmd.
 ```sh
     php artisan serve
 ```
-10. Buka pada web broser url berikut localhost:8000
+11. Buka pada web broser url berikut localhost:8000
 ```sh
     localhost:8000
 ```
