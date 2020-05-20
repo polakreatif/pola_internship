@@ -14,10 +14,12 @@ class ViewController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->take(3)->get();
+        $articles = Article::latest()->paginate(9);
         $companies = \App\Models\Company::findOrFail(1);
         $products = \App\Models\Product::all();
-        return view('pages.blogs.index', compact('articles', 'companies', 'products'));
+        return view('pages.blogs.index', compact('companies', 'products'), [
+            'articles' => $articles
+        ]);
     }
 
     /**

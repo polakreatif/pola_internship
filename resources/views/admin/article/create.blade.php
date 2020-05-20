@@ -36,6 +36,14 @@
                                                 {{ Form::textarea('isi', '', ['id' => 'konten', 'class' => 'form-control', 'placeholder' => 'Masukkan isi artikel']) }}
                                             </div>
                                             <div class="form-group">
+                                                {{ Form::label('status',  'Pilih Status Post') }}
+                                                <select id="status" name="status">
+                                                  <option value="">Pilih salah satu</option>
+                                                  <option value="0">Terbitkan</option>
+                                                  <option value="1">Simpan sebagai draft</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
                                                 {{ Form::label('gambar',  'Gambar') }}<br>
                                                 {{ Form::file('gambar') }}
                                             </div>

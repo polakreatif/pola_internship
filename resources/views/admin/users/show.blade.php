@@ -36,21 +36,27 @@
                                                 </a>
                                             </div>
                                             <div class="col-lg-6 col-sm-12" style="text-align: right;">
+                                                @if($user->id == 1)
                                                 <a href="{{ url('/admin/users/' . $user->id . '/edit') }}" title="Edit User">
-                                                    <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                                                    <button class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                                                 </a>
-                                                {!! Form::open([
-                                                    'method' => 'DELETE',
-                                                    'url' => ['/admin/users', $user->id],
-                                                    'style' => 'display:inline'
-                                                ]) !!}
-                                                    {!! Form::button('<i class="fa fa-trash-alt" aria-hidden="true"></i> Delete', array(
-                                                            'type' => 'submit',
-                                                            'class' => 'btn btn-danger btn-sm',
-                                                            'title' => 'Delete User',
-                                                            'onclick'=>'return confirm("Apakah kamu yakin mau menghapus user ini?")'
-                                                    ))!!}
-                                                {!! Form::close() !!}
+                                                    {!! Form::open([
+                                                        'method' => 'DELETE',
+                                                        'url' => ['/admin/users', $user->id],
+                                                        'style' => 'display:inline'
+                                                    ]) !!}
+                                                        {!! Form::button('<i class="fa fa-trash-alt" aria-hidden="true"></i> Delete', array(
+                                                                'type' => 'submit',
+                                                                'class' => 'btn btn-danger btn-sm',
+                                                                'title' => 'Delete User',
+                                                                'onclick'=>'return confirm("Apakah kamu yakin mau menghapus user ini?")'
+                                                        ))!!}
+                                                    {!! Form::close() !!}
+                                                @else
+                                                <a href="{{ url('/admin/users/' . $user->id . '/edit') }}" title="Edit User">
+                                                    <button class="btn btn-primary btn-sm"><i class="fas fa-cog" aria-hidden="true"></i> Edit</button>
+                                                </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

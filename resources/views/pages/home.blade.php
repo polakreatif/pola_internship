@@ -8,7 +8,7 @@
             <h1 class="display-4"><h1>{{ $jumbotrons->header }}</h1>
             <p class="lead">{!! $jumbotrons->konten !!}</p>
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="{{ $jumbotrons->link }}" role="button">Learn more</a>
           </div>
           <div class="col-sm-6">  
             <span><img src="/storage/img/jumbotron/{{ $jumbotrons->gambar_jumbo }}" class="banner img-fluid" alt="{{ $jumbotrons->header }}"></span>
@@ -86,7 +86,7 @@
                   <div class="card-body">
                     <h3 class="card-title" id="title-about">Tentang Kami</h3>
                     <p class="card-text" id="text-about">{!! \Illuminate\Support\Str::limit($companies->about, 150, $end='...') !!}</p>
-                    <a class="btn btn-outline-info" href="#" role="button" id="click">See More</a>
+                    <a class="btn btn-outline-info" href="/about-us" role="button" id="click">See More</a>
                   </div>
                 </div>
               </div>

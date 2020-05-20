@@ -21,7 +21,7 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>2</h2>
+                                                <h2>{{ $users->total() }}</h2>
                                                 <span>Total Pengguna</span>
                                             </div>
                                         </div>
@@ -36,7 +36,7 @@
                                                 <i class="far fa-newspaper"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1</h2>
+                                                <h2>{{ $articles->total() }}</h2>
                                                 <span>Total Article</span>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@
                                                 <i class="fab fa-slideshare"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>3</h2>
+                                                <h2>{{ $carousels->total() }}</h2>
                                                 <span>Total Carousel</span>
                                             </div>
                                         </div>
@@ -66,7 +66,7 @@
                                                 <i class="fas fa-user-plus"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1</h2>
+                                                <h2>{{ $careers->total() }}</h2>
                                                 <span>Total Lowongan</span>
                                             </div>
                                         </div>

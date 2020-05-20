@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Jumbotron;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,16 +28,20 @@ class HomeController extends Controller
     {
         $companies = \App\Models\Company::find(1);
         $jumbotrons = \App\Models\Jumbotron::findOrFail(1);
-        $products = \App\Models\Product::latest()->take(1)->get();
-        $carousels = \App\Models\Carousel::latest()->take(1)->get();
-        $users = \App\User::latest()->take(1)->get();
+        $products = \App\Models\Product::all();
+        $articles = DB::table('article')->paginate(1);
+        $carousels = DB::table('carousel')->paginate(1);
+        $users = DB::table('users')->paginate(1);
+        $careers = DB::table('career')->paginate(1);
 
         return view('admin.home', [
             'companies' => $companies,
             'jumbotrons' => $jumbotrons,
             'products' => $products,
+            'articles' => $articles,
             'carousels' => $carousels,
-            'users' => $users
+            'users' => $users,
+            'careers' => $careers
         ]);
     }
 }

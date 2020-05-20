@@ -40,6 +40,10 @@
                                                 {{ Form::textarea('about', $companies->about, ['id' => 'konten', 'class' => 'form-control', 'placeholder' => 'Masukkan tentang perusahaan']) }}
                                             </div>
                                             <div class="form-group">
+                                                {{ Form::label('email', 'Email') }}
+                                                {{ Form::text('email', $companies->email, ['class' => 'form-control', 'placeholder' => 'Contoh : contoh@domain.com']) }}
+                                            </div>
+                                            <div class="form-group">
                                                 {{ Form::label('whatsapp', 'Nomer Whatsapp (bila tidak ada, silahkan tulis "#")') }}
                                                 {{ Form::text('whatsapp', $companies->whatsapp, ['class' => 'form-control', 'placeholder' => 'Contoh : 6281234567890']) }}
                                             </div>

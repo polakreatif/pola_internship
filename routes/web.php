@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'DashboardController@index');
+Route::get('/about-us', 'AboutController@index');
+Route::get('/careers/register', 'DaftarController@index');
 
 Auth::routes();
 

@@ -46,6 +46,7 @@ class CompanyController extends Controller
                 'nama_company' => 'required',
                 'slogan' => 'required',
                 'about' => 'required',
+                'email' => 'required',
                 'whatsapp' => 'required',
                 'instagram' => 'required',
                 'facebook' => 'required',
@@ -94,6 +95,7 @@ class CompanyController extends Controller
         $infocompanies->nama_company = $request->input('nama_company');
         $infocompanies->slogan = $request->input('slogan');
         $infocompanies->about = $request->input('about');
+        $infocompanies->email = $request->input('email');
         $infocompanies->whatsapp = $request->input('whatsapp');
         $infocompanies->instagram = $request->input('instagram');
         $infocompanies->facebook = $request->input('facebook');
@@ -149,6 +151,7 @@ class CompanyController extends Controller
                 'nama_company' => 'required',
                 'slogan' => 'required',
                 'about' => 'required',
+                'email' => 'required',
                 'whatsapp' => 'required',
                 'instagram' => 'required',
                 'facebook' => 'required',
@@ -192,6 +195,7 @@ class CompanyController extends Controller
         $infocompanies->nama_company = $request->input('nama_company');
         $infocompanies->slogan = $request->input('slogan');
         $infocompanies->about = $request->input('about');
+        $infocompanies->email = $request->input('email');
         $infocompanies->whatsapp = $request->input('whatsapp');
         $infocompanies->instagram = $request->input('instagram');
         $infocompanies->facebook = $request->input('facebook');

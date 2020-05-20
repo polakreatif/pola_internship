@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Career;
 use App\Models\Submit;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class ViewCareerController extends Controller
 {
@@ -18,16 +19,16 @@ class ViewCareerController extends Controller
     {
         $companies = \App\Models\Company::findOrFail(1);
         $products = \App\Models\Product::all();
-        $career = Career::latest()->take(10)->get();
-        return view('pages.karir.index', compact('companies', 'career', 'products'));
+        $careers = Career::latest()->take(10)->get();
+        return view('pages.karir.index', compact('companies', 'careers', 'products'));
     }
 
-    public function create()
+    public function edit($id)
     {
         $companies = \App\Models\Company::findOrFail(1);
-        $career = \App\Models\Career::findOrFail(1);
+        $careers = Career::find($id);
         $products = \App\Models\Product::all();
-        return view('pages.karir.daftar', compact('companies', 'products', 'career'));
+        return view('pages.karir.daftar', compact('companies', 'careers', 'products'));
     }
 
     /**
@@ -55,7 +56,7 @@ class ViewCareerController extends Controller
             // get just ext 
             $extension2 = $request->file('gambar')->getClientOriginalExtension();
 
-            // filename to store
+            // filename to update
             $fileNameToStore2 = $fileName2.'_'.time().'.'.$extension2;
 
             // Upload Image
@@ -103,10 +104,10 @@ class ViewCareerController extends Controller
      */
     public function show($id)
     {
-        $career = Career::find($id);    
+        $careers = Career::find($id);
         $companies = \App\Models\Company::findOrFail(1);
         $products = \App\Models\Product::all();
-        return view('pages.karir.details', compact('companies', 'products'))->with('career', $career);
+        return view('pages.karir.details', compact('companies', 'products'))->with('careers', $careers);
     }
 
     /**

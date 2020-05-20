@@ -18,6 +18,7 @@ class CreateCompanyTable extends Migration
             $table->string('nama_company');
             $table->string('slogan');
             $table->longText('about');
+            $table->string('email');
             $table->string('whatsapp');
             $table->string('instagram');
             $table->string('facebook');

@@ -54,7 +54,8 @@ class ArticleController extends Controller
         	$request, 
         	[
         		'judul' => 'required',
-        		'isi' => 'required',
+                'isi' => 'required',
+                'status' => 'required',
         		'gambar' => 'image|nullable|max:1999'
         	]
         );
@@ -79,6 +80,7 @@ class ArticleController extends Controller
         $articles = new Article;
         $articles->judul = $request->input('judul');
         $articles->isi = $request->input('isi');
+        $articles->is_published = $request->input('status');
         $articles->gambar = $fileNameToStore;
         $articles->id_user = Auth::user()->id;
         $articles->save();
@@ -130,6 +132,7 @@ class ArticleController extends Controller
             [
                 'judul' => 'required',
                 'isi' => 'required',
+                'status' => 'required'
             ]
         );
 
@@ -150,6 +153,7 @@ class ArticleController extends Controller
         $articles = Article::find($id);
         $articles->judul = $request->input('judul');
         $articles->isi = $request->input('isi');
+        $articles->is_published = $request->input('status');
         if($request->hasFile('gambar')){
             $articles->gambar = $fileNameToStore;
         }

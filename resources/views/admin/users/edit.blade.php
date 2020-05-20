@@ -29,14 +29,14 @@
                                         {!! Form::open(['action' => 'Admin\UsersController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                                             <div class="form-group">
                                                 {{ Form::label('name',  'Nama Pengguna') }}
-                                                {{ Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Masukkan nama pengguna', 'autocomplete' => 'off']) }}
+                                                <input placeholder="{{ $user->name }}" class="form-control" readonly>
                                             </div>
                                             <div class="form-group">
                                                 {{ Form::label('email',  'Email Pengguna') }}
-                                                {{ Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Masukkan email pengguna', 'autocomplete' => 'off']) }}
+                                                <input placeholder="{{ $user->email }}" class="form-control" readonly>
                                             </div>
                                             <div class="form-group">
-                                                {{ Form::label('password',  'Password Pengguna (jika tidak ingin diubah silahkan masukkan password lagi)') }}
+                                                {{ Form::label('password',  'Password') }}
                                                 {{ Form::text('password', '', ['class' => 'form-control', 'placeholder' => 'Masukkan password pengguna', 'autocomplete' => 'off']) }}
                                             </div>
                                     </div>

@@ -47,6 +47,10 @@
                                                 <td>{!! $companies->about !!}</td>
                                             </tr>
                                             <tr>
+                                                <th>Email</th>
+                                                <td>{{ $companies->email }}</td>
+                                            </tr>
+                                            <tr>
                                                 <th>Whatsapp</th>
                                                 <td>{{ $companies->whatsapp }}</td>
                                             </tr>

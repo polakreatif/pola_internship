@@ -20,7 +20,7 @@ class SubmitController extends Controller
         $perPage = 15;
 
         if (!empty($keyword)) {
-            $submits = Submit::where('id_career', 'LIKE', "%$keyword%")->orWhere('nama', 'LIKE', "%$keyword%")
+            $submites = Submit::where('email', 'LIKE', "%$keyword%")->orWhere('nama', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $submites = Submit::latest()->paginate($perPage);

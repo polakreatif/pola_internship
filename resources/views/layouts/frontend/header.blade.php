@@ -32,7 +32,7 @@
 			        <a class="nav-link" href="/blogs"><i class="far fa-newspaper blog"></i> Blogs</a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" href="/#about-us" tabindex="-1" aria-disabled="true"><i class="fas fa-info-circle about"></i> About Us</a>
+			        <a class="nav-link" href="/about-us" tabindex="-1" aria-disabled="true"><i class="fas fa-info-circle about"></i> About Us</a>
 			      </li>
 			    </ul>
 			  </div>

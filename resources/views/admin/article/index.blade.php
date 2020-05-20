@@ -32,6 +32,7 @@
                                                 <th>Judul</th>
                                                 <th>Isi</th>
                                                 <th>Gambar</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -42,6 +43,12 @@
                                                     <td><a href="{{ url('/admin/article/' . $article->id) }}">{{ $article->judul }}</a></td>
                                                     <td>{!! ($article->isi) !!}</td>
                                                     <td><img src="/storage/img/article/{{ $article->gambar }}" style="height: 100px; width: 100px;" alt="{{ $article->judul }}"></td>
+                                                    <td>@if($article->is_published == 0)
+                                                            <p>Telah Diterbitkan</p>
+                                                        @else
+                                                            <p>Disimpan sebagai draft</p>
+                                                        @endif
+                                                    </td>
                                                     <td>
                                                         <a href="{{ url('/admin/article/' . $article->id_artikel) }}" title="View Artikel"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                                         <a href="{{ url('/admin/article/' . $article->id_artikel . '/edit') }}" title="Edit Artikel"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>

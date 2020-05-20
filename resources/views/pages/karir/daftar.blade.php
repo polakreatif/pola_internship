@@ -24,11 +24,12 @@
                 <img src="{{ asset('/img/daftar.png') }}" style="width:100%">
               </div>
               <div class="column-contact-us">
-                {!! Form::open(['action' => ['ViewCareerController@store', $career->id_career], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                {!! Form::open(['action' => ['ViewCareerController@store'], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 <div class="form-group">
-                    {!! Form::label('kode', 'Kode Pendaftaran') !!}
-                    <small style="color: red;">* Kode harus sesuai dengan yang ingin kalian daftar</small>
-                    {!! Form::text('kode', '', ['class' => 'form-control','placeholder' => 'Masukkan kode pekerjaan']) !!}
+                    {!! Form::label('kode', 'Pekerjaan Yang Anda Inginkan') !!}
+                    <select id="kode" name="kode" class="form-control">
+                        <option value="{{ $careers->id_career }}">{{ $careers->nama_career }}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     {!! Form::label('nama', 'Nama Lengkap') !!}

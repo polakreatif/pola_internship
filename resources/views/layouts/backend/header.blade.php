@@ -127,8 +127,8 @@
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
                             <div class="header-wrap">
-                                <form class="form-header" action="" method="POST">
-                                    <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <form url="/" class="form-header" method="GET" role="search">
+                                    <input class="au-input au-input--xl" type="text" name="search" placeholder="Cari data disini..." />
                                     <button class="au-btn--submit" type="submit">
                                         <i class="zmdi zmdi-search"></i>
                                     </button>
@@ -137,7 +137,7 @@
                                     <div class="account-wrap">
                                         <div class="account-item clearfix js-item-menu">
                                             <div class="image">
-                                                <img src="{{ asset('admin/images/icon/user.png') }}" alt="{ Auth::user()->name }" />
+                                                <img style="border-radius: 100%" src="{{ asset('admin/images/icon/user.png') }}" alt="{ Auth::user()->name }" />
                                             </div>
                                             <div class="content">
                                                 <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -146,7 +146,7 @@
                                                 <div class="info clearfix">
                                                     <div class="image">
                                                         <a href="#">
-                                                            <img src="{{ asset('admin/images/icon/user.png') }}" alt="{{ Auth::user()->name }}" />
+                                                            <img style="border-radius: 100%" src="{{ asset('admin/images/icon/user.png') }}" alt="{{ Auth::user()->name }}" />
                                                         </a>
                                                     </div>
                                                     <div class="content">
@@ -164,10 +164,6 @@
                                                     <div class="account-dropdown__item">
                                                         <a href="{{ url('/admin/users/' . Auth::user()->id . '/edit') }}">
                                                             <i class="zmdi zmdi-settings"></i>Ubah Kata Sandi</a>
-                                                    </div>
-                                                    <div class="account-dropdown__item">
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                     </div>
                                                 </div>
                                                 <div class="account-dropdown__footer">

@@ -19,6 +19,7 @@ class Company extends Model
         'nama_company',
         'slogan',
         'about',
+        'email',
         'whatsapp',
         'facebook',
         'instagram',

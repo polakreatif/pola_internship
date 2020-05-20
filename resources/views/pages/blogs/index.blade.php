@@ -10,6 +10,7 @@
                 <div class="row">
                     @if($articles->isNotEmpty())
                         @foreach($articles as $article)
+                            @if($article->is_published == 0)
                             <div class="col-md-4 blog">
                                 <div class="box">
                                     <div class="card-body">
@@ -22,12 +23,14 @@
                                 </div>
                               <h4 class="bg-default text-white" align="center">C</h4>
                             </div>
+                            @endif
                         @endforeach
                     @else
-                        <p>No Blog Post (:</p>
+                        <p>No Blog Post (:</p><br>
                     @endif
                 </div>
             </div>
+            <p class="posisi page">{{ $articles->links() }}</p>
         </div>
     </section>
 

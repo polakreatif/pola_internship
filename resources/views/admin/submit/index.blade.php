@@ -8,8 +8,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-9">
                                         <h2 class="title-1 m-b-25">Data Pendaftar</h2>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <p class="btn btn-info">Terdapat {{ $submites->total() }} pendaftar</p>
                                     </div>
                                     <div class="col-lg-12">
                                         @if(session('success'))

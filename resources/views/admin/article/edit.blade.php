@@ -36,6 +36,18 @@
                                                 {{ Form::textarea('isi', $articles->isi, ['id' => 'konten', 'class' => 'form-control', 'placeholder' => 'Masukkan isi artikel']) }}
                                             </div>
                                             <div class="form-group">
+                                                {{ Form::label('status',  'Pilih Status Post') }} <br>
+                                                <select id="status" name="status" class="form-control">
+                                                    @if($articles->is_published == 0)
+                                                    <option value="$articles->is_published" selected>Telah Dipublikasi</option>
+                                                    @else
+                                                    <option value="$articles->is_published" selected>Disimpan sebagai draft</option>
+                                                    @endif
+                                                    <option value="0">Publikasikan</option>
+                                                    <option value="1">Simpan sebagai draft</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
                                                 {{ Form::label('gambar',  'Gambar') }}<br>
                                                 {{ Form::file('gambar') }}
                                             </div>
