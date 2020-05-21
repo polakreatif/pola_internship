@@ -32,14 +32,16 @@
     <br/><br/><br/>
     <main id="main">
         <br/><br/><br/>
-      @yield('about_us')
-        <br/><br/><br/>
-        
+      
       @yield('carousel')
         <br/><br/><br/>
       
       @yield('products')
-
+        <br/><br/><br/>
+        
+      @yield('about_us')
+        <br/><br/><br/>
+        
       @yield('customer_service')
         <br/><br/><br/>
         

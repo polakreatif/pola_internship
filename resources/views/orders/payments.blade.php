@@ -15,6 +15,8 @@
 		<div class='text-center mt-3'>	
 			<h3>Pembayaran</h3>
 			<p>Pembayaran bisa melalui transfer ke rekening berikut atau COD langsung. Jangan lupa simpan bukti pembayaran dan konfirmasi pembayaran ke nomer berikut (WA) 082133170120.
+			<a href="https://wa.me/{{ preg_replace('/^[0]/', '62', $user_admin->phone). '?text=Nama%20%3A%20%28atas%20nama%20pemesanan%29%0AJasa%20%3A%20%28nama%20jasa%20yang%20dipesan%29%0AWaktu%20pemesanan%20%3A%28waktu%20pemesanan%29%0A%0ANama%20Bank%20%3A%20%28Bank%20Anda%29%0Ajumlah%20%28Rp%29%20%3A%20%28uang%20yang%20anda%20kirimkan%29%0A%0Asertakan%20gambar%2Ffile%20bukti%20pembayaran'}}" class="btn btn-sm btn-outline-primary" target="_blank">Konfirmasi Pembayaran</a>
+			</p>
 		</div>
 		
 		<div class="row justify-content-center mt-3">

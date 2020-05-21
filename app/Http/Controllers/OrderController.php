@@ -13,8 +13,8 @@ class OrderController extends Controller
      */
     public function index_admin()
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $orders = \App\Order::all();
         
         for($i = 0; $i < count($orders); $i++){
@@ -36,8 +36,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $products = \App\Product::all();
 
         return view('orders.index', [
@@ -54,8 +54,9 @@ class OrderController extends Controller
      */
     public function my_order()
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $orders = \App\Order::where('created_by', \Auth::user()->id)
             ->orderBy('created_at', 'desc')->get();
 
@@ -66,6 +67,7 @@ class OrderController extends Controller
 
         return view('orders.my_order', [
             'setting' => $setting,
+            'user_admin' => $user_admin,
             'other' => $other,
             'orders' => $orders
         ]);
@@ -78,11 +80,13 @@ class OrderController extends Controller
      */
     public function payments()
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
+        $user_admin = \App\User::findOrFail(1);
 
         return view('orders.payments', [
             'setting' => $setting,
+            'user_admin' => $user_admin,
             'other' => $other
         ]);
     }
@@ -94,8 +98,8 @@ class OrderController extends Controller
      */
     public function create($product_slug)
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $product = \App\Product::where('slug', $product_slug)->first();
 
         return view('orders.create', [
@@ -154,8 +158,8 @@ class OrderController extends Controller
      */
     public function edit_admin($id)
     {
-        $setting = \App\Setting::findOrfail(1);
-        $other = \App\Other::findOrfail(1);
+        $setting = \App\Setting::findOrFail(1);
+        $other = \App\Other::findOrFail(1);
         $order = \App\Order::findOrFail($id);
         $product = $order->product;
         $status = $order->status;

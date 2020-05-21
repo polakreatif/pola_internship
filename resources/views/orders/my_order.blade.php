@@ -49,6 +49,7 @@
 						        Berat (perkiraan) : {{ $order->weight }}<br/>
 						        Total Harga (perkiraan) : Rp. {{ $order->weight*$order->product->price }}<br/>
 						        <a href="{{ url('/payments') }}" class="btn btn-sm btn-primary">Cara pembayaran</a>
+						        <a href="https://wa.me/{{ preg_replace('/^[0]/', '62', $user_admin->phone). '?text=Nama%20%3A%20'. Auth::user()->name . '%0D%0AJasa%20%3A%20'. $order->product->name . '%0D%0AWaktu%20pemesanan%20%3A' .  $order->created_at . '%0D%0A%0D%0ANama%20Bank%20%3A%20%28Bank%20Anda%29%0D%0Ajumlah%20%28Rp%29%20%3A%20%28uang%20yang%20anda%20kirimkan%29%0D%0A%0D%0Asertakan%20gambar%2Ffile%20bukti%20pembayaran'}}" class="btn btn-sm btn-outline-primary" target="_blank">Konfirmasi Pembayaran</a>
 						        <span class="btn btn-sm btn-theme"> {{ $order->status->name }} </span>
 						       </p>
 						      </div>

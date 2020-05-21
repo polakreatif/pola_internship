@@ -1,4 +1,4 @@
-<div class="footer-newsletter" data-aos="fade-up">
+<!-- <div class="footer-newsletter" data-aos="fade-up">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6">
@@ -10,4 +10,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
