@@ -73,8 +73,8 @@
 
 				  <div class="form-group">
 				    <label for="avatar"></label>
-				    <input type="file" class="form-control" name="avatar" id="avatar">
-				    <small id="avatarHelp" class="form-text text-muted">Pilih gambar.</small>
+				    <input type="file" class="form-control" name="avatar" id="avatar" accept="image/*">
+				    <small id="avatarHelp" class="form-text text-muted">Pilih gambar, Pilih gambar, max 2000 kb (2 MB), typefile: jpg,jpeg,png,bmp,tiff</small>
 				  </div>
 
 				  <button type="submit" class="btn btn-primary w-100">Kirim</button>

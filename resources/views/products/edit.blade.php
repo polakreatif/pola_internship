@@ -103,8 +103,8 @@
 
 				  <div class="form-group">
 				    <label for="image"></label>
-				    <input type="file" class="form-control" name="image" id="image">
-				    <small id="imageHelp" class="form-text text-muted">Pilih gambar.</small>
+				    <input type="file" class="form-control" name="image" id="image" accept="image/*">
+				    <small id="imageHelp" class="form-text text-muted">Pilih gambar, Pilih gambar, max 2000 kb (2 MB), typefile: jpg,jpeg,png,bmp,tiff</small>
 				  </div>
 
 				  	<div class="input-group mb-3">
@@ -122,7 +122,7 @@
 				  </div>
 				  <br/>
 
-				  <button type="submit" class="btn btn-primary">Kirim</button>
+				  <button type="submit" class="btn btn-primary w-100" style="border-radius: 15px;">Kirim</button>
 				</form>
 			</div>
 		</div>

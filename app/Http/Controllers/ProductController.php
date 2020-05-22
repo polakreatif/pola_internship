@@ -49,7 +49,7 @@ class ProductController extends Controller
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
-            "image" => "required",
+            "image" => "required|file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff",
             "sumber_label" => "max:199"
         ])->validate();
 
@@ -127,7 +127,8 @@ class ProductController extends Controller
             "price" => "required",
             "type" => "required",
             "description" => "required|max:245",
-            "sumber_label" => "max:199"
+            "sumber_label" => "max:199",
+            "image" => "file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff"
         ])->validate();
 
         $product = \App\Product::find($id);

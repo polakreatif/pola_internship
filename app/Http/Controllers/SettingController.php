@@ -37,6 +37,7 @@ class SettingController extends Controller
             "name" => "required|max:199",
             "phone" => "required|min:10|max:15|unique:users,phone,". \Auth::user()->id,
             "email" => "required|max:199|unique:users,email,". \Auth::user()->id,
+            "avatar" => "file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff",
         ])->validate();
 
         $setting = \App\Setting::findOrFail(1);

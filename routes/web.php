@@ -58,6 +58,10 @@ Route::get('/order', 'OrderController@index')->middleware('auth');
 Route::get('/order/{product_slug}', 'OrderController@create')->middleware('auth');
 Route::get('/payments', 'OrderController@payments');
 
+
+// Customer Service
+Route::post('/customer-service-message', 'CustomerServiceController@send_to_wa');
+
 // Users
 Route::resource('users', 'UserController')->middleware('auth', 'admin');
 

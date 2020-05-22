@@ -48,7 +48,7 @@ class CarouselController extends Controller
             "title" => "max:199",
             "caption" => "max:245",
             "sumber_label" => "max:199",
-            "image" => "required"
+            "image" => "required|file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff",
         ])->validate();
 
         $file = $request->file('image')->store('images', 'public');
@@ -94,6 +94,7 @@ class CarouselController extends Controller
         $validator = \Validator::make($request->all(), [
             "title" => "max:199",
             "caption" => "max:245",
+            "image" => "file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff",
             "sumber_label" => "max:199",
         ])->validate();
 

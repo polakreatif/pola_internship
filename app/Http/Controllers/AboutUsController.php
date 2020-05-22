@@ -48,6 +48,7 @@ class AboutUsController extends Controller
         $validator = \Validator::make($request->all(), [
             "title" => "max:199",
             "description" => "required|max:245",
+            "image" => "file|max:2000|mimetypes:image/jpg,image/jpeg,image/png,image/bmp,image/tiff",
             "sumber_label" => "max:199"
         ])->validate();
 

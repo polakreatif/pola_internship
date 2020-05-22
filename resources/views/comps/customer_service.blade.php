@@ -40,25 +40,27 @@
     </div>
 
     <div class="col-lg-6">
-      <form action="{{ url('/customer-service/store') }}" method="POST" role="form">
+      <form action="{{ url('/customer-service-message') }}" method="POST" role="form">
+				@csrf
+
         <div class="form-group" data-aos="fade-up" data-aos-delay="0">
           <input placeholder="Nama" type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Mohon isikan setidaknya 4 karakter !" />
-          <div class="validate"></div>
+				  <small id="nameHelp" class="form-text text-muted">Nama, dibutuhkan max 199 karakter.</small>
         </div>
         <div class="form-group" data-aos="fade-up" data-aos-delay="100">
           <input placeholder="Email" type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Mohon isikan email dengan benar !" />
-          <div class="validate"></div>
+				  <small id="emailHelp" class="form-text text-muted">Email, dibutuhkan max 199 karakter.</small>
         </div>
         <div class="form-group" data-aos="fade-up" data-aos-delay="200">
           <input placeholder="Subjek" type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Mohon isikan setidaknya 8 karakter !" />
-          <div class="validate"></div>
+				  <small id="subjectHelp" class="form-text text-muted">Subjek max 199 karakter.</small>
         </div>
         <div class="form-group" data-aos="fade-up" data-aos-delay="300">
           <textarea placeholder="Pesan...." class="form-control" name="message" rows="5" data-rule="required" data-msg="Mohon isikan pesan pesan untuk kami..."></textarea>
-          <div class="validate"></div>
+				  <small id="messageHelp" class="form-text text-muted">Pesan, dibutuhkan max 245 karakter.</small>
         </div>
         <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-          <button class="btn  btn-theme w-100" type="submit">Kirim Pesan</button>
+          <button class="btn  btn-theme w-100" type="submit">Kirim Pesan WA</button>
         </div>
       </form>
     </div>
