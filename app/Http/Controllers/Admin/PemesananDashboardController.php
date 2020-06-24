@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Produk;
+use App\Order;
 
 class PemesananDashboardController extends Controller
 {
@@ -14,9 +15,18 @@ class PemesananDashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $orders = Order::all();
+        
+        $order = Order::all();
+        // dd($orders);
 
-        return view('pages.admin.pemesanan-dashboard.index');
+        $carts = $orders->transform(function($cart, $key){
+            return unserialize($cart->cart);
+        });
+        
+        // dd($carts);
+        return view('pages.admin.pemesanan-dashboard.index', compact('order','carts'));
     }
 
     /**

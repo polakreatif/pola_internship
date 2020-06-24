@@ -60,8 +60,11 @@
         </div>
         <div class="modal-body">Pilih Keluar Jika Siap Mengakhiri Sesi.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="login.html">Keluar</a>
+          <form action="{{ url('logout') }}" method="POST">
+            @csrf
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+            <button class="btn btn-primary" type="submit">Keluar</button>
+          </form>
         </div>
       </div>
     </div>

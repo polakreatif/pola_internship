@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Produk;
+use App\Order;
 
 class DashboardController extends Controller
 {
@@ -16,8 +17,9 @@ class DashboardController extends Controller
     public function index()
     {
         $produk = Produk::all();
+        $order = Order::all();
 
-        return view('pages.admin.dashboard', compact('produk'));
+        return view('pages.admin.dashboard', compact('produk','order'));
     }
 
     /**

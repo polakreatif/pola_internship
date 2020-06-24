@@ -5,7 +5,14 @@
 @section('content')
     <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    
+    @if (session()->has('success'))
+        <div class="alert alert-success"> {{ session()->get('success') }} </div>
+    @endif
+    @if (session()->has('update'))
+        <div class="alert alert-success"> {{ session()->get('update') }} </div>
+    @endif
+    
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Daftar Kategori</h1>
@@ -27,15 +34,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($kategori as $kategori)
+                        @forelse ($kategori as $kategoris)
                             <tr>
-                                <td>{{ $kategori->id }}</td>
-                                <td>{{ $kategori->nama }}</td>
+                                <td>{{ $kategoris->id }}</td>
+                                <td>{{ $kategoris->nama }}</td>
                                 <td>
-                                    <a href="{{ route('kategori.edit', $kategori->id) }}" class="btn btn-info">
+                                    <a href="{{ route('kategori.edit', $kategoris->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('kategori.destroy', $kategori->id) }}" method="post" class="d-inline">
+                                    <form action="{{ route('kategori.destroy', $kategoris->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
@@ -53,6 +60,9 @@
                         @endforelse
                     </tbody>
                 </table>
+                <div class="d-flex flex-row-reverse">
+                    {{$kategori->links()}}
+                </div>
             </div>
         </div>
     </div>

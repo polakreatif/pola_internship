@@ -7,12 +7,17 @@
         <!-- section produk kami header / judul -->
         <section class="section-produk-kami-header">
             <div class="container">
+
+                @if (session()->has('success'))
+                    <div class="alert alert-success"> {{ session()->get('success') }} </div>
+                @endif
+                
                 <nav class="row navbar navbar-expand-lg navbar-light bg-white align-items-center">
-                    <div class="section-title-detail">
+                    {{-- <div class="section-title-detail">
                         <h5>Sepatu Laki</h5>
-                    </div>
-                    <ul class="navbar-nav ml-auto mr-3">
-                        <form action="#" class="search-form">
+                    </div> --}}
+                    {{-- <ul class="navbar-nav ml-auto mr-3"> --}}
+                        {{-- <form action="#" class="search-form">
                             <div class="input-group">
                                 <input type="text" class="form-control input-style" name="search-produk-sepatuLaki" placeholder="Cari Produk...">
                                 <button type="submit" class="btn btn-search">
@@ -21,8 +26,8 @@
                                     </i>
                                 </button>
                             </div>
-                        </form>
-                        <li class="nav-item dropdown">
+                        </form> --}}
+                        {{-- <li class="nav-item dropdown">
                             <a href="#" class=" nav-dropdown dropdown-toggle" id="navbardrop" data-toggle="dropdown">
                                 Kategori Sepatu
                             </a>
@@ -31,8 +36,8 @@
                                     <a href="#" class="dropdown-item">{{ $kategori->nama }}</a>
                                 @endforeach
                             </div>
-                        </li>
-                        <li class="nav-item dropdown">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown">
                             <a href="#" class="nav-dropdown dropdown-toggle" id="navbardrop" data-toggle="dropdown">
                                 Urutkan Dari
                             </a>
@@ -41,8 +46,8 @@
                                 <a href="#" class="dropdown-item">Termahal</a>
                                 <a href="#" class="dropdown-item">Terbaru</a>
                             </div>
-                        </li>
-                    </ul>
+                        </li> --}}
+                    {{-- </ul> --}}
                 </nav>
             </div>
         </section>
@@ -70,6 +75,7 @@
                     </a>
                 </div>
             </div>
+            <div class="elfsight-app-0fea70a3-21a9-4c80-86ec-29070e6f10d4"></div>
         </section>
     </main>
     

@@ -16,7 +16,7 @@ class KategoriDashboardController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::all();
+        $kategori = Kategori::paginate(2);
 
         return view('pages.admin.produk-dashboard.kategori-dashboard.index', compact('kategori'));
     }
@@ -45,7 +45,7 @@ class KategoriDashboardController extends Controller
 
         Kategori::create($data);
 
-        return redirect()->route('kategori.index');
+        return redirect()->route('kategori.index')->with('success',"Selamat Berhasil Menambahkan Data Kategori");
     }
 
     /**
@@ -87,7 +87,7 @@ class KategoriDashboardController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('kategori.index');
+        return redirect()->route('kategori.index')->with('update',"Selamat Data Kategori Diperbarui");
     }
 
     /**

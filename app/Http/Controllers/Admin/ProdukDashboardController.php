@@ -18,7 +18,7 @@ class ProdukDashboardController extends Controller
      */
     public function index()
     {
-        $items = Produk::all();
+        $items = Produk::paginate(2);
 
         return view('pages.admin.produk-dashboard.index', compact('items'));
     }
@@ -51,7 +51,7 @@ class ProdukDashboardController extends Controller
 
         Produk::create($data);
 
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')->with('success',"Selamat Anda Berhasil Menambah Data Baru");
     }
 
     /**
@@ -98,7 +98,7 @@ class ProdukDashboardController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')->with('update',"Selamat Data Anda Berhasil Diperbarui");
     }
 
     /**

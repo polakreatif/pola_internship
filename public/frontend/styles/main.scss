@@ -110,6 +110,11 @@ header{
     }
 }
 
+// make notification badge
+.badge{
+    color: #000;
+    font-size:14px;
+}
 
 // Main / Konten Utama
 main{
@@ -470,6 +475,115 @@ main{
     }
 }
 
+
+
+// css bagian halaman keranjang
+.card-checkout{
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.26);
+    border: 0 !important;
+
+    .sub-bagian{
+        padding: 20px 20px 0 20px;
+    }
+
+    .form-group{
+        padding: 5px 20px 0 20px;
+    }
+
+    .deskripsi-keranjang{
+        font-size: 14px;
+        padding-top: 5px;
+        color: #AAAAAA;
+    }
+
+    .judul-keranjang{
+        font-size:16px;
+        font-weight: 600;
+    }
+
+    .input-alamatpengiriman{
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+        color:#757575;
+        border-color: #ababab;
+        outline: none;
+    }
+
+    .pembayaran-keranjang{
+        padding: 5px;
+        width: 100%;
+        font-size:14px;
+        outline: none;
+    }
+
+    .btn-checkoutContainer{
+        
+        .btn{
+            border-radius: 0px !important;
+        }
+
+        .btn-checkout{
+            margin-top: 40px;
+            background-color:#CB5036;
+            color: #fff;
+            font-weight:600;
+            border-radius: 0;
+            font-size: 16px;
+
+            &:hover{
+                background-color:#D25A41;
+            }
+        }
+
+    }
+}
+
+.attendee{
+    
+    p{
+        margin: 0 !important;
+    }
+    
+    .desk-nama{
+        font-size: 14px;
+        color: #757575;
+        font-weight:500;
+    }
+
+    .harga-keranjang{
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+    }
+
+    .jumlah-barang{
+        width:25%;
+    }
+
+    .desk-judul{
+        font-size: 16px;
+        color: #000;
+        font-weight:500;
+    }
+}
+
+.btn-perbarui-kontainer{
+
+    .btn{
+        outline: none;
+    }
+
+    .btn-perbaruikeranjang{
+        border: 1px solid #CB5036;
+        color: #CB5036;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+}
+
+// akhir css halaman keranjang
 
 
 // Footer

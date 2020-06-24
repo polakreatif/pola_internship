@@ -99,6 +99,11 @@ header .image-box img {
   max-height: 400px;
 }
 
+.badge {
+  color: #000;
+  font-size: 14px;
+}
+
 main .heading-main {
   color: #212121;
   font-weight: bold;
@@ -430,6 +435,101 @@ main .section-produk-sepatu-detail .btn.btn-beli-produk {
 
 main .section-produk-sepatu-detail .btn.btn-beli-produk:hover {
   background-color: #D25A41;
+}
+
+.card-checkout {
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.26);
+          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.26);
+  border: 0 !important;
+}
+
+.card-checkout .sub-bagian {
+  padding: 20px 20px 0 20px;
+}
+
+.card-checkout .form-group {
+  padding: 5px 20px 0 20px;
+}
+
+.card-checkout .deskripsi-keranjang {
+  font-size: 14px;
+  padding-top: 5px;
+  color: #AAAAAA;
+}
+
+.card-checkout .judul-keranjang {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-checkout .input-alamatpengiriman {
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  color: #757575;
+  border-color: #ababab;
+  outline: none;
+}
+
+.card-checkout .pembayaran-keranjang {
+  padding: 5px;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+}
+
+.card-checkout .btn-checkoutContainer .btn {
+  border-radius: 0px !important;
+}
+
+.card-checkout .btn-checkoutContainer .btn-checkout {
+  margin-top: 40px;
+  background-color: #CB5036;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+  font-size: 16px;
+}
+
+.card-checkout .btn-checkoutContainer .btn-checkout:hover {
+  background-color: #D25A41;
+}
+
+.attendee p {
+  margin: 0 !important;
+}
+
+.attendee .desk-nama {
+  font-size: 14px;
+  color: #757575;
+  font-weight: 500;
+}
+
+.attendee .harga-keranjang {
+  font-size: 16px;
+  color: #000;
+  font-weight: 600;
+}
+
+.attendee .jumlah-barang {
+  width: 25%;
+}
+
+.attendee .desk-judul {
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+}
+
+.btn-perbarui-kontainer .btn {
+  outline: none;
+}
+
+.btn-perbarui-kontainer .btn-perbaruikeranjang {
+  border: 1px solid #CB5036;
+  color: #CB5036;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .section-footer {

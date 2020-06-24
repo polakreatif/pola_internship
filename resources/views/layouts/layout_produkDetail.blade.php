@@ -33,10 +33,10 @@
                         <a href="/" class="nav-link active">Beranda</a>
                     </li>
                     <li class="nav-item dropdown position">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                        <a href="{{route('detail.index')}}" class="nav-link">
                             Produk
                         </a>
-                        <div class="megamenu dropdown-menu" aria-labelledby="navbardrop">
+                        {{-- <div class="megamenu dropdown-menu" aria-labelledby="navbardrop">
                             <div class="row">
                                 <div class="col-md-4">
                                     <a href="#" class="dropdown-item">
@@ -57,14 +57,36 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href="#" class="nav-link">Keranjang</a>
+                        <a href="{{route('displaykeranjang.index')}}" class="nav-link">Keranjang
+                            <span class="badge">( {{ session()->has('cart') ? session()->get('cart')->totalQty : '0' }} )</span>
+                        </a>
                     </li>
-                    <li class="nav-item mx-md-2">
-                        <a href="#" class="nav-link">Akun Saya</a>
-                    </li>
+
+                    @guest
+                        <li class="nav-item mx-md-2">
+                            <a href="/login" class="nav-link">
+                                Akun Saya
+                            </a>
+                        </li>   
+                    @endguest
+
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarout" data-toggle="dropdown">
+                                Halo, {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarout" data-toggle="dropdown">
+                                <form action="{{ url('logout') }}" method="POST">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit" >Keluar</button>
+                                </form>
+                            </div>
+                        </li> 
+                    @endauth
+                    
                 </ul>
             </div>
         </nav>

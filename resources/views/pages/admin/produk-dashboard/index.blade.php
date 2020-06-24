@@ -6,6 +6,13 @@
     <!-- Begin Page Content -->
 <div class="container-fluid">
 
+    @if (session()->has('success'))
+        <div class="alert alert-success"> {{ session()->get('success') }} </div>
+    @endif
+    @if (session()->has('update'))
+        <div class="alert alert-success"> {{ session()->get('update') }} </div>
+    @endif
+
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800">Daftar Produk</h1>
@@ -21,7 +28,7 @@
                 <table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>NO</th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
                             <th>Harga</th>
@@ -63,6 +70,9 @@
                         @endforelse
                     </tbody>
                 </table>
+                <div class="d-flex flex-row-reverse">
+                    {{$items->links()}}
+                </div>
             </div>
         </div>
     </div>
